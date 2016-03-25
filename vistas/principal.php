@@ -16,7 +16,7 @@
         <div id="pad-wrapper" class="form-page">
             <div class="row header">
                 <h3>MEDIk</h3></br>
-                <h4>- Sistema Medico -</h4></br>
+                <h4>- Sistema de citas Medicas -</h4></br>
                 
             </div>
 

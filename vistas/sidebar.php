@@ -34,7 +34,7 @@
     <header class="navbar navbar-inverse" role="banner">
         <div class="navbar-header">            
             <a class="navbar-brand" href="principal.php">
-                <img src="css/images/" alt="" width="150" />sistema de la Universidad Politecnica Territorial de Paria
+                <img src="css/images/" alt="" width="150" />sistema MEDIK
             </a>
         </div>
 
