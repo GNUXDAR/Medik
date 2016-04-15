@@ -4,7 +4,7 @@
 
 class Conection {
 	public function conectar(){
-		$CONECTAR="host='127.0.0.1' dbname='consultorio' user='gnuxdar' password='123'";
+		$CONECTAR="host='127.0.0.1' dbname='consultorio' user='canaima' password='canaima'";
 		$CONEXION=pg_connect($CONECTAR);
 
 		if ($CONEXION==NULL) {
