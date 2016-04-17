@@ -74,14 +74,14 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     <input value="'.$ci_medic.'" name="ci_medic" id="ci_medic" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
 
                         <div class="field-box">
-                            <label>Nombre Paciente:</label>
+                            <label>Nombre Medico:</label>
                             <div class="col-md-7">
                                 <input name="nom_medic" id="nom_medic" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text" autofocus>
                             </div>                            
                         </div>
 
                         <div class="field-box">
-                            <label>Apellido Paciente:</label>
+                            <label>Apellido Medico:</label>
                             <div class="col-md-7">
                                 <input name="apel_medic" id="apel_medic" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text">
                             </div>                            

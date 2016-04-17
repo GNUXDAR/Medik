@@ -8,6 +8,27 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
+--
+-- Name: consultorio; Type: COMMENT; Schema: -; Owner: gnuxdar
+--
+
+COMMENT ON DATABASE consultorio IS 'consultorio medico. sistema de citas';
+
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -286,29 +307,26 @@ ALTER TABLE ONLY usr_system ALTER COLUMN id_usr SET DEFAULT nextval('user_system
 -- Data for Name: cita_cnslt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
 --
 
-COPY cita_cnslt (id_cita, ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita) FROM stdin;
-1	19330646	2016-01-10	refriado y malestar general	Margarita Guerrero
-3	19330646	2016-03-27	dolor de cabeza	Luisa Romero
-2	19330646	2016-03-26	Revision Rutinaria	Pedro Pablo
-5	12345678	2016-03-17	creer ganar	arturo
-4	12345678	2016-03-12	problemas personales	angel
-6	12121212	2016-03-10	dolor	adin
-\.
+INSERT INTO cita_cnslt VALUES (1, 19330646, '2016-01-10', 'refriado y malestar general', 'Margarita Guerrero');
+INSERT INTO cita_cnslt VALUES (3, 19330646, '2016-03-27', 'dolor de cabeza', 'Luisa Romero');
+INSERT INTO cita_cnslt VALUES (2, 19330646, '2016-03-26', 'Revision Rutinaria', 'Pedro Pablo');
+INSERT INTO cita_cnslt VALUES (5, 12345678, '2016-03-17', 'creer ganar', 'arturo');
+INSERT INTO cita_cnslt VALUES (4, 12345678, '2016-03-12', 'problemas personales', 'angel');
+INSERT INTO cita_cnslt VALUES (6, 12121212, '2016-03-10', 'dolor', 'adin');
+INSERT INTO cita_cnslt VALUES (7, 12345678, '2016-04-05', 'xdgfd', 'ara');
 
 
 --
 -- Name: cita_cnslt_id_cita_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
 --
 
-SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 6, true);
+SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 7, true);
 
 
 --
 -- Data for Name: hist-pacnt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
 --
 
-COPY "hist-pacnt" (id_his, ci_pacnt_hist, antc_hist, antc_fm_hist, hab_pscb_hist, ex_fisc_hist, mdicnt_alrgc_hist, ptlg_hist, "null") FROM stdin;
-\.
 
 
 --
@@ -322,9 +340,7 @@ SELECT pg_catalog.setval('"hist-pacnt_id_his_seq"', 1, false);
 -- Data for Name: medic_cnslt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
 --
 
-COPY medic_cnslt (id_medic, nom_medic, apel_medic, fn_medic, mail_medic, dir_medic, tlf_medic, ci_medic, espc_medic) FROM stdin;
-1	jose	carmona	1942-03-12	drjs@gmail.com	carupano	34534543	21212121	dr general
-\.
+INSERT INTO medic_cnslt VALUES (1, 'jose', 'carmona', '1942-03-12', 'drjs@gmail.com', 'carupano', 34534543, 21212121, 'dr general');
 
 
 --
@@ -338,12 +354,10 @@ SELECT pg_catalog.setval('medic_cnslt_id_medic_seq', 1, true);
 -- Data for Name: pacnt_cnslt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
 --
 
-COPY pacnt_cnslt (id_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, mail_pacnt, dir_pacnt, tlf_pacnt, ci_pacnt) FROM stdin;
-1	Arturo	Guerrero	1989-09-18	gnuxdar@gmail.com	Tunapuy	4267889948	19330646
-2	norelys	ospedales	1989-09-18	nore@nore.com	tunapuy	4267889948	12345678
-6	amarily	guerrero	1968-10-06	amarili@guerrero	rio caribe	124546	12121212
-3	adrian	guerrero	1989-09-16	adri@hotmail.com	tunapuy	4267889945	19330647
-\.
+INSERT INTO pacnt_cnslt VALUES (1, 'Arturo', 'Guerrero', '1989-09-18', 'gnuxdar@gmail.com', 'Tunapuy', 4267889948, 19330646);
+INSERT INTO pacnt_cnslt VALUES (2, 'norelys', 'ospedales', '1989-09-18', 'nore@nore.com', 'tunapuy', 4267889948, 12345678);
+INSERT INTO pacnt_cnslt VALUES (6, 'amarily', 'guerrero', '1968-10-06', 'amarili@guerrero', 'rio caribe', 124546, 12121212);
+INSERT INTO pacnt_cnslt VALUES (3, 'adrian', 'guerrero', '1989-09-16', 'adri@hotmail.com', 'tunapuy', 4267889945, 19330647);
 
 
 --
@@ -364,9 +378,7 @@ SELECT pg_catalog.setval('user_system_id_usr_seq', 1, true);
 -- Data for Name: usr_system; Type: TABLE DATA; Schema: public; Owner: gnuxdar
 --
 
-COPY usr_system (id_usr, ci_usr, login_usr, pass_usr, status_usr) FROM stdin;
-1	12345678	gnuxdar	123	t
-\.
+INSERT INTO usr_system VALUES (1, 12345678, 'gnuxdar', '123', true);
 
 
 --

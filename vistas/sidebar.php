@@ -48,11 +48,11 @@
             </li>
             <li class="dropdown open">
                 <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
-                    Usuario<?php echo ": ".$_SESSION['usuario'] ?>
+                    Usuario <?php echo ": ".$_SESSION['usuario'] ?>
                 </a>                
             </li>             
             <li class="settings-hidden-xs hidden-sm">
-                <a href="../control/cerrarSesion.php" role="button">
+                <a href="../control/cerrarSesion.php" role="button" onclick="if(confirm('&iquest;Esta seguro que desea cerrar la sesi&oacute;n?')) return true;  else return false;" >
                     <i class="icon-share-alt"></i>
                 </a>
             </li>
