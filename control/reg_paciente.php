@@ -1,0 +1,46 @@
+<?php 
+
+include_once('conexion.php');
+ 
+ini_set('display_errors', 'on');
+
+
+$ci_pacnt		= $_POST['ci_pacnt'];
+$nom_pacnt		= $_POST['nom_pacnt'];
+$apel_pacnt		= $_POST['apel_pacnt'];
+$fn_pacnt		= $_POST['fn_pacnt'];
+$dir_pacnt		= $_POST['dir_pacnt'];
+$mail_pacnt		= $_POST['mail_pacnt'];
+$tlf_pacnt		= $_POST['tlf_pacnt'];
+
+$comparar="SELECT * FROM pacnt_cnslt WHERE ci_pacnt = '$ci_pacnt'";
+
+$conectando = new Conection();
+
+$verifica = pg_query($conectando->conectar(), $comparar) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
+
+$localizar=pg_num_rows($verifica);
+	if ($localizar==0) {
+
+
+		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO pacnt_cnslt (ci_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, dir_pacnt, mail_pacnt, tlf_pacnt)
+		VALUES ('$ci_pacnt', '$nom_pacnt', '$apel_pacnt', '$fn_pacnt', '$dir_pacnt', '$mail_pacnt', '$tlf_pacnt')");	
+
+		if (!$INSERTAR) { 
+		    print ("<script>alert('El paciente no pudo ser registrado');</script>");
+		    print('<meta http-equiv="refresh" content="0; URL=../vistas/pacientes.php">');
+		    }
+
+		else { 
+		    print ("<script>alert('El paciente fue registrado exitosamente');</script>");
+		    print('<meta http-equiv="refresh" content="0; URL=../vistas/pacientes.php">');
+		    }
+
+	}
+
+	else {
+	    print ("<script>alert('El paciente ya se encuentra registrado');</script>");
+	    print('<meta http-equiv="refresh" content="0; URL=../vistas/pacientes.php">');
+}
+
+?>
