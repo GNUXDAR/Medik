@@ -38,7 +38,7 @@
         if ($estado_user==3) {
             session_destroy();
             echo "<script>alert('Usted se encuentra temporalmente inactivo')</script>";
-            echo "<script>location.href = '../vistas/index.php';</script>";
+            echo "<script>location.href = '../index.php';</script>";
 
         }
                 
@@ -56,7 +56,7 @@
     else
     {
         echo "<script>alert('Los datos son incorrectos, intente nuevamente!')</script>";
-        echo "<script>location.href = '../vistas/index.php';</script>";
+        echo "<script>location.href = '../index.php';</script>";
     }
     
 ?>

@@ -4,7 +4,6 @@ include_once('conexion.php');
  
 ini_set('display_errors', 'on');
 
-
 $ci_medic		= $_POST['ci_medic'];
 $nom_medic		= $_POST['nom_medic'];
 $apel_medic		= $_POST['apel_medic'];

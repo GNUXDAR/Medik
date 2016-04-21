@@ -11,7 +11,7 @@ $id_cita = $_GET["id_cita"];
 
     if ($localizar = 1){
       print ("<script>alert('La cita fue Eliminada');</script>");
-      print('<meta http-equiv="refresh" content="0; URL=b_citas.php">');
+      print('<meta http-equiv="refresh" content="0; URL=../vistas/b_citas.php">');
     }
 
     else{

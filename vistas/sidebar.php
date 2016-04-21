@@ -34,7 +34,7 @@
     <header class="navbar navbar-inverse" role="banner">
         <div class="navbar-header">            
             <a class="navbar-brand" href="principal.php">
-                <img src="css/images/" alt="" width="150" />sistema MEDIK
+                <img src="css/images/logo.gif" alt=""  width="35"/>  SISTRAERCA
             </a>
         </div>
 
@@ -82,7 +82,7 @@
             </li>            
 <!--inicio citas-->            
             <li>
-                <a class="dropdown-toggle" href="cliente.php"><!--separacion-->
+                <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-group"></i>
                     <span>Citas</span>
                     <i class="icon-chevron-down"></i><!--flecha-->
@@ -90,21 +90,22 @@
                 <ul class="submenu">
 					<li><a href="citas.php">Registrar</a></li>
                     <li><a href="b_citas.php">consultar</a></li>
-                    <!-- <li><a href="cliente_upd2.php">modificar</a></li> -->
+                    
 
                 </ul>
             </li> 
 <!--fin citas-->
             
              <li>
-                <a class="dropdown-toggle" href="equipo.php"><!--separacion-->
+                <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-ambulance"></i><!--icon-->
                     <span>Pacientes</span>
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a href="pacientes.php">Registrar</a></li>
-                    <li><a href="#">consultar</a></li>
+                    <li><a href="b_paciente.php">Consultar</a></li>
+                    <li><a href="edit_paciente.php">Modificar</a></li>
                     <li><a href="hist.php">Historial Cinico</a></li>
                 </ul>
 			</li> 
@@ -117,7 +118,7 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a href="medicos.php" >Registrar</a></li>
-                    <li><a href="#" >Consultar</a></li>
+                    <li><a href="edit_medico.php">Modificar</a></li>
                 </ul>
 			</li> 
             <!--reporte-->
@@ -129,7 +130,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="https://twitter.com/ArturoGnuxdar" target="_blank">Ayuda</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Ayuda</a></li>
 
 
                 </ul>

@@ -2,10 +2,8 @@
     session_start();
     $usuario = $_SESSION['usuario'];
     if(!isset($usuario)){
-        header("Location: index.php");
-    }
-?>
-<?php 
+        header("Location: ../index.php");
+    } 
         include_once('../control/conexion.php');
         include_once('sidebar.php');
         include_once('script.php');
@@ -43,7 +41,7 @@
                     </form>
                     <hr>
                                 <!-- tabla de las citas del usuarios -->
-                                <?php include_once('t_citas.php') ?>
+                                <?php include_once('t_citas.php'); ?>
 
                 </div>
             

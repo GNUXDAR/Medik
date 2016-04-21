@@ -3,7 +3,7 @@
     $usuario = $_SESSION['usuario'];
     if(!isset($usuario)){
         header("Location: ../index.php");
-    }
+    } 
         include_once('../control/conexion.php');
         include_once('sidebar.php');
         include_once('script.php');
@@ -24,10 +24,10 @@
 
                 <div class="col-md-2"></div><!--primera columna de centrado-->
                 <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
-					<h2 align="center">Registrar Medicos</h2></br></br>
+                    <h2 align="center">Modificar Medico</h2></br></br>
 
                     <!---->
-                     <form method="POST" action="medicos.php">
+                     <form method="POST" action="edit_medico.php">
     
                         <div class="field-box">
                             <label>Cedula:</label>
@@ -41,7 +41,8 @@
                         
                     </form>
                     <hr>
-                    <?php include_once('form_medicos.php'); ?>
+
+                    <?php include_once('form_edit_medic.php');  ?>
 
                 </div>
             

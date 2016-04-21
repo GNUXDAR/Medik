@@ -3,11 +3,8 @@
 include_once('Reportes_pdf.php');
 ini_set('display_errors', 'on');
 $buscar="SELECT * FROM personas ";
-// INNER JOIN  
-// carreras ON personas.id_carrera = carreras.id_carrera INNER JOIN  
-// estados ON personas.id_estado = estados.id_estado ";
 
-$CONECTAR="host='127.0.0.1' dbname='salas' user='gnuxdar' password='123'";
+$CONECTAR="host='127.0.0.1' dbname='consultorio' user='gnuxdar' password='123'";
 $CONEXION=pg_connect($CONECTAR);
 
 $verifica = pg_query($CONEXION, $buscar) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
@@ -58,7 +55,7 @@ $html.= '
 ';
 
 $pdf= new Reportes_pdf();
-$pdf->pdf( $titulo = "Listado de investigadores de SIAT-SVO", $formato = 'A4' , $orientacion = 'P' , $html, $archivo = "Listado Investigadores");
+$pdf->pdf( $titulo = "SISTRAERCA    ", $formato = 'A4' , $orientacion = 'P' , $html, $archivo = "Listado Investigadores");
 }
 
 elseif ($localizar==0) {
