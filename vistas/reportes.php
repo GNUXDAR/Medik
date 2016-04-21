@@ -38,7 +38,7 @@
         <div class="row">
         	<div id="reporte"></div>
         </div>      
-
+        <div id="pdf"></div>
   
 </div>
 </div>
@@ -70,4 +70,29 @@
 			}
 		});
 	});
+</script>
+
+<script type="text/javascript">
+	function descargar_pdf() {
+		
+		var titilu_grafica = "";
+		var nombre_archivo = "";
+		if ($("#select_reporte").val() == 1) {
+				titilu_grafica = "Reporte de pacientes por Edades";
+				nombre_archivo = "reporte de pacientes por edades";
+		}
+		$.ajax({
+                    url: "reporte_pdf.php",
+                    type : 'POST',
+                    data: { 
+                    		titilu_grafica : titilu_grafica,
+                    		nombre_archivo : nombre_archivo
+                    	  },
+                    success:
+                        function (data) {
+                               $("#pdf").html(data);                      
+                        }
+        });
+		
+	}
 </script>

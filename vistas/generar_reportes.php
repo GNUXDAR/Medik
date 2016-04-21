@@ -7,7 +7,6 @@ $conectando = new Conection();
 $sql = "";
 $nombreImagen = ""; 
 $title = "";
-
 $chart = new PieChart(500, 500);
 $dataSet = new XYDataSet();
 
@@ -73,7 +72,8 @@ function result($sql='')
 	$chart->render("img/reportes/".$nombreImagen.".png");
 
 	if( file_exists("img/reportes/".$nombreImagen.".png") ){
-			echo '<img  src="img/reportes/'.$nombreImagen.'.png">';
+			echo '<img  src="img/reportes/'.$nombreImagen.'.png"><br>';
+			echo '<a href="reporte_pdf.php?nombre_archivo='.$nombreImagen.'&titulo_grafica='.$title.'" class="btn btn-primary" onclick="descargar_pdf();">Descargar</a>';
 	}else{
 			echo(0);
 	}
