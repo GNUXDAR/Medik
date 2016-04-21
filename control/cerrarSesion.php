@@ -5,5 +5,5 @@
 	session_start();
 	$_SESSION['usuario'] = array();
 	session_destroy();
-	header("Location: ../vistas/index.php");
+	header("Location: ../index.php");
  ?>

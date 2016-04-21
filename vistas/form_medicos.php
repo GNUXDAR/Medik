@@ -1,54 +1,3 @@
-<?php  //modulo de session
-    session_start();
-    $usuario = $_SESSION['usuario'];
-    if(!isset($usuario)){
-        header("Location: ../index.php");
-    }
-
-
-?>
-<?php 
-
-
-        include_once('../control/conexion.php');
-        include_once('sidebar.php');
-        include_once('script.php');
-        ini_set('display_errors', 'on');  //muestra los errores de php
-
-?> 
-    
-    <!--  main container -->
-    <div class="content">
-
-        <!-- end upper main stats -->
-
-        <div id="pad-wrapper" class="form-page">
-
-            <!-- statistics chart built with jQuery Flot -->
-            <div class="row form-wrapper">
-                <!-- left column -->
-
-                <div class="col-md-2"></div><!--primera columna de centrado-->
-                <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
-					<h2 align="center">Registrar Medicos</h2></br></br>
-
-                    <!---->
-                     <form method="POST" action="medicos.php">
-    
-                        <div class="field-box">
-                            <label>Cedula:</label>
-                            <div class="col-md-7">
-                                <input value="<?php echo $_POST['ci_medic'];?>" name="ci_medic" id="ci_medic" class="form-control" required type="number" min="00000000" max="30000000" placeholder="12345678" autofocus>
-                            </div>        
-                                            
-                       <div class="action">
-                            <input type="submit"  class="btn-flat" id="buscar" value="Buscar"></input>
-                        </div> 
-                        
-                    </form>
-                    <hr>
-
-
 <?php 
 
 if($_POST){  //inicio if _POST
@@ -79,19 +28,14 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     <input value="'.$ci_medic.'" name="ci_medic" id="ci_medic" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
 
                         <div class="field-box">
-
                             <label>Nombre Medico:</label>
-
-
                             <div class="col-md-7">
                                 <input name="nom_medic" id="nom_medic" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text" autofocus>
                             </div>                            
                         </div>
 
                         <div class="field-box">
-
                             <label>Apellido Medico:</label>
-
                             <div class="col-md-7">
                                 <input name="apel_medic" id="apel_medic" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text">
                             </div>                            
@@ -100,7 +44,11 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         <div class="field-box">
                             <label>Especialidad:</label>
                             <div class="col-md-7">
-                                <input type="text" name="espc_medic" id="espc_medic" class="form-control" placeholder="Ingrese Aqui" required>
+                                <select name="espc_medic" class="form-control" id="espc_medic">
+                                    <option value="GENERAL">General</option>
+                                    <option value="INTERNISTA">Internista</option>
+                                    <option value="TRAUMATOLOGO">Traumatologo</option>
+                                </select>
                             </div>
                         </div>
 
@@ -162,18 +110,6 @@ else{
 
      }
 
-?>
-
-<?php
-
 } //fin if _POST
 
 ?>
-
-                    <?php include_once('form_medicos.php'); ?>
-
-                </div>
-            
-            </div>
-        </div>
-    </div>

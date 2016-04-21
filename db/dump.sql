@@ -9,6 +9,9 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 --
 -- Name: consultorio; Type: COMMENT; Schema: -; Owner: gnuxdar
 --
@@ -30,8 +33,11 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> afe8f48d4a7f6ab4add8b62abbffd0a945860594
+=======
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -311,6 +317,9 @@ ALTER TABLE ONLY usr_system ALTER COLUMN id_usr SET DEFAULT nextval('user_system
 --
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 INSERT INTO cita_cnslt VALUES (1, 19330646, '2016-01-10', 'refriado y malestar general', 'Margarita Guerrero');
 INSERT INTO cita_cnslt VALUES (3, 19330646, '2016-03-27', 'dolor de cabeza', 'Luisa Romero');
 INSERT INTO cita_cnslt VALUES (2, 19330646, '2016-03-26', 'Revision Rutinaria', 'Pedro Pablo');
@@ -318,6 +327,7 @@ INSERT INTO cita_cnslt VALUES (5, 12345678, '2016-03-17', 'creer ganar', 'arturo
 INSERT INTO cita_cnslt VALUES (4, 12345678, '2016-03-12', 'problemas personales', 'angel');
 INSERT INTO cita_cnslt VALUES (6, 12121212, '2016-03-10', 'dolor', 'adin');
 INSERT INTO cita_cnslt VALUES (7, 12345678, '2016-04-05', 'xdgfd', 'ara');
+<<<<<<< HEAD
 =======
 COPY cita_cnslt (id_cita, ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita) FROM stdin;
 1	19330646	2016-01-10	refriado y malestar general	Margarita Guerrero
@@ -328,6 +338,8 @@ COPY cita_cnslt (id_cita, ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita) FRO
 6	12121212	2016-03-10	dolor	adin
 \.
 >>>>>>> afe8f48d4a7f6ab4add8b62abbffd0a945860594
+=======
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 
 
 --
@@ -335,10 +347,14 @@ COPY cita_cnslt (id_cita, ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita) FRO
 --
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 7, true);
 =======
 SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 6, true);
 >>>>>>> afe8f48d4a7f6ab4add8b62abbffd0a945860594
+=======
+SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 7, true);
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 
 
 --
@@ -346,10 +362,13 @@ SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 6, true);
 --
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 COPY "hist-pacnt" (id_his, ci_pacnt_hist, antc_hist, antc_fm_hist, hab_pscb_hist, ex_fisc_hist, mdicnt_alrgc_hist, ptlg_hist, "null") FROM stdin;
 \.
 >>>>>>> afe8f48d4a7f6ab4add8b62abbffd0a945860594
+=======
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 
 
 --
@@ -364,12 +383,16 @@ SELECT pg_catalog.setval('"hist-pacnt_id_his_seq"', 1, false);
 --
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 INSERT INTO medic_cnslt VALUES (1, 'jose', 'carmona', '1942-03-12', 'drjs@gmail.com', 'carupano', 34534543, 21212121, 'dr general');
 =======
 COPY medic_cnslt (id_medic, nom_medic, apel_medic, fn_medic, mail_medic, dir_medic, tlf_medic, ci_medic, espc_medic) FROM stdin;
 1	jose	carmona	1942-03-12	drjs@gmail.com	carupano	34534543	21212121	dr general
 \.
 >>>>>>> afe8f48d4a7f6ab4add8b62abbffd0a945860594
+=======
+INSERT INTO medic_cnslt VALUES (1, 'jose', 'carmona', '1942-03-12', 'drjs@gmail.com', 'carupano', 34534543, 21212121, 'dr general');
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 
 
 --
@@ -384,10 +407,14 @@ SELECT pg_catalog.setval('medic_cnslt_id_medic_seq', 1, true);
 --
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 INSERT INTO pacnt_cnslt VALUES (1, 'Arturo', 'Guerrero', '1989-09-18', 'gnuxdar@gmail.com', 'Tunapuy', 4267889948, 19330646);
 INSERT INTO pacnt_cnslt VALUES (2, 'norelys', 'ospedales', '1989-09-18', 'nore@nore.com', 'tunapuy', 4267889948, 12345678);
 INSERT INTO pacnt_cnslt VALUES (6, 'amarily', 'guerrero', '1968-10-06', 'amarili@guerrero', 'rio caribe', 124546, 12121212);
 INSERT INTO pacnt_cnslt VALUES (3, 'adrian', 'guerrero', '1989-09-16', 'adri@hotmail.com', 'tunapuy', 4267889945, 19330647);
+<<<<<<< HEAD
 =======
 COPY pacnt_cnslt (id_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, mail_pacnt, dir_pacnt, tlf_pacnt, ci_pacnt) FROM stdin;
 1	Arturo	Guerrero	1989-09-18	gnuxdar@gmail.com	Tunapuy	4267889948	19330646
@@ -396,6 +423,8 @@ COPY pacnt_cnslt (id_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, mail_pacnt, dir_pac
 3	adrian	guerrero	1989-09-16	adri@hotmail.com	tunapuy	4267889945	19330647
 \.
 >>>>>>> afe8f48d4a7f6ab4add8b62abbffd0a945860594
+=======
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 
 
 --
@@ -417,12 +446,16 @@ SELECT pg_catalog.setval('user_system_id_usr_seq', 1, true);
 --
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 INSERT INTO usr_system VALUES (1, 12345678, 'gnuxdar', '123', true);
 =======
 COPY usr_system (id_usr, ci_usr, login_usr, pass_usr, status_usr) FROM stdin;
 1	12345678	gnuxdar	123	t
 \.
 >>>>>>> afe8f48d4a7f6ab4add8b62abbffd0a945860594
+=======
+INSERT INTO usr_system VALUES (1, 12345678, 'gnuxdar', '123', true);
+>>>>>>> 70cffc394acba3d3269444d10b993feffdc545e9
 
 
 --

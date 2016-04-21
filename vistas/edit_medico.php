@@ -2,10 +2,8 @@
     session_start();
     $usuario = $_SESSION['usuario'];
     if(!isset($usuario)){
-
         header("Location: ../index.php");
     } 
-
         include_once('../control/conexion.php');
         include_once('sidebar.php');
         include_once('script.php');
@@ -26,15 +24,15 @@
 
                 <div class="col-md-2"></div><!--primera columna de centrado-->
                 <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
-					<h2 align="center">Registrar Pacientes</h2></br></br>
+                    <h2 align="center">Modificar Medico</h2></br></br>
 
                     <!---->
-                     <form method="POST" action="pacientes.php">
+                     <form method="POST" action="edit_medico.php">
     
                         <div class="field-box">
                             <label>Cedula:</label>
                             <div class="col-md-7">
-                                <input value="<?php echo $_POST['ci_pacnt'];?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="30000000" placeholder="12345678" autofocus>
+                                <input value="<?php echo $_POST['ci_medic'];?>" name="ci_medic" id="ci_medic" class="form-control" required type="number" min="00000000" max="30000000" placeholder="12345678" autofocus>
                             </div>        
                                             
                        <div class="action">
@@ -44,7 +42,7 @@
                     </form>
                     <hr>
 
-                    <?php include_once('form_pacientes.php');  ?>
+                    <?php include_once('form_edit_medic.php');  ?>
 
                 </div>
             

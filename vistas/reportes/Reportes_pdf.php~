@@ -5,7 +5,7 @@
 	{
 
 //-----------------------------------------------------------------------------------------------
-		public function pdf( $titulo = "SISTRAERCA", $formato = 'A4' , $orientacion = 'P' , $html, $archivo = "Usuarios")
+		public function pdf( $titulo = "Listado de investigadores de SIAT-SVO", $formato = 'A4' , $orientacion = 'P' , $html, $archivo = "Usuarios")
 		{
 					//establece el tiempo de ejecucion del script
 					ini_set('max_execution_time', 'PHP_INI_ALL');

@@ -2,12 +2,9 @@
 //include_once('../../control/conexion.php');
 include_once('Reportes_pdf.php');
 ini_set('display_errors', 'on');
-$buscar="SELECT * FROM personal ";
-// INNER JOIN  
-// carreras ON personas.id_carrera = carreras.id_carrera INNER JOIN  
-// estados ON personas.id_estado = estados.id_estado ";
+$buscar="SELECT * FROM personas ";
 
-$CONECTAR="host='127.0.0.1' dbname='salas' user='gnuxdar' password='123'";
+$CONECTAR="host='127.0.0.1' dbname='consultorio' user='gnuxdar' password='123'";
 $CONEXION=pg_connect($CONECTAR);
 
 $verifica = pg_query($CONEXION, $buscar) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
@@ -26,13 +23,12 @@ $html= '
 <thead>
 <tr id="esquema_tabla">
 
-        <th><strong>CEDULA</strong></th>
-        <th><strong>NOMBRE</strong></th>
-        <th><strong>APELLIDOS</strong></th>
-        <th><strong>SEXO</strong></th>
-        <th><strong>TLF</strong></th>
-        <th><b>STATUS</b></th>
-        
+    <th><strong>CEDULA</strong></th>
+    <th><strong>NOMBRE</strong></th>
+    <th><strong>APELLIDOS</strong></th>
+    <th><strong>EDAD</strong></th>
+    <th><strong>SEXO</strong></th>
+    
 </tr>
 </thead>
 <tbody>';
@@ -41,12 +37,13 @@ $html= '
 
     $html.= '<tr>
      
-        <td>'.$ATRIBUTO['ci_personal'].'</td>
-        <td>'.$ATRIBUTO['nombre_personal'].'</td>
-        <td>'.$ATRIBUTO['apellido_personal'].'</td>
-        <td>'.$ATRIBUTO['sexo_personal'].'</td>
-        <td>'.$ATRIBUTO['tlf_personal'].'</td>
-        <td>'.$ATRIBUTO['status'].'</td>
+        <td>'.$ATRIBUTO['ci_persona'].'</td>
+        <td>'.$ATRIBUTO['nombre_persona'].'</td>
+        <td>'.$ATRIBUTO['apel_persona'].'</td>
+        <td>'.$ATRIBUTO['edad_persona'].'</td>
+        <td>'.$ATRIBUTO['sexo_persona'].'</td>
+        
+
         </tr>';
 
  }
@@ -58,7 +55,7 @@ $html.= '
 ';
 
 $pdf= new Reportes_pdf();
-$pdf->pdf( $titulo = "Listado de investigadores de SIAT-SVO", $formato = 'A4' , $orientacion = 'P' , $html, $archivo = "Listado Investigadores");
+$pdf->pdf( $titulo = "SISTRAERCA", $formato = 'A4' , $orientacion = 'P' , $html, $archivo = "Listado Investigadores");
 }
 
 elseif ($localizar==0) {

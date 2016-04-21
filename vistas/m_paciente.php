@@ -1,9 +1,9 @@
-<!-- tabla de las citas del usuarios -->
+<!--formulario de mostrar paciente -->
 <?php 
 include_once('../control/conexion.php');
 ini_set('display_errors', 'on');
 
-if($_POST){
+if($_POST){   //if
     $ci_pacnt = $_POST['ci_pacnt'];
 
     $buscar="SELECT * FROM cita_cnslt WHERE ci_pacnt_cita='$ci_pacnt'";
@@ -26,28 +26,45 @@ if($_POST){
 
 
             echo '<div class="row">
-            <div class="col-md-7"> <b>Cita(s) de:</>
+            <div class="col-md-7"> <b>Paciente:</>
              '.$ATRIBUTO['nom_pacnt'].'
              '.$ATRIBUTO['apel_pacnt'].'
               </div>
              </div> <hr><br>';
 
+            echo '<div class="field-box">
+                      <label>Direccion:</label>
+                      <div class="col-md-7">
+                          '.$ATRIBUTO['dir_pacnt'].'
+                      </div>
+                  </div>
+
+                  <div class="field-box">
+                      <label>Coreo:</label>
+                      <div class="col-md-7">
+                          '.$ATRIBUTO['mail_pacnt'].'
+                      </div>
+                  </div>
+
+                  <div class="field-box">
+                      <label>Num Telefono:</label>
+                      <div class="col-md-7">
+                          '.$ATRIBUTO['tlf_pacnt'].'
+                      </div>
+                  </div>
+                  ';
 
 
              echo '<center>
              <div class="col-md-12">
              <table class="table table-striped table-bordered table-hover table-heading no-border-bottom" id="tabla_muetral" border="1" cellpadding="2">
-
-
+                <h2><small>citas del paciente</small></h2>
                 <tr id="esquema_tabla" class="success">
-
 
                     <th class="primary">Fecha Cita</th>
                     <th>Motivo</th>
                     <th>Acompanante</th>
                     <th>Accion</th>
-
-
                 </tr>
 
                 <tbody class=".table-striped">';
@@ -59,10 +76,8 @@ if($_POST){
                         <td>'.$ATRIBUTO['fecha_cita'].'</td>
                         <td>'.$ATRIBUTO['motivo_cita'].'</td>
                         <td>'.$ATRIBUTO['acmp_cita'].'</td>
-
-                        <td><div>&nbsp;&nbsp;&nbsp;<a class="icon-edit"href="edit_cita.php?id_cita='.$ATRIBUTO['id_cita'].'"></a>&nbsp;&nbsp;&nbsp;<a class="icon-trash" href=../control/elim_cita.php?id_cita='.$ATRIBUTO['id_cita'].'></a></div>
+                        <td><div>&nbsp;&nbsp;&nbsp;<a class="icon-edit"href="edit_cita.php?id_cita='.$ATRIBUTO['id_cita'].'"></a>&nbsp;&nbsp;&nbsp;<a class="icon-trash" href=elim_cita.php?id_cita='.$ATRIBUTO['id_cita'].'></a></div>
                         </td>
-
                         </tr>';
 
                  }';
@@ -82,8 +97,6 @@ if($_POST){
         else{
             print ("<script>alert('El paciente con la Cedula: $ci_pacnt No tiene Cita');</script>");
 
-
         }
-
-}
+}//fin if
 ?>
