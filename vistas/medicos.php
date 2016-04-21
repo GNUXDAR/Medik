@@ -4,6 +4,10 @@
     if(!isset($usuario)){
         header("Location: index.php");
     }
+
+?>
+<?php 
+
         include_once('../control/conexion.php');
         include_once('sidebar.php');
         include_once('script.php');
@@ -72,14 +76,19 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     <input value="'.$ci_medic.'" name="ci_medic" id="ci_medic" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
 
                         <div class="field-box">
+
                             <label>Nombre Medico:</label>
+
+
                             <div class="col-md-7">
                                 <input name="nom_medic" id="nom_medic" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text" autofocus>
                             </div>                            
                         </div>
 
                         <div class="field-box">
+
                             <label>Apellido Medico:</label>
+
                             <div class="col-md-7">
                                 <input name="apel_medic" id="apel_medic" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text">
                             </div>                            

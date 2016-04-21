@@ -127,8 +127,8 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="reportes.php" >uno</a></li>
-                    <li><a href="#" >dos</a></li>
+                    <li><a href="reportes.php" >Estadisticos</a></li>
+                    <!-- <li><a href="#" >dos</a></li> -->
                 </ul>
             </li> 
             <!--reporte-->
