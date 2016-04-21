@@ -28,14 +28,14 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     <input value="'.$ci_pacnt.'" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
 
                         <div class="field-box">
-                            <label>Nombre Paciente:</label>
+                            <label>Nombres Paciente:</label>
                             <div class="col-md-7">
                                 <input name="nom_pacnt" id="nom_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text" autofocus>
                             </div>                            
                         </div>
 
                         <div class="field-box">
-                            <label>Apellido Paciente:</label>
+                            <label>Apellidos Paciente:</label>
                             <div class="col-md-7">
                                 <input name="apel_pacnt" id="apel_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text">
                             </div>                            
@@ -68,7 +68,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         </div>
 
                         <div class="field-box">
-                            <label>Coreo:</label>
+                            <label>Correo:</label>
                             <div class="col-md-7">
                                 <input type="text" name="mail_pacnt" id="mail_pacnt" class="form-control" placeholder="
                                 @" required>

@@ -79,6 +79,20 @@
                     <i class="icon-home"></i>
                     <span>Home</span>
                 </a>
+            </li> 
+<!--inicio pacientes--> 
+             <li>
+                <a class="dropdown-toggle" href="#"><!--separacion-->
+                    <i class="icon-ambulance"></i><!--icon-->
+                    <span>Pacientes</span>
+                    <i class="icon-chevron-down"></i><!--flecha-->
+                </a> <!--fin class ="dropdown-toggle"-->
+                <ul class="submenu">
+                    <li><a href="pacientes.php">Registrar</a></li>
+                    <li><a href="b_paciente.php">Consultar</a></li>
+                    <li><a href="edit_paciente.php">Modificar</a></li>
+                    <li><a href="hist.php">Historial Cinico</a></li>
+                </ul>
             </li>            
 <!--inicio citas-->            
             <li>
@@ -98,20 +112,6 @@
             
              <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
-                    <i class="icon-ambulance"></i><!--icon-->
-                    <span>Pacientes</span>
-                    <i class="icon-chevron-down"></i><!--flecha-->
-                </a> <!--fin class ="dropdown-toggle"-->
-                <ul class="submenu">
-                    <li><a href="pacientes.php">Registrar</a></li>
-                    <li><a href="b_paciente.php">Consultar</a></li>
-                    <li><a href="edit_paciente.php">Modificar</a></li>
-                    <li><a href="hist.php">Historial Cinico</a></li>
-                </ul>
-			</li> 
-            
-             <li>
-                <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-user-md"></i><!--icon-->
                     <span>Medicos</span>
                     <i class="icon-chevron-down"></i><!--flecha-->
@@ -121,7 +121,7 @@
                     <li><a href="edit_medico.php">Modificar</a></li>
                 </ul>
 			</li> 
-            <!--reporte-->
+<!--reporte-->
 
               <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
