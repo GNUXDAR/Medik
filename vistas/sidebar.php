@@ -133,6 +133,19 @@
             </li> 
             <!--reporte-->
 
+            <!-- usuario -->
+            <li>
+                <a class="dropdown-toggle" href="#"><!--separacion-->
+                    <i class="icon-user-md"></i><!--icon-->
+                    <span>Usuario</span>
+                    <i class="icon-chevron-down"></i><!--flecha-->
+                </a> <!--fin class ="dropdown-toggle"-->
+                <ul class="submenu">
+                    <li><a href="usuarios_show.php" >lista</a></li>
+                    <li><a href="usuario_create.php" >Registrar</a></li>
+                </ul>
+            </li> 
+            <!-- fin usuario -->
               <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-book"></i><!--icon-->
