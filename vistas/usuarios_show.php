@@ -29,7 +29,7 @@
             <tr>
                 <th>Usuario</th>
                 <th>estado</th>
-                <th></th>
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody id="tbody">
@@ -41,10 +41,17 @@
 ?>
                 <tr>
                     <td><?php echo $value['login_usr']; ?></td>
-                    <td><?php echo $value['status_usr']; ?></td>
+                    <td><?php if ($value['status_usr'] == 1 ){
+                    					echo "Activo";
+                    		  }else{
+                    		  			echo "Inactivo";
+                    		  }
+                    	 ?>
+                    </td>
                     <td>
                         <div class="btn-group btn-group-sm">
                             <a href="show_usuario.php?id_user=<?php echo $value['id_usr']; ?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
+                            <a href="#" class="btn btn-primary" title="Editar"><i class="icon-pencil"></i></a>
                             <!-- <a href="#" class="btn btn-danger" title="Generar Reporte"><i class="fa fa-file-pdf-o"></i></a> -->
                         </div>
                     </td>

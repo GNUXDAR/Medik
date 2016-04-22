@@ -145,7 +145,7 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a href="usuarios_show.php" >lista</a></li>
-                    <li><a href="usuario_create.php" >Registrar</a></li>
+                    <li><a href="user_create.php" >Registrar</a></li>
                 </ul>
             </li> 
             <!-- fin usuario -->
