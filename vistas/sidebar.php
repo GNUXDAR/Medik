@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -121,8 +120,41 @@
                     <li><a href="edit_medico.php">Modificar</a></li>
                 </ul>
 			</li> 
-<!--reporte-->
 
+
+            <li>
+                <a class="dropdown-toggle" href="#"><!--separacion-->
+                    <i class="icon-user-md"></i><!--icon-->
+                    <span>Reportes</span>
+                    <i class="icon-chevron-down"></i><!--flecha-->
+                </a> <!--fin class ="dropdown-toggle"-->
+                <ul class="submenu">
+                    <li><a href="reportes.php" >Estadisticos</a></li>
+                    <!-- <li><a href="#" >dos</a></li> -->
+                </ul>
+            </li> 
+            <!--reporte-->
+
+<?php 
+    if ($_SESSION['tipo'] == 1) {
+?>
+
+            <!-- usuario -->
+            <li>
+                <a class="dropdown-toggle" href="#"><!--separacion-->
+                    <i class="icon-user-md"></i><!--icon-->
+                    <span>Usuario</span>
+                    <i class="icon-chevron-down"></i><!--flecha-->
+                </a> <!--fin class ="dropdown-toggle"-->
+                <ul class="submenu">
+                    <li><a href="usuarios_show.php" >lista</a></li>
+                    <li><a href="user_create.php" >Registrar</a></li>
+                </ul>
+            </li> 
+<?php
+    }
+?>
+            <!-- fin usuario -->
               <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-book"></i><!--icon-->

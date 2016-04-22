@@ -9,7 +9,7 @@
     include_once('script.php');
     $date = date('Y-m-d');
     ini_set('display_errors', 'on');  //muestra los errores de php
-    $buscarCitas="SELECT * FROM cita_cnslt WHERE fecha_cita='$date'";
+    $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) WHERE fecha_cita='$date'";
 	$conectando = new Conection();
 
 	$listaCitas = pg_query($conectando->conectar(), $buscarCitas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
@@ -44,12 +44,17 @@
                                                     
         </div>
         <table class="table" id="table_citas">
+            <thead>
             <tr>
                 <th>Fecha Cita</th>
+                <th>Paciente</th>
+                <th>Cedula</th>
                 <th>Motivo</th>
                 <th>Acompañante</th>
                 <th></th>
             </tr>
+            </thead>
+            <tbody id="tbody">
 
 <?php	if( pg_num_rows($listaCitas) > 0 ){
 
@@ -58,24 +63,29 @@
 ?>
                 <tr>
                     <td><?php echo $value['fecha_cita']; ?></td>
+                    <td><?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?></td>
+                    <td><?php echo $value['ci_pacnt']; ?></td>
                     <td><?php echo $value['motivo_cita']; ?></td>
                     <td><?php echo $value['acmp_cita']; ?></td>
-                    <td><?php echo $value['id_cita']; ?></td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <a href="show_citas.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
+                            <!-- <a href="#" class="btn btn-danger" title="Generar Reporte"><i class="fa fa-file-pdf-o"></i></a> -->
+                        </div>
+                    </td>
                 </tr>   
 <?php   
             }
     }else{ ?>
         <tr>    
-            <td>no hay</td>
-            <td>no hay</td>
-            <td>no hay</td>
-            <td>no hay</td>
+            <td colspan="4">No hay Registros</td>
         </tr>
 <?php    }
 	
 
 
 ?> 
+        </tbody>
         </table>
 </div>
 </div>
@@ -83,7 +93,7 @@
 <script type="text/javascript">
     $("#buscarCita").click(function(e) {
         if ( $("#fecha_cita").val() =="" ) {
-            alert("El campo fecha no debe estar vacio!.");
+            alert("El campo fecha no debe estar vaico!.");
             $("#fecha_cita").focus();
         }else{
                 $.ajax({
@@ -95,7 +105,7 @@
                             if (data == 0) {
                                 alert("No se encuentran Citas para esa Fecha!.");
                             }else{
-                                 $("#table_citas").html(data);
+                                 $("#tbody").html(data);
                             }
                            
                         }
@@ -103,5 +113,6 @@
         }
           
     });
+
 
 </script>

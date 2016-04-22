@@ -2,8 +2,10 @@
     session_start();
     $usuario = $_SESSION['usuario'];
     if(!isset($usuario)){
+
         header("Location: ../index.php");
     } 
+
         include_once('../control/conexion.php');
         include_once('sidebar.php');
         include_once('script.php');

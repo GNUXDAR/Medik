@@ -13,6 +13,8 @@
     <script type="text/JavaScript" language="javascript" src="calendario/calendar.js"></script>
     <script type="text/JavaScript" language="javascript" src="calendario/lang/calendar-sp.js"></script>
     <script type="text/JavaScript" language="javascript" src="calendario/calendar-setup.js"></script>
+    <script type="text/JavaScript" language="javascript" src="../vistas/js/jquery.dataTables.js"></script>
+
 
 </body>
 </html>

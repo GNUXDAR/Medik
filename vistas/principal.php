@@ -16,13 +16,19 @@
                 <h4>- Sistema de citas Medicas -</h4></br>
                 
             </div>
+
             <div class="row">
                 <div class="col col-4">
                     <a  href="listas_citas.php" class="btn btn-default">Citas del Dia</a>
                 </div>
             
             </div>
+
             
         </div>
         
+            
+        </div>
+
+     
     </div>

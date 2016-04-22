@@ -38,12 +38,16 @@ if($_POST){
              <div class="col-md-12">
              <table class="table table-striped table-bordered table-hover table-heading no-border-bottom" id="tabla_muetral" border="1" cellpadding="2">
 
+
                 <tr id="esquema_tabla" class="success">
+
 
                     <th class="primary">Fecha Cita</th>
                     <th>Motivo</th>
                     <th>Acompanante</th>
                     <th>Accion</th>
+
+
                 </tr>
 
                 <tbody class=".table-striped">';
@@ -55,8 +59,10 @@ if($_POST){
                         <td>'.$ATRIBUTO['fecha_cita'].'</td>
                         <td>'.$ATRIBUTO['motivo_cita'].'</td>
                         <td>'.$ATRIBUTO['acmp_cita'].'</td>
+
                         <td><div>&nbsp;&nbsp;&nbsp;<a class="icon-edit"href="edit_cita.php?id_cita='.$ATRIBUTO['id_cita'].'"></a>&nbsp;&nbsp;&nbsp;<a class="icon-trash" href=../control/elim_cita.php?id_cita='.$ATRIBUTO['id_cita'].'></a></div>
                         </td>
+
                         </tr>';
 
                  }';
@@ -76,6 +82,8 @@ if($_POST){
         else{
             print ("<script>alert('El paciente con la Cedula: $ci_pacnt No tiene Cita');</script>");
 
+
         }
+
 }
 ?>
