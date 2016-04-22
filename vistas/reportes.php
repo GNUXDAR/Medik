@@ -50,7 +50,7 @@
 		$("#button_reporte").click(function (e) {
 			var reporte = $("#select_reporte").val();
 			if (reporte == "") {
-				alert("El campo Reporte no debe estar vaico!.");
+				alert("<- Selecione uno");
             	$("#select_reporte").focus();
 			}else{
 					$.ajax({
