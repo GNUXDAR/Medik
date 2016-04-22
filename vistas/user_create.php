@@ -54,11 +54,13 @@
                             
                             <label class="control-label col-xs-2">Tipo de Usuario:</label>
                             <div class="col-md-7">
-                               <select class="select" name="tipo_usr" id="tipo_usr" required>
+                               <label class="select">
+                               <select  name="tipo_usr" class="form-control" id="tipo_usr" required>
                                         <option value="">Seleccine</option>
                                         <option value="1">Administrador</option>
                                         <option value="2">Secretaria</option>                                 
                                </select>
+                               </label>
                             </div>                                                  
                         </div>
 

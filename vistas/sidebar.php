@@ -135,6 +135,9 @@
             </li> 
             <!--reporte-->
 
+<?php 
+    if ($_SESSION['tipo'] == 1) {
+?>
 
             <!-- usuario -->
             <li>
@@ -148,6 +151,9 @@
                     <li><a href="user_create.php" >Registrar</a></li>
                 </ul>
             </li> 
+<?php
+    }
+?>
             <!-- fin usuario -->
               <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->

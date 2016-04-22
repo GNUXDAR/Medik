@@ -51,7 +51,7 @@
                     <td>
                         <div class="btn-group btn-group-sm">
                             <a href="show_usuario.php?id_user=<?php echo $value['id_usr']; ?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
-                            <a href="#" class="btn btn-primary" title="Editar"><i class="icon-pencil"></i></a>
+                            <a href="edit_user.php?id_user=<?php echo $value['id_usr']; ?>" class="btn btn-primary" title="Editar"><i class="icon-pencil"></i></a>
                             <!-- <a href="#" class="btn btn-danger" title="Generar Reporte"><i class="fa fa-file-pdf-o"></i></a> -->
                         </div>
                     </td>
