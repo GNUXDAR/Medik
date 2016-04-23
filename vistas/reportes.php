@@ -12,9 +12,12 @@
 
   <div class="content">
         <div id="pad-wrapper" class="form-page"> 
-        <h3>Reportes</h3>
+        
         <div class="row">
-        	<div class="col col-md-6">        		
+            <div class="col col-md-3"></div>
+        	<div class="col col-md-6">
+                <h2 align="center">Reportes</h2></br></br>
+                <div class="field-box">
             	<label >Reporte de Pacientes por:</label>
             	<label class="select">
 	            
@@ -28,11 +31,11 @@
 	               </select>
             	</label>
 
+                <button id="button_reporte" class="btn btn-primary">Generar</button>
+                </div>
         	</div>
 
-        	<div class="col col-md-6">
-	          	<button id="button_reporte" class="btn btn-primary">Generar</button>
-        	</div>
+        	<div class="col col-md-3"></div>
         </div>
         <br>    <br>          
         <div class="row">
