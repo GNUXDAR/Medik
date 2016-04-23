@@ -124,7 +124,7 @@
 
             <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
-                    <i class="icon-user-md"></i><!--icon-->
+                    <i class="icon-th-list"></i><!--icon-->
                     <span>Reportes</span>
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
@@ -142,7 +142,7 @@
             <!-- usuario -->
             <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
-                    <i class="icon-user-md"></i><!--icon-->
+                    <i class="icon-user"></i><!--icon-->
                     <span>Usuario</span>
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
