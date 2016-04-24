@@ -184,7 +184,7 @@ textarea::-webkit-input-placeholder {
 	min-height: 48px;
 	margin-bottom: 0px;
 	border-radius: 0px;
-	border-bottom: 1px solid #191e23;
+	border-bottom: 1px solid ##16CA48; /*#191e23;*/
 
 	background: #2c3742; /* Old browsers */
 	background: -moz-linear-gradient(top,  #3377BD 0%, #153a69 100%); /* FF3.6+ */
