@@ -45,8 +45,8 @@
                             <div class="col-md-7">
                                 <input name="login_usr" id="login_usr" class="form-control" type="text" placeholder="user1" required type="text">
                             </div>
-                            <div class="col-md-2">
-                                verificar
+                            <div id="msg" class="col-md-3">
+                                
                             </div>                           
                         </div>
 
@@ -80,7 +80,7 @@
                         </div>
                         
                         <div class="action">
-                            <input type="submit"  class="btn-flat" id="registrar" value="Registrar" >
+                            <input type="submit"  class="btn-flat" id="registrar" disabled value="Registrar" >
                             
                         </div> 
                         
@@ -106,7 +106,7 @@ $(document).ready(function() {
     });
  
 
-    $("#").click(function() {
+    $("#login_usr").keyup(function() {
         var login_usr = $("#login_usr").val();
     
         $.ajax({
@@ -117,7 +117,15 @@ $(document).ready(function() {
                       },
                 success:
                         function (data) {
-                                                        
+                            if (data > 0) {
+                                 
+                                 $("#registrar").attr('disabled','disabled');
+                                 $("#msg").html('<spam class="text-danger">el nombre de usuario no esta disponible intente con otro</spam>');
+                            } else {
+                                $("#msg").html('<spam class="text-success">el nombre de usuario esta disponible</spam>');
+                                $("#registrar").removeAttr('disabled');
+                                
+                           }                            
                         }
         });
     });
