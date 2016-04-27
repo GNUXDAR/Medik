@@ -44,7 +44,7 @@
                     </form>
                     <hr>
                     <!-- tabla de las citas del usuarios -->
-                                <?php include_once('t_citas.php') ?>
+                                <?php include_once('t_citas.php'); ?>
 
                 </div>
             

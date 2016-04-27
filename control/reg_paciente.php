@@ -8,10 +8,14 @@ ini_set('display_errors', 'on');
 $ci_pacnt		= $_POST['ci_pacnt'];
 $nom_pacnt		= $_POST['nom_pacnt'];
 $apel_pacnt		= $_POST['apel_pacnt'];
+$sexo_pacnt		= $_POST['sexo_pacnt'];
 $fn_pacnt		= $_POST['fn_pacnt'];
 $dir_pacnt		= $_POST['dir_pacnt'];
 $mail_pacnt		= $_POST['mail_pacnt'];
-$tlf_pacnt		= $_POST['tlf_pacnt'];
+$tlf_pacnt2		= $_POST['tlf_pacnt2'];
+$tlf_pacnt1		= $_POST['tlf_pacnt'];
+
+$tlf_pacnt  	= $tlf_pacnt2 . $tlf_pacnt1;
 
 $comparar="SELECT * FROM pacnt_cnslt WHERE ci_pacnt = '$ci_pacnt'";
 
@@ -23,8 +27,8 @@ $localizar=pg_num_rows($verifica);
 	if ($localizar==0) {
 
 
-		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO pacnt_cnslt (ci_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, dir_pacnt, mail_pacnt, tlf_pacnt)
-		VALUES ('$ci_pacnt', '$nom_pacnt', '$apel_pacnt', '$fn_pacnt', '$dir_pacnt', '$mail_pacnt', '$tlf_pacnt')");	
+		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO pacnt_cnslt (ci_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, dir_pacnt, mail_pacnt, tlf_pacnt, sexo_pacnt)
+		VALUES ('$ci_pacnt', '$nom_pacnt', '$apel_pacnt', '$fn_pacnt', '$dir_pacnt', '$mail_pacnt', '$tlf_pacnt', '$sexo_pacnt')");	
 
 		if (!$INSERTAR) { 
 		    print ("<script>alert('El paciente no pudo ser registrado');</script>");

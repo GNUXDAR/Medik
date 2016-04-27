@@ -14,6 +14,8 @@
     <script type="text/JavaScript" language="javascript" src="calendario/lang/calendar-sp.js"></script>
     <script type="text/JavaScript" language="javascript" src="calendario/calendar-setup.js"></script>
     <script type="text/JavaScript" language="javascript" src="../vistas/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="pass.js"></script>
+    <!-- <script type="text/javascript" src="jquery-1.2.6.min.js"></script> -->
 
 
 </body>

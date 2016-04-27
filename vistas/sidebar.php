@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="../vistas/css/compiled/layout.css" />
     <link rel="stylesheet" type="text/css" href="../vistas/css/compiled/elements.css" />
     <link rel="stylesheet" type="text/css" href="../vistas/css/compiled/icons.css" />
+    <link rel="stylesheet" type="text/css" href="../vistas/css/compiled/pass.css" />
 
 <!--this page specific styles -->
     <link rel="stylesheet" href="../vistas/css/compiled/index.css" type="text/css" media="screen" />
