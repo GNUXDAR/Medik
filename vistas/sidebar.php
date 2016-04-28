@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <title>:0.0:</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=uft-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- bootstrap -->	<!--modifica header, input, letra, etc-->
