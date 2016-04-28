@@ -14,8 +14,8 @@
         <h3>Nuevo Usuario</h3> <br>
 
 
-       <form method="POST" class="form-horizontal" action="../control/reg_user.php" autocomplete="off">
-                       
+       <form method="POST" id="from_user" class="form-horizontal" action="../control/reg_user.php" autocomplete="off">
+                     
                         <div class="form-group">
                                 <label class="control-label col-xs-2">Nombre:</label>
                                 <div class="col-md-7">
@@ -33,7 +33,7 @@
                         <div class="form-group">
                                 <label class="control-label col-xs-2">Cedula:</label>
                                 <div class="col-md-7">
-                                         <input name="ci_usr" id="ci_usr" class="form-control" required type="numeric" min="00000000" max="99999999" placeholder="12345678" >
+                                         <input name="ci_usr" id="ci_usr" class="form-control" required type="numeric"  placeholder="12345678" >
                                 </div>
                         </div>
 
@@ -84,7 +84,7 @@
                             
                         </div> 
                         
-                        
+                      
                     </form>
         
 </div>
@@ -92,23 +92,10 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $("#registrar").click(function(event) {
-         if ( $("#re_pass_usr").val() == $("#pass_usr").val() ) {
-
-         }else{
-            event.preventDefault();
-            alert("Las contraseñas no son iguales!");
-            $("#re_pass_usr").val('');
-            $("#pass_usr").val('');
-            $("#pass_usr").focus();
-         }
-         
-    });
- 
 
     $("#login_usr").keyup(function() {
         var login_usr = $("#login_usr").val();
-    
+
         $.ajax({
                 url: "buscar_login.php",
                 type : 'POST',
@@ -118,18 +105,91 @@ $(document).ready(function() {
                 success:
                         function (data) {
                             if (data > 0) {
-                                 
                                  $("#registrar").attr('disabled','disabled');
                                  $("#msg").html('<spam class="text-danger">el nombre de usuario no esta disponible intente con otro</spam>');
                             } else {
-                                $("#msg").html('<spam class="text-success">el nombre de usuario esta disponible</spam>');
-                                $("#registrar").removeAttr('disabled');
                                 
+                                if (login_usr == '') {
+                                            $("#registrar").attr('disabled','disabled');
+                                            $("#msg").html('');
+                                }else{
+                                            $("#msg").html('<spam class="text-success">el nombre de usuario esta disponible</spam>');
+                                            $("#registrar").removeAttr('disabled');
+                                            $("#registrar").removeClass( "btn-flat" ).addClass( "btn btn-primary" );
+                                }
+                                
+
                            }                            
                         }
         });
     });
 
+$("#from_user").validate({
+  rules: {
+    nombre_usr: 
+                {
+                    required: true,
+                    minlength: 2
+                },
+    apellido_usr: 
+                {
+                    required: true,
+                    minlength: 2
+                },
+    ci_usr:     {
+                    number : true,
+                    required: true,
+                    minlength: 6,                    
+    },
+    tipo_usr:   {
+                     required: true,
+    },
+    pass_usr:   {
+                    required: true,
+                    minlength: 6,
+    },
+    re_pass_usr: {
+                    equalTo: "#pass_usr",
+                    required: true,
+    },
+     login_usr: {
+                  required: true,
+    }
+  },
+  messages: {
+    nombre_usr: 
+                {
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 2 caracteres'
+                },
+    apellido_usr: 
+                {
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 2 caracteres'
+                },
+    ci_usr:     {
+                    number : 'solo numeros',
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 6 caracteres',
+                    
+    },
+    tipo_usr:   {
+                     required: 'el campo es requerido',
+    }, 
+    pass_usr:   {
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 6 caracteres',
+    },
+    re_pass_usr: {
+                    equalTo: "La contaseña no es igual",
+                    required: 'el campo es requerido',
+    },
+    login_usr: {
+                  required: 'el campo es requerido',
+    },
+    
+  }
+});
 
 
 
@@ -137,3 +197,17 @@ $(document).ready(function() {
 
 
 </script>
+
+<style type="text/css">
+    
+#from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
+
+    .error {
+        text-decoration-color: red;
+        color: red;
+    } 
+</style>
