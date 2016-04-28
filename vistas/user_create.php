@@ -33,7 +33,7 @@
                         <div class="form-group">
                                 <label class="control-label col-xs-2">Cedula:</label>
                                 <div class="col-md-7">
-                                         <input name="ci_usr" id="ci_usr" class="form-control" required type="numeric" min="00000000" max="99999999" placeholder="12345678" >
+                                         <input name="ci_usr" id="ci_usr" class="form-control" required type="numeric"  placeholder="12345678" >
                                 </div>
                         </div>
 
@@ -92,23 +92,10 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $("#registrar").click(function(event) {
-         if ( $("#re_pass_usr").val() == $("#pass_usr").val() ) {
-
-         }else{
-            event.preventDefault();
-            alert("Las contraseñas no son iguales!");
-            $("#re_pass_usr").val('');
-            $("#pass_usr").val('');
-            $("#pass_usr").focus();
-         }
-         
-    });
- 
 
     $("#login_usr").keyup(function() {
         var login_usr = $("#login_usr").val();
-    
+
         $.ajax({
                 url: "buscar_login.php",
                 type : 'POST',
@@ -118,12 +105,19 @@ $(document).ready(function() {
                 success:
                         function (data) {
                             if (data > 0) {
-                                 
                                  $("#registrar").attr('disabled','disabled');
                                  $("#msg").html('<spam class="text-danger">el nombre de usuario no esta disponible intente con otro</spam>');
                             } else {
-                                $("#msg").html('<spam class="text-success">el nombre de usuario esta disponible</spam>');
-                                $("#registrar").removeAttr('disabled');
+                                
+                                if (login_usr == '') {
+                                            $("#registrar").attr('disabled','disabled');
+                                            $("#msg").html('');
+                                }else{
+                                            $("#msg").html('<spam class="text-success">el nombre de usuario esta disponible</spam>');
+                                            $("#registrar").removeAttr('disabled');
+                                            $("#registrar").removeClass( "btn-flat" ).addClass( "btn btn-primary" );
+                                }
+                                
 
                            }                            
                         }
@@ -135,15 +129,64 @@ $("#from_user").validate({
     nombre_usr: 
                 {
                     required: true,
-                    minlength: 20
-                }
+                    minlength: 2
+                },
+    apellido_usr: 
+                {
+                    required: true,
+                    minlength: 2
+                },
+    ci_usr:     {
+                    number : true,
+                    required: true,
+                    minlength: 6,                    
+    },
+    tipo_usr:   {
+                     required: true,
+    },
+    pass_usr:   {
+                    required: true,
+                    minlength: 6,
+    },
+    re_pass_usr: {
+                    equalTo: "#pass_usr",
+                    required: true,
+    },
+     login_usr: {
+                  required: true,
+    }
   },
   messages: {
     nombre_usr: 
                 {
                     required: 'el campo es requerido',
-                    minlength: 'minimo 20 caracteres'
-                }
+                    minlength: 'minimo 2 caracteres'
+                },
+    apellido_usr: 
+                {
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 2 caracteres'
+                },
+    ci_usr:     {
+                    number : 'solo numeros',
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 6 caracteres',
+                    
+    },
+    tipo_usr:   {
+                     required: 'el campo es requerido',
+    }, 
+    pass_usr:   {
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 6 caracteres',
+    },
+    re_pass_usr: {
+                    equalTo: "La contaseña no es igual",
+                    required: 'el campo es requerido',
+    },
+    login_usr: {
+                  required: 'el campo es requerido',
+    },
     
   }
 });
@@ -168,30 +211,3 @@ $("#from_user").validate({
         color: red;
     } 
 </style>
-<form class="cmxform" id="commentForm" method="get" action="">
-  <fieldset>
-    <legend>Please provide your name, email address (won't be published) and a comment</legend>
-    <p>
-      <label for="cname">Name (required, at least 2 characters)</label>
-      <input id="cname" name="name" minlength="2" type="text" required>
-    </p>
-    <p>
-      <label for="cemail">E-Mail (required)</label>
-      <input id="cemail" type="email" name="email" required>
-    </p>
-    <p>
-      <label for="curl">URL (optional)</label>
-      <input id="curl" type="url" name="url">
-    </p>
-    <p>
-      <label for="ccomment">Your comment (required)</label>
-      <textarea id="ccomment" name="comment" required></textarea>
-    </p>
-    <p>
-      <input class="submit" type="submit" value="Submit">
-    </p>
-  </fieldset>
-</form>
-<script>
-$("#commentForm").validate();
-</script>
