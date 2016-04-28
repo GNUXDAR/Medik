@@ -24,7 +24,7 @@
 
             <div class="row">
                 <div class="col col-4">
-                    <a  href="listas_citas.php" class="btn btn-info">Citas del Dia <span class="badge"><?php echo pg_num_rows($listaCitas); ?></span></a>
+                    <a  href="listas_citas.php" class="alert alert-info">Citas del Dia <span class="badge"><?php echo pg_num_rows($listaCitas); ?></span></a>
                 </div>
             
             </div>
