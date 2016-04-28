@@ -16,8 +16,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
         $ATRIBUTO=pg_fetch_array($verificaPersona);
 
         echo '<div class="row">
-        <div class="col-md-7"> <b>Registrando Nuevo Paciente</>
-          </div>
+        <div class="col-md-7"> <b class="text-info">Registrando Nuevo Paciente</b></div>
          </div> <hr>';
 
 
@@ -30,21 +29,32 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         <div class="field-box">
                             <label>Nombres Paciente:</label>
                             <div class="col-md-7">
-                                <input name="nom_pacnt" id="nom_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text" autofocus>
+                                <input title="Nombre Paciente" name="nom_pacnt" id="nom_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text" autofocus>
                             </div>                            
                         </div>
 
                         <div class="field-box">
                             <label>Apellidos Paciente:</label>
                             <div class="col-md-7">
-                                <input name="apel_pacnt" id="apel_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text">
+                                <input title="Apellido del Paciente" name="apel_pacnt" id="apel_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text">
                             </div>                            
                         </div>
+                        
+                        <div class="field-box">
+                            <label>Sexo:</label>
+                            <div class="col-md-4">
+                            <select class="form-control">
+                                <option value="Masculino" name="sexo_pacnt">Masculino</option>
+                                <option value="Femenino" name="sexo_pacnt">Femenino</option>
+                            </select>
+                            </div>
+                        </div>
+
 
                         <div class="field-box">
                             <label>Fecha de Nacimiento:</label>
-                            <div class="col-md-7">
-                                <input name="fn_pacnt" id="fn_pacnt" class="form-control" type="text" placeholder="Click Aqui" required type="text">
+                            <div class="col-md-4">
+                                <input title="Fecha del Paciente" name="fn_pacnt" id="fn_pacnt" class="form-control" type="text" placeholder="Click Aqui" required type="text">
 
                                         <script type="text/javascript">
                                           Calendar.setup(
@@ -63,24 +73,40 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         <div class="field-box">
                             <label>Direccion:</label>
                             <div class="col-md-7">
-                                <input type="text" name="dir_pacnt" id="dir_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
+                                <input title="Direccion del Paciente" type="text" name="dir_pacnt" id="dir_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
                             </div>
                         </div>
 
                         <div class="field-box">
                             <label>Correo:</label>
                             <div class="col-md-7">
-                                <input type="text" name="mail_pacnt" id="mail_pacnt" class="form-control" placeholder="
+                                <input title="Correo del Paciente" type="text" name="mail_pacnt" id="mail_pacnt" class="form-control" placeholder="
                                 @" required>
                             </div>
                         </div>
 
+                        
                         <div class="field-box">
                             <label>Num Telefono:</label>
-                            <div class="col-md-7">
+                            <div class="col-md-2">
+                                <select name="tlf_pacnt2" id="tlf_pacnt2" class="form-control">
+                                    <option value="0412" name="0412">0412</option>
+                                    <option value="0414" name="0414">0414</option>
+                                    <option value="0424" name="0424">0424</option>
+                                    <option value="0416" name="0416">0416</option>
+                                    <option value="0426" name="0426">0426</option>
+
+                                </select>
+                            </div>
+                        
+                        
+                            <div class="col-md-5">
+                            
                                 <input type="number" name="tlf_pacnt" id="tlf_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
+                            
                             </div>
                         </div>
+                       
                         
                         <div class="action">
                             <input type="submit"  class="btn btn-primary" id="registrar" value="Registrar" >

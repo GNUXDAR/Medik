@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <label class="control-label col-xs-2">Contraseña:</label>
                             <div class="col-md-7">
-                                <input type="password" name="pass_usr" id="pass_usr" class="form-control" placeholder="Ingrese Aqui" required>
+                                <input type="password" name="pass_usr" id="pass_usr" class="form-control is0" placeholder="Ingrese Aqui" required>
                             </div>
                         </div>
 

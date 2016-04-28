@@ -16,7 +16,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
         $ATRIBUTO=pg_fetch_array($verificaPersona);
 
         echo '<div class="row">
-        <div class="col-md-7"> <b>Registrando Nuevo Medico</>
+        <div class="col-md-7"> <b class="text-info">Registrando Nuevo Medico</b>
           </div>
          </div> <hr>';
 

@@ -24,7 +24,7 @@ if ($localizar > 0){        //inicio if otra cita
 
 
         echo '<div class="row">
-        <div class="col-md-7"> <b>Agregando Cita a:</>
+        <div class="col-md-7"> <b class="text-info">Agregando Cita a:</b>
          '.$ATRIBUTO['nom_pacnt'].'
          '.$ATRIBUTO['apel_pacnt'].'
           </div>
@@ -93,7 +93,7 @@ else{  //registrar cita a paciente
 
 
         echo '<div class="row">
-        <div class="col-md-7"> <b>Agregando cita a:</>
+        <div class="col-md-7"> <b class="text-info">Agregando cita a:</b>
          '.$ATRIBUTO['nom_pacnt'].'
          '.$ATRIBUTO['apel_pacnt'].'
           </div>
