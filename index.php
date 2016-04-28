@@ -49,7 +49,7 @@
             </div>
         </form>
     </div>
-
+	<script src="vistas/js/jquery-1.10.2.js"></script> 
     <script src="vistas/js/bootstrap.min.js"></script>
     <script src="vistas/js/theme.js"></script>
 </body>
