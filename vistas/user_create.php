@@ -14,7 +14,7 @@
         <h3>Nuevo Usuario</h3> <br>
 
 
-       <form method="POST" class="form-horizontal" action="../control/reg_user.php" autocomplete="off">
+       <form method="POST" id="from_user" class="form-horizontal" action="../control/reg_user.php" autocomplete="off">
                        
                         <div class="form-group">
                                 <label class="control-label col-xs-2">Nombre:</label>
@@ -124,12 +124,29 @@ $(document).ready(function() {
                             } else {
                                 $("#msg").html('<spam class="text-success">el nombre de usuario esta disponible</spam>');
                                 $("#registrar").removeAttr('disabled');
-                                
+
                            }                            
                         }
         });
     });
 
+$("#from_user").validate({
+  rules: {
+    nombre_usr: 
+                {
+                    required: true,
+                    minlength: 20
+                }
+  },
+  messages: {
+    nombre_usr: 
+                {
+                    required: 'el campo es requerido',
+                    minlength: 'minimo 20 caracteres'
+                }
+    
+  }
+});
 
 
 
@@ -137,3 +154,17 @@ $(document).ready(function() {
 
 
 </script>
+
+<style type="text/css">
+    
+    #from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
+
+    .error {
+        text-decoration-color: red;
+        color: red;
+    }
+</style>
