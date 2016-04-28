@@ -152,6 +152,18 @@
                     <li><a href="user_create.php" >Registrar</a></li>
                 </ul>
             </li> 
+
+            <!-- configuracion -->
+            <li>
+                <a class="dropdown-toggle" href="#"><!--separacion-->
+                    <i class="icon-cog"></i><!--icon-->
+                    <span>config</span>
+                    <i class="icon-chevron-down"></i><!--flecha-->
+                </a> <!--fin class ="dropdown-toggle"-->
+                <ul class="submenu">
+                    <li><a href="mumero_citas.php" >limite de citas</a></li>
+                </ul>
+            </li> 
 <?php
     }
 ?>
