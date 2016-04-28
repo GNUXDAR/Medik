@@ -27,6 +27,8 @@
 <!--this page specific styles -->
     <link rel="stylesheet" href="../vistas/css/compiled/index.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../vistas/css/compiled/form-showcase.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.css"/>
+ 
 
 </head>
 <body>
@@ -89,6 +91,7 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a href="pacientes.php">Registrar</a></li>
+                    <li><a href="pacientes_shows.php">Lista</a></li>
                     <li><a href="b_paciente.php">Consultar</a></li>
                     <li><a href="edit_paciente.php">Modificar</a></li>
                     <li><a href="hist.php">Historial Cinico</a></li>
