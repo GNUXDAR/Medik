@@ -170,8 +170,7 @@ $("#from_user").validate({
     ci_usr:     {
                     number : 'solo numeros',
                     required: 'el campo es requerido',
-                    minlength: 'minimo 6 caracteres',
-                    
+                    minlength: 'minimo 6 caracteres',                
     },
     tipo_usr:   {
                      required: 'el campo es requerido',

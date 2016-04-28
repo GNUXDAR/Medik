@@ -18,7 +18,7 @@
         <div id="pad-wrapper" class="form-page"> 
         <h3>Listas de citas</h3>
         <div class="row">
-            <div class="col col-md-6">
+            <div class="col col-md-4">
                 <label>Fecha:</label>
                            
                                 <input name="fecha_cita" id="fecha_cita" class="form-control" type="text" placeholder="Click Aqui" required type="text">
@@ -35,14 +35,16 @@
                                           
                                         </script>
             </div>
-            <div class="col col-md-6">
-                <samp class="btn btn-primary" id="buscarCita">Buscar</samp>
+            <div class="col col-md-4">
+                <label for=""></label><br>
+                <input type="button" class="btn btn-primary" id="buscarCita" value="Buscar">
             </div>
                             
                                     
 
                                                     
         </div>
+        <br>
         <table class="table" id="table_citas">
             <thead>
             <tr>
