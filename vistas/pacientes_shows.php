@@ -18,14 +18,23 @@
         <div id="pad-wrapper" class="form-page"> 
         <h3>Listas de pacientes</h3><br>
         <div class="row">
-         <table class="table" id="table_citas">
+            <div class="col col-md-6">
+                <a href="pacientes.php" class="btn btn-primary">
+                    <i class="icon-plus" ></i>  Agregar Paciente
+                </a>
+                
+            </div>                                                    
+        </div><br><br>
+        <div class="row">
+         <table class="table table-condensed table-striped table-hover dataTable" id="table_citas">
             <thead>
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
-                <th>apel_pacnt</th>
+               
                 <th>Cedula</th>
                 <th>Email</th>
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody id="tbody">
@@ -37,10 +46,17 @@
 ?>
                 <tr>
                     <td><?php echo $i++; ?></td>
-                    <td><?php echo $value['nom_pacnt']; ?></td>
-                    <td><?php echo $value['apel_pacnt']; ?></td>
+                    <td><?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?></td>
+                   
                     <td><?php echo $value['ci_pacnt']; ?></td>
                     <td><?php echo $value['mail_pacnt']; ?></td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <a href="show_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
+                            <a href="edit_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
+                            <a href="../control/delete_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-danger" title="Eliminar" onclick="if(confirm('&iquest;Esta seguro que desea Eliminar al paciente?')) return true;  else return false;"><i class="icon-trash"></i></a>
+                        </div>
+                    </td>
                 </tr>   
 <?php   
             }
@@ -60,7 +76,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-         $("#table_citas").dataTable();
+        
     });
        
 
