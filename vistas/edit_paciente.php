@@ -12,6 +12,9 @@
         $buscarCitas="SELECT * FROM  pacnt_cnslt WHERE id_pacnt='$id_pacnt'";
         $conectando = new Conection();
         $listaCitas = pg_query($conectando->conectar(), $buscarCitas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
+        if (pg_num_rows($listaCitas) > 0) {
+          
+        
         $paciente = pg_fetch_array($listaCitas);
 ?> 
     
@@ -128,3 +131,9 @@
             </div>
         </div>
     </div>
+<?php
+        }else{
+            print ("<script>alert('No hay Resgistro!.');</script>");
+            print('<meta http-equiv="refresh" content="0; URL=pacientes_shows.php">');
+        } 
+?>
