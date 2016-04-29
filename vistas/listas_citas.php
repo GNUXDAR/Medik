@@ -16,7 +16,15 @@
 ?>
   <div class="content">
         <div id="pad-wrapper" class="form-page"> 
-        <h3>Listas de citas</h3>
+        <h3>Listas de citas</h3><br>
+        <div class="row">
+            <div class="col col-md-6">
+                <a href="citas.php" class="btn btn-primary">
+                    <i class="icon-plus" ></i>  Registrar Cita
+                </a>
+                
+            </div>                                                    
+        </div><br><br>
         <div class="row">
             <div class="col col-md-4">
                 <label>Fecha:</label>
@@ -45,15 +53,16 @@
                                                     
         </div>
         <br>
-        <table class="table" id="table_citas">
+        <table class="table table-condensed table-striped table-hover dataTable" id="table_citas">
             <thead>
             <tr>
                 <th>Fecha Cita</th>
+                <th>Estado</th>
                 <th>Paciente</th>
                 <th>Cedula</th>
                 <th>Motivo</th>
-                <th>Acompañante</th>
-                <th></th>
+                <th>Acompañante</th>                
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody id="tbody">
@@ -65,14 +74,26 @@
 ?>
                 <tr>
                     <td><?php echo $value['fecha_cita']; ?></td>
+                    <td>
+                            <?php
+                                if ($value['estatus'] == 0) {
+                                    echo "<span class='label label-info'>En Espera</span>";
+                                }else{
+                                    echo "<span class='label label-info'>Realizada</span>";
+                                }
+                            ?>
+                    </td>
                     <td><?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?></td>
                     <td><?php echo $value['ci_pacnt']; ?></td>
                     <td><?php echo $value['motivo_cita']; ?></td>
-                    <td><?php echo $value['acmp_cita']; ?></td>
+                    <td><?php echo $value['acmp_cita']; ?></td>                    
                     <td>
                         <div class="btn-group btn-group-sm">
                             <a href="show_citas.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
-                            <!-- <a href="#" class="btn btn-danger" title="Generar Reporte"><i class="fa fa-file-pdf-o"></i></a> -->
+                            <a href="#" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
+                            <a href="#" class="btn btn-success" title="Verificar"><i class="icon-check"></i></a>
+                            <a href="#" class="btn btn-default" title="Mover"><i class="icon-forward"></i></a>
+                            <a href="#" class="btn btn-danger"  title="Cancelar"><i class="icon-remove"></i></a>
                         </div>
                     </td>
                 </tr>   
@@ -80,7 +101,7 @@
             }
     }else{ ?>
         <tr>    
-            <td colspan="4">No hay Registros</td>
+            <td colspan="6">No hay Registros</td>
         </tr>
 <?php    }
 	

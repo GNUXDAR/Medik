@@ -18,6 +18,7 @@ $id_pacnt = $_GET['id_paciente'];
 <div class="content">
         <div id="pad-wrapper" class="form-page"> 
         		<h3>Datos del Paciente</h3><br>
+        		<a href="pacientes_shows.php" class="btn btn-default"><i class="icon-arrow-left"></i> Regresar</a><br><br>
 				<table class="table table-striped" id="documentacion">
 				    <tbody>
 				        <tr>

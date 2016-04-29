@@ -19,9 +19,9 @@ session_start();
 ?>
 <div class="content">
         <div id="pad-wrapper" class="form-page"> 
-        <h3>cita</h3>
-
-        <table class="table"> 
+        <h3>Datos de la Cita</h3><br>
+        <a href="listas_citas.php" class="btn btn-default"><i class="icon-arrow-left"></i> Regresar</a><br><br>
+        <table class="table table-striped" id="documentacion"> 
         	<thead>
         		<tr>
                 <th>Fecha Cita</th>

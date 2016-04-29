@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../vistas/css/compiled/index.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../vistas/css/compiled/form-showcase.css" type="text/css" media="screen" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.css"/>
- 
+    <link rel="stylesheet" type="text/css" href="../vistas/css/app.css" />
 
 </head>
 <body>
@@ -106,8 +106,9 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-					<li><a href="citas.php">Registrar</a></li>
-                    <li><a href="b_citas.php">consultar</a></li>
+                    <li><a  href="listas_citas.php">Listado </a></li>
+					<!-- <li><a href="citas.php">Registrar</a></li> -->
+                    <!-- <li><a href="b_citas.php">consultar</a></li> -->
                     
 
                 </ul>
