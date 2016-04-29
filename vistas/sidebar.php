@@ -90,10 +90,11 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
+                    <li><a href="pacientes_shows.php">Listado</a></li>
                     <li><a href="pacientes.php">Registrar</a></li>
-                    <li><a href="pacientes_shows.php">Lista</a></li>
-                    <li><a href="b_paciente.php">Consultar</a></li>
-                    <li><a href="edit_paciente.php">Modificar</a></li>
+                    
+                    <!-- <li><a href="b_paciente.php">Consultar</a></li>
+                    <li><a href="edit_paciente.php">Modificar</a></li> -->
                     <li><a href="hist.php">Historial Cinico</a></li>
                 </ul>
             </li>            
@@ -151,7 +152,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="usuarios_show.php" >lista</a></li>
+                    <li><a href="usuarios_show.php" >Listado</a></li>
                     <li><a href="user_create.php" >Registrar</a></li>
                 </ul>
             </li> 
