@@ -137,7 +137,16 @@ include_once('modal.php');
                                         e.preventDefault();
                                         $("#modal_cita").modal();
                                         $("#title_cita").text($(this).data('title'));
-                                        $("#id_cita").val( $(this).data('id') );
+                                        var id_cita = $(this).data('id');
+                                        $.ajax({
+                                                        url: "buscar_cita.php",
+                                                        type : 'POST',
+                                                        data: { id_cita : id_cita },
+                                                        success:
+                                                            function (data) {                                   
+                                                               $("#modal_body_cita").html(data);                               
+                                                            }
+                                        });
                                  });
                             }
                            
@@ -149,12 +158,4 @@ include_once('modal.php');
 
         
     });
-
-$(".ver_cita").click(function(e) {
-    e.preventDefault();
-    $("#modal_cita").modal();
-    $("#title_cita").text($(this).data('title'));
-    $("#id_cita").val( $(this).data('id') );
-});
-
 </script>

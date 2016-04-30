@@ -32,3 +32,33 @@ $(function () {
             }
     } );
 });
+
+
+// ========================================================================
+//  Eventos Modulo Citas
+// ========================================================================
+$(function () {
+
+    $(".ver_cita").click(function(e) {
+        e.preventDefault();
+        $("#modal_cita").modal();
+        $("#title_cita").text($(this).data('title'));
+        var id_cita = $(this).data('id');
+        $.ajax({
+                        url: "buscar_cita.php",
+                        type : 'POST',
+                        data: { id_cita : id_cita },
+                        success:
+                            function (data) {                                   
+                               $("#modal_body_cita").html(data);                               
+                            }
+        });
+    });
+
+});
+
+
+
+
+
+
