@@ -122,8 +122,9 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
+                    <li><a href="index_medicos.php">Lisdato</a></li>
                     <li><a href="medicos.php" >Registrar</a></li>
-                    <li><a href="edit_medico.php">Modificar</a></li>
+                    <!-- <li><a href="edit_medico.php">Modificar</a></li> -->
                 </ul>
 			</li> 
 
