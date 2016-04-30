@@ -77,9 +77,9 @@
                     <td>
                             <?php
                                 if ($value['estatus'] == 0) {
-                                    echo "<span class='label label-info'>En Espera</span>";
+                                    echo "<span class='label label-default'>En Espera</span>";
                                 }else{
-                                    echo "<span class='label label-info'>Realizada</span>";
+                                    echo "<span class='label label-success'>Realizada</span>";
                                 }
                             ?>
                     </td>
@@ -89,11 +89,15 @@
                     <td><?php echo $value['acmp_cita']; ?></td>                    
                     <td>
                         <div class="btn-group btn-group-sm">
-                            <a href="show_citas.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
-                            <a href="#" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
-                            <a href="#" class="btn btn-success" title="Verificar"><i class="icon-check"></i></a>
-                            <a href="#" class="btn btn-default" title="Mover"><i class="icon-forward"></i></a>
-                            <a href="#" class="btn btn-danger"  title="Cancelar"><i class="icon-remove"></i></a>
+                            <a href="show_citas.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-info ver_cita" data-id="<?php echo $value['id_cita']; ?>"  data-title= "<?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?>" title="Ver"><i class="icon-eye-open"></i></a>
+                            <?php if ($value['estatus'] == 0) {
+                               
+                            ?>
+                            <a href="edit_cita.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
+                            <a href="terminar_cita.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-success"  title="Verificar" onclick="if(confirm('&iquest;Esta seguro que desea Terminar la Cita?')) return true;  else return false;"><i class="icon-check"></i></a>
+                            <!-- <a href="#" class="btn btn-default" title="Mover"><i class="icon-forward"></i></a> -->
+                            <a href="../control/elim_cita.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-danger"  title="Cancelar" onclick="if(confirm('&iquest;Esta seguro que desea Cancelar la Cita?')) return true;  else return false;"><i class="icon-remove"></i></a>
+                            <?php } ?>
                         </div>
                     </td>
                 </tr>   
@@ -105,7 +109,7 @@
         </tr>
 <?php    }
 	
-
+include_once('modal.php');
 
 ?> 
         </tbody>
@@ -129,13 +133,28 @@
                                 alert("No se encuentran Citas para esa Fecha!.");
                             }else{
                                  $("#tbody").html(data);
+                                 $(".ver_cita").click(function(e) {
+                                        e.preventDefault();
+                                        $("#modal_cita").modal();
+                                        $("#title_cita").text($(this).data('title'));
+                                        $("#id_cita").val( $(this).data('id') );
+                                 });
                             }
                            
                         }
                 });
         }
-          
+        
+
+
+        
     });
 
+$(".ver_cita").click(function(e) {
+    e.preventDefault();
+    $("#modal_cita").modal();
+    $("#title_cita").text($(this).data('title'));
+    $("#id_cita").val( $(this).data('id') );
+});
 
 </script>

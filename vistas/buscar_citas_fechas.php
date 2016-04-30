@@ -13,11 +13,25 @@ if ($resul) {
 	foreach ($resul as  $cita) {
 			$table.= '<tr>';
 				$table.='<td>'. $cita["fecha_cita"] .'</td>';
+				if ($cita['estatus'] == 0) {
+					$table.='<td><span class="label label-default">En Espera</span></td>';
+				} else {
+					$table.='<td><span class="label label-success">Realizada</span></td>';
+				}
+				
 				$table.='<td>'. $cita["nom_pacnt"] .' '. $cita["apel_pacnt"] .'</td>';
 				$table.='<td>'. $cita["ci_pacnt"] .'</td>';
 				$table.='<td>'. $cita["motivo_cita"] .'</td>';
 				$table.='<td>'. $cita["acmp_cita"] .'</td>';
-				$table.='<td><div class="btn-group btn-group-sm"><a href="show_citas.php?id_cita='.$cita["id_cita"].'" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a></div></td>';
+				$table.='<td><div class="btn-group btn-group-sm">
+							<a href="#" class="btn btn-info ver_cita" data-id="'.$cita['id_cita'].'"  data-title= "'.$cita['nom_pacnt'].' '.$cita['apel_pacnt'].'" title="Ver"><i class="icon-eye-open"></i></a>';
+							if ($cita['estatus'] == 0) {
+								$table.=' <a href="edit_cita.php?id_cita='.$cita['id_cita'].'" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
+                            			  <a href="terminar_cita.php?id_cita='.$cita['id_cita'].'" class="btn btn-success"  title="Verificar" onclick="if(confirm(\'&iquest;Esta seguro que desea Terminar la Cita?\')) return true;  else return false;"><i class="icon-check"></i></a>
+                            			  <a href="../control/elim_cita.php?id_cita='.$cita['id_cita'].'" class="btn btn-danger"  title="Cancelar" onclick="if(confirm(\'&iquest;Esta seguro que desea Cancelar la Cita?\')) return true;  else return false;"><i class="icon-remove"></i></a>';
+							}
+                            
+				$table.='</div></td>';
 			$table.= '</tr>';
 
 	}
@@ -26,6 +40,3 @@ if ($resul) {
 }else{
 	echo json_encode(0);
 }
-
-
-

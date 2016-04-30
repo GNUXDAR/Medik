@@ -20,8 +20,8 @@ $localizar=pg_num_rows($verifica);
 	if ($localizar==0) {
 
 
-		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO cita_cnslt (ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita)
-		VALUES ('$ci_pacnt_cita', '$fecha_cita', '$motivo_cita', '$acmp_cita')");	
+		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO cita_cnslt (ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita, estatus)
+		VALUES ('$ci_pacnt_cita', '$fecha_cita', '$motivo_cita', '$acmp_cita', '0')");	
 
 		if (!$INSERTAR) { 
 		    print ("<script>alert('La cita no pudo ser registrada');</script>");
@@ -36,8 +36,8 @@ $localizar=pg_num_rows($verifica);
 	}
 
 	else {	//si hay citas igual registar, un paciente puede tener muchas citas
-		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO cita_cnslt (ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita)
-		VALUES ('$ci_pacnt_cita', '$fecha_cita', '$motivo_cita', '$acmp_cita')");	
+		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO cita_cnslt (ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita, estatus)
+		VALUES ('$ci_pacnt_cita', '$fecha_cita', '$motivo_cita', '$acmp_cita', '0')");	
 	    print ("<script>alert('Se registro una nueva cita');</script>");
 	    print('<meta http-equiv="refresh" content="0; URL=../vistas/citas.php">');
 }

@@ -20,13 +20,13 @@ $localizar=pg_affected_rows($verifica);
 
 
 		print ("<script>alert('Cita Modificada');</script>");
-	    print('<meta http-equiv="refresh" content="0; URL=../vistas/b_citas.php">');
+	    print('<meta http-equiv="refresh" content="0; URL=../vistas/listas_citas.php">');
 
 	}
 
 	else {
 		print ("<script>alert('Cita No Modificada');</script>");
-	    print('<meta http-equiv="refresh" content="0; URL=../vistas/b_citas.php>');
+	    print('<meta http-equiv="refresh" content="0; URL=../vistas/listas_citas.php>');
 }
 
 ?>
