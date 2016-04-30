@@ -10,7 +10,7 @@
     ini_set('display_errors', 'on');  //muestra los errores de php
     $sql="SELECT * FROM  usr_system ";
 	$conectando = new Conection();
-
+    $i =1;
 	$query = pg_query($conectando->conectar(), $sql) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
 ?>
   <div class="content">
@@ -27,6 +27,7 @@
         <table class="table table-condensed table-striped table-hover dataTable" id="table_citas">
             <thead>
             <tr>
+                <th>#</th>
                 <th>Usuario</th>
                 <th>estado</th>
                 <th>Acciones</th>
@@ -40,6 +41,7 @@
             foreach ( $resul as $value) {
 ?>
                 <tr>
+                    <td><?php echo $i++; ?></td>
                     <td><?php echo $value['login_usr']; ?></td>
                     <td><?php if ($value['status_usr'] == 1 ){
                     					echo "Activo";
