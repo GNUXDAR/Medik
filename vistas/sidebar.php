@@ -163,7 +163,7 @@
             <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-cog"></i><!--icon-->
-                    <span>config</span>
+                    <span>Configuración</span>
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">

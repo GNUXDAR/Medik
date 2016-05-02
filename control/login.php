@@ -20,6 +20,7 @@
                 session_start();
                 $_SESSION['usuario']=$usuario;
                 $_SESSION['tipo'] = $resul['tipo_usr'];
+                $_SESSION['id'] = $resul['id_usr'];
                 //$_SESSION['tiempo']=time();  //control de tiempo de sesion (inacvtivo)
                   
                 $estado_user=$resul['status_usr'];
