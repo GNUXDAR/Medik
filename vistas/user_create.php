@@ -56,7 +56,7 @@
                             <div class="col-md-7">
                                <label class="select">
                                <select  name="tipo_usr" class="form-control" id="tipo_usr" required>
-                                        <option value="">Seleccine</option>
+                                        <option value="">Seleccione</option>
                                         <option value="1">Administrador</option>
                                         <option value="2">Secretaria</option>                                 
                                </select>
@@ -67,14 +67,15 @@
 
                         <div class="form-group">
                             <label class="control-label col-xs-2">Contraseña:</label>
-                            <div class="col-md-7">
-                                <input type="password" name="pass_usr" id="pass_usr" class="form-control is0" placeholder="Ingrese Aqui" required>
+                            <div class="col-md-3">
+                                <input type="password" name="pass_usr" id="pass_usr" class="form-control" placeholder="Ingrese Aqui" required>
+                                <div id="passwordStrengthDiv" class="is0"></div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-xs-2">Repetir Contraseña:</label>
-                            <div class="col-md-7">
+                            <div class="col-md-3">
                                 <input type="password" name="re_pass_usr" id="re_pass_usr" class="form-control" placeholder="Ingrese Aqui" required>
                             </div>
                         </div>

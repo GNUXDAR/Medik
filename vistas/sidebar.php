@@ -88,10 +88,10 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="pacientes.php">Registrar</a></li>
-                    <li><a href="b_paciente.php">Consultar</a></li>
-                    <li><a href="edit_paciente.php">Modificar</a></li>
-                    <li><a href="hist.php">Historial Cinico</a></li>
+                    <li><a href="pacientes.php">Registrar <div class="icon-save"></div></a></li>
+                    <li><a href="b_paciente.php">Consultar <div class="icon-search"></div></a></li>
+                    <li><a href="edit_paciente.php">Modificar <div class="icon-edit"></div></a></li>
+                    <li><a href="hist.php">Historial Cinico <div class="icon-list"></div></a></li>
                 </ul>
             </li>            
 <!--inicio citas-->            
@@ -102,8 +102,8 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-					<li><a href="citas.php">Registrar</a></li>
-                    <li><a href="b_citas.php">consultar</a></li>
+					<li><a href="citas.php">Registrar <div class="icon-save"></div></a></li>
+                    <li><a href="b_citas.php">consultar <div class="icon-search"></div></a></li>
                     
 
                 </ul>
@@ -117,8 +117,8 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="medicos.php" >Registrar</a></li>
-                    <li><a href="edit_medico.php">Modificar</a></li>
+                    <li><a href="medicos.php" >Registrar <div class="icon-save"></div></a></li>
+                    <li><a href="edit_medico.php">Modificar <div class="icon-search"></div></a></li>
                 </ul>
 			</li> 
 
