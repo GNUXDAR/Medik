@@ -75,9 +75,6 @@ if($_POST){
 
 
         }//fin de if 3
-        else{
-            print ("<script>alert('El paciente no esxiste.');</script>");
-        }
 
     }//fin if 2
 

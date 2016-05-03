@@ -76,26 +76,38 @@
 </script>
 
 <script type="text/javascript">
-	function descargar_pdf() {
+	// function descargar_pdf() {
 		
-		var titilu_grafica = "";
-		var nombre_archivo = "";
-		if ($("#select_reporte").val() == 1) {
-				titilu_grafica = "Reporte de pacientes por Edades";
-				nombre_archivo = "reporte de pacientes por edades";
-		}
-		$.ajax({
-                    url: "reporte_pdf.php",
-                    type : 'POST',
-                    data: { 
-                    		titilu_grafica : titilu_grafica,
-                    		nombre_archivo : nombre_archivo
-                    	  },
-                    success:
-                        function (data) {
-                               $("#pdf").html(data);                      
-                        }
-        });
+	// 	var titilu_grafica = "";
+	// 	var nombre_archivo = "";
+	// 	if ($("#select_reporte").val() == 1) {
+	// 			titilu_grafica = "Reporte de pacientes por Edades";
+	// 			nombre_archivo = "reporte de pacientes por edades";
+	// 	}
+ //        if ($("#select_reporte").val() == 2) {
+ //                titilu_grafica = "Reporte de pacientes por Sexo";
+ //                nombre_archivo = "reporte de pacientes por sexo";
+ //        }
+ //        if ($("#select_reporte").val() == 3) {
+ //                titilu_grafica = "Reporte de pacientes por Enfermedad";
+ //                nombre_archivo = "reporte de pacientes por enfermedad";
+ //        }
+ //        if ($("#select_reporte").val() == 4) {
+ //                titilu_grafica = "Reporte de pacientes por Asisten al mes";
+ //                nombre_archivo = "reporte de pacientes por asisten al mes";
+ //        }
+	// 	$.ajax({
+ //                    url: "reporte_pdf.php",
+ //                    type : 'POST',
+ //                    data: { 
+ //                    		titilu_grafica : titilu_grafica,
+ //                    		nombre_archivo : nombre_archivo
+ //                    	  },
+ //                    success:
+ //                        function (data) {
+ //                               $("#pdf").html(data);                      
+ //                        }
+ //        });
 		
-	}
+	// }
 </script>

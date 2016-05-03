@@ -43,9 +43,9 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         <div class="field-box">
                             <label>Sexo:</label>
                             <div class="col-md-4">
-                            <select name="sexo_pacnt" id="sexo_pacnt" class="form-control">
-                                <option value="Masculino" name="sexo_pacnt">Masculino</option>
-                                <option value="Femenino" name="sexo_pacnt">Femenino</option>
+                            <select class="form-control" name="sexo_pacnt">
+                                <option value="Masculino" >Masculino</option>
+                                <option value="Femenino" >Femenino</option>
                             </select>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         
                             <div class="col-md-5">
                             
-                                <input title="Numero Telefonico" type="number" name="tlf_pacnt" id="tlf_pacnt" class="form-control" placeholder="Ingrese Aqui" max="99999999" required>
+                                <input type="number" name="tlf_pacnt" id="tlf_pacnt" class="form-control" placeholder="Ingrese Aqui" required>
                             
                             </div>
                         </div>

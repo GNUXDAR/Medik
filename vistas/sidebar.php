@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <title>:0.0:</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=uft-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- bootstrap -->	<!--modifica header, input, letra, etc-->
@@ -27,6 +27,8 @@
 <!--this page specific styles -->
     <link rel="stylesheet" href="../vistas/css/compiled/index.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../vistas/css/compiled/form-showcase.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../vistas/css/app.css" />
 
 </head>
 <body>
@@ -88,10 +90,12 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="pacientes.php">Registrar <div class="icon-save"></div></a></li>
-                    <li><a href="b_paciente.php">Consultar <div class="icon-search"></div></a></li>
-                    <li><a href="edit_paciente.php">Modificar <div class="icon-edit"></div></a></li>
-                    <li><a href="hist.php">Historial Cinico <div class="icon-list"></div></a></li>
+                    <li><a href="pacientes_shows.php">Listado</a></li>
+                    <li><a href="pacientes.php">Registrar</a></li>
+                    
+                    <!-- <li><a href="b_paciente.php">Consultar</a></li>
+                    <li><a href="edit_paciente.php">Modificar</a></li> -->
+                    <li><a href="hist.php">Historial Cinico</a></li>
                 </ul>
             </li>            
 <!--inicio citas-->            
@@ -102,8 +106,9 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-					<li><a href="citas.php">Registrar <div class="icon-save"></div></a></li>
-                    <li><a href="b_citas.php">consultar <div class="icon-search"></div></a></li>
+                    <li><a  href="listas_citas.php">Listado </a></li>
+					<li><a href="citas.php">Registrar</a></li>
+                    <!-- <li><a href="b_citas.php">consultar</a></li> -->
                     
 
                 </ul>
@@ -117,8 +122,9 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="medicos.php" >Registrar <div class="icon-save"></div></a></li>
-                    <li><a href="edit_medico.php">Modificar <div class="icon-search"></div></a></li>
+                    <li><a href="index_medicos.php">Lisdato</a></li>
+                    <li><a href="medicos.php" >Registrar</a></li>
+                    <!-- <li><a href="edit_medico.php">Modificar</a></li> -->
                 </ul>
 			</li> 
 
@@ -148,8 +154,20 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="usuarios_show.php" >lista</a></li>
+                    <li><a href="usuarios_show.php" >Listado</a></li>
                     <li><a href="user_create.php" >Registrar</a></li>
+                </ul>
+            </li> 
+
+            <!-- configuracion -->
+            <li>
+                <a class="dropdown-toggle" href="#"><!--separacion-->
+                    <i class="icon-cog"></i><!--icon-->
+                    <span>config</span>
+                    <i class="icon-chevron-down"></i><!--flecha-->
+                </a> <!--fin class ="dropdown-toggle"-->
+                <ul class="submenu">
+                    <li><a href="mumero_citas.php" >limite de citas</a></li>
                 </ul>
             </li> 
 <?php

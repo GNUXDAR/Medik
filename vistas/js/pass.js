@@ -26,7 +26,7 @@ $.fn.passwordStrength = function( options ){
 				.addClass( this.opts.classes[ t ] );
 				
 		})
-		.after('<a href="#">Generar Password</a>')
+		.after('<a href="#">Generate Password</a>')
 		.next()
 		.click(function(){
 			$(this).prev().val( randomPassword() ).trigger('keyup');
@@ -73,7 +73,7 @@ $.fn.passwordStrength = function( options ){
 	
 $.fn.passwordStrength.defaults = {
 	classes : Array('is10','is20','is30','is40','is50','is60','is70','is80','is90','is100'),
-	targetDiv : '#password',
+	targetDiv : '#pass_usr',
 	cache : {}
 }
 $(document)

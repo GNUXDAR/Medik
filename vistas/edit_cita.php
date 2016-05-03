@@ -84,8 +84,8 @@
                         </div>
                         
                         <div class="action">
-                            <input type="submit"  class="btn-flat" id="registrar" value="Registrar" >
-                            
+                            <input type="submit"  class="btn-flat" id="editar" value="Editar" >
+                             <a href="listas_citas.php" class="btn btn-default">Cancelar</a>
                         </div> 
                         
                         

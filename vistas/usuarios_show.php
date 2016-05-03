@@ -19,12 +19,12 @@
         <div class="row">
             <div class="col col-md-6">
                 <a href="user_create.php" class="btn btn-primary">
-                	<samp class="icon-plus" ></samp>nuevo
+                	<i class="icon-plus" ></i> Agregar Usuario
                 </a>
                 
             </div>                                                    
         </div><br>
-        <table class="table" id="table_citas">
+        <table class="table table-condensed table-striped table-hover dataTable" id="table_citas">
             <thead>
             <tr>
                 <th>Usuario</th>

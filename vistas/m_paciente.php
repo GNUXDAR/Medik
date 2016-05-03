@@ -6,24 +6,33 @@ ini_set('display_errors', 'on');
 if($_POST){   //if
     $ci_pacnt = $_POST['ci_pacnt'];
 
-    $buscar="SELECT * FROM pacnt_cnslt WHERE ci_pacnt='$ci_pacnt'";
+    $buscar="SELECT * FROM cita_cnslt WHERE ci_pacnt_cita='$ci_pacnt'";
     $conectando = new Conection();
 
     $verifica = pg_query($conectando->conectar(), $buscar) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
     $localizar=pg_num_rows($verifica);
-    $ATRIBUTO=pg_fetch_array($verifica);
 
 
 
     if ($localizar > 0){      //inicio if 2
+        $buscarPersona="SELECT * FROM pacnt_cnslt WHERE ci_pacnt='$ci_pacnt'";
 
-      echo '<div class="row">
+        $verificaPersona = pg_query($conectando->conectar(), $buscarPersona) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
+        $localizarPersona=pg_num_rows($verificaPersona);
+
+        if ($localizarPersona > 0){  //inicio if 3
+
+            $ATRIBUTO=pg_fetch_array($verificaPersona);
+
+
+            echo '<div class="row">
             <div class="col-md-7"> <b>Paciente:</>
              '.$ATRIBUTO['nom_pacnt'].'
              '.$ATRIBUTO['apel_pacnt'].'
               </div>
              </div> <hr><br>';
-      echo '<div class="field-box">
+
+            echo '<div class="field-box">
                       <label>Direccion:</label>
                       <div class="col-md-7">
                           '.$ATRIBUTO['dir_pacnt'].'
@@ -45,12 +54,6 @@ if($_POST){   //if
                   </div>
                   ';
 
-        $buscarPersona="SELECT * FROM cita_cnslt WHERE ci_pacnt_cita='$ci_pacnt'";
-
-        $verificaPersona = pg_query($conectando->conectar(), $buscarPersona) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
-        $localizarPersona=pg_num_rows($verificaPersona);
-
-        if ($localizarPersona > 0){  //inicio if 3
 
              echo '<center>
              <div class="col-md-12">
@@ -66,14 +69,14 @@ if($_POST){   //if
 
                 <tbody class=".table-striped">';
 
-                 while($ATRIBUTO2=pg_fetch_array($verificaPersona)) {
+                 while($ATRIBUTO=pg_fetch_array($verifica)) {
 
                     echo '<tr>
                      
-                        <td>'.$ATRIBUTO2['fecha_cita'].'</td>
-                        <td>'.$ATRIBUTO2['motivo_cita'].'</td>
-                        <td>'.$ATRIBUTO2['acmp_cita'].'</td>
-                        <td><div>&nbsp;&nbsp;&nbsp;<a class="icon-edit"href="edit_cita.php?id_cita='.$ATRIBUTO2['id_cita'].'"></a>&nbsp;&nbsp;&nbsp;<a class="icon-trash" href=elim_cita.php?id_cita='.$ATRIBUTO2['id_cita'].'></a></div>
+                        <td>'.$ATRIBUTO['fecha_cita'].'</td>
+                        <td>'.$ATRIBUTO['motivo_cita'].'</td>
+                        <td>'.$ATRIBUTO['acmp_cita'].'</td>
+                        <td><div>&nbsp;&nbsp;&nbsp;<a class="icon-edit"href="edit_cita.php?id_cita='.$ATRIBUTO['id_cita'].'"></a>&nbsp;&nbsp;&nbsp;<a class="icon-trash" href=elim_cita.php?id_cita='.$ATRIBUTO['id_cita'].'></a></div>
                         </td>
                         </tr>';
 
@@ -92,7 +95,7 @@ if($_POST){   //if
 
 
         else{
-            print ("<script>alert('El paciente con la Cedula: $ci_pacnt No esta registrado');</script>");
+            print ("<script>alert('El paciente con la Cedula: $ci_pacnt No tiene Cita');</script>");
 
         }
 }//fin if

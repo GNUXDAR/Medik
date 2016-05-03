@@ -7,7 +7,13 @@ $conectando = new Conection();
 $sql = "";
 $nombreImagen = ""; 
 $title = "";
-$chart = new PieChart(500, 500);
+
+if ($reporte == 4 or $reporte == 5) {
+	$chart = new VerticalBarChart(250, 500);
+}else{
+	$chart = new PieChart(500, 500);
+}
+
 $dataSet = new XYDataSet();
 
 switch ($reporte) {
@@ -23,7 +29,13 @@ switch ($reporte) {
 		break;
 
 	case 2:
-		echo "es dos"; 
+		$sql="SELECT  count(pacnt_cnslt.sexo_pacnt) as count_sexo_pacnt, pacnt_cnslt.sexo_pacnt FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) group by pacnt_cnslt.sexo_pacnt";
+		$result = result($sql);
+		foreach ($result as $value) {
+			$dataSet->addPoint(new Point( $value['sexo_pacnt'].' ('.$value['count_sexo_pacnt'].')' , $value['count_sexo_pacnt']));
+		}
+		$nombreImagen = 'repote_sexo';
+		$title = "Reporte de Pacientes por Sexo";
 		break;
 
 	case 3: #reporte por enfermedad
@@ -38,7 +50,13 @@ switch ($reporte) {
 		break;
 
 	case 4:
-		echo "es catro"; 
+		$sql="SELECT  count(cita_cnslt.motivo_cita) as count_total_mes FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) Where fecha_cita  BETWEEN '2016-04-01'  AND '2016-04-30'";
+		$result = result($sql);
+		foreach ($result as $value) {
+			$dataSet->addPoint(new Point( date('M').' ('.$value['count_total_mes'].')' , $value['count_total_mes']));
+		}
+		$nombreImagen = 'repote_mes';
+		$title = "Reporte de pacientes por Asisten al mes";
 		break;
 
 	case 5:
@@ -77,3 +95,22 @@ function result($sql='')
 	}else{
 			echo(0);
 	}
+
+
+
+	// if ($("#select_reporte").val() == 1) {
+	// 			titilu_grafica = "Reporte de pacientes por Edades";
+	// 			nombre_archivo = "reporte de pacientes por edades";
+	// 	}
+ //        if ($("#select_reporte").val() == 2) {
+ //                titilu_grafica = "Reporte de pacientes por Sexo";
+ //                nombre_archivo = "reporte de pacientes por sexo";
+ //        }
+ //        if ($("#select_reporte").val() == 3) {
+ //                titilu_grafica = "Reporte de pacientes por Enfermedad";
+ //                nombre_archivo = "reporte de pacientes por enfermedad";
+ //        }
+ //        if ($("#select_reporte").val() == 4) {
+ //                titilu_grafica = "Reporte de pacientes por Asisten al mes";
+ //                nombre_archivo = "reporte de pacientes por asisten al mes";
+ //        }
