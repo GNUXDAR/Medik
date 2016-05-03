@@ -107,7 +107,11 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a  href="listas_citas.php">Listado </a></li>
+<<<<<<< HEAD
 					<li><a href="citas.php">Registrar</a></li>
+=======
+					<!-- <li><a href="citas.php">Registrar</a></li> -->
+>>>>>>> 89a451467197dfa12e14121dd5a1c77a31742e48
                     <!-- <li><a href="b_citas.php">consultar</a></li> -->
                     
 
