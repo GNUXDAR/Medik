@@ -161,6 +161,19 @@
                 </ul>
             </li> 
 
+            <!-- ingresos -->
+            <li>
+                <a class="dropdown-toggle" href="#"><!--separacion-->
+                    <i class="icon-plus-sign"></i><!--icon-->
+                    <span>Ingresos</span>
+                    <i class="icon-chevron-down"></i><!--flecha-->
+                </a> <!--fin class ="dropdown-toggle"-->
+                <ul class="submenu">
+                    <li><a href="#" >Diario</a></li>
+                    <li><a href="#" >Mensual</a></li>
+                </ul>
+            </li> 
+
             <!-- configuracion -->
             <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
