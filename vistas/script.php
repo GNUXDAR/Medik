@@ -4,7 +4,7 @@
     <script src="../vistas/js/bootstrap.min.js"></script>
     <script src="../vistas/js/bootstrap.datepicker.js"></script>
     <script src="../vistas/js/jquery.uniform.min.js"></script>
-    <script src="../vistas/js/select2.min.js"></script>
+    <script src="../vistas/js/select2-4.0.2/dist/js/select2.js"></script>
     <script src="../vistas/js/jquery-ui-1.10.2.custom.min.js"></script>  
     <script src="../vistas/js/theme.js"></script>
 
