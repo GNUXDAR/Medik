@@ -177,7 +177,8 @@ CREATE TABLE pacnt_cnslt (
     mail_pacnt character varying(30),
     dir_pacnt text,
     tlf_pacnt numeric,
-    ci_pacnt integer
+    ci_pacnt integer,
+    sexo_pacnt character varying NOT NULL
 );
 
 
@@ -283,6 +284,76 @@ ALTER TABLE ONLY pacnt_cnslt ALTER COLUMN id_pacnt SET DEFAULT nextval('pacnt_cn
 --
 
 ALTER TABLE ONLY usr_system ALTER COLUMN id_usr SET DEFAULT nextval('user_system_id_usr_seq'::regclass);
+
+
+--
+-- Data for Name: cita_cnslt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+--
+
+
+
+--
+-- Name: cita_cnslt_id_cita_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
+--
+
+SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 1, false);
+
+
+--
+-- Data for Name: hist-pacnt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+--
+
+
+
+--
+-- Name: hist-pacnt_id_his_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
+--
+
+SELECT pg_catalog.setval('"hist-pacnt_id_his_seq"', 1, false);
+
+
+--
+-- Data for Name: medic_cnslt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+--
+
+INSERT INTO medic_cnslt VALUES (1, 'Adrian', 'Guerrero', '1978-05-17', 'draa@sistraerca.com', 'Tunapuy', 414923423, 19330545, 'GENERAL');
+
+
+--
+-- Name: medic_cnslt_id_medic_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
+--
+
+SELECT pg_catalog.setval('medic_cnslt_id_medic_seq', 1, true);
+
+
+--
+-- Data for Name: pacnt_cnslt; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+--
+
+INSERT INTO pacnt_cnslt VALUES (1, 'Enmar', 'nose', '2016-05-02', 'usuario@gmail.com', 'carupano', 4142342332, 11111111, 'Femenino');
+INSERT INTO pacnt_cnslt VALUES (2, 'Aracelys ', 'Olivier', '1993-05-12', 'user@gmail.com', 'playa grande', 4147886632, 87654321, 'Femenino');
+
+
+--
+-- Name: pacnt_cnslt_id_pacnt_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
+--
+
+SELECT pg_catalog.setval('pacnt_cnslt_id_pacnt_seq', 2, true);
+
+
+--
+-- Name: user_system_id_usr_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
+--
+
+SELECT pg_catalog.setval('user_system_id_usr_seq', 2, true);
+
+
+--
+-- Data for Name: usr_system; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+--
+
+INSERT INTO usr_system VALUES (1, 12345678, 'admin', '123', B'1', 'Aracelys', 'Olivier', 1);
+INSERT INTO usr_system VALUES (2, 19330646, 'gnuxdar', '123456', B'1', 'Arturo', 'Cabrera', 2);
 
 
 --

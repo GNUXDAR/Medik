@@ -34,7 +34,7 @@
                         <div class="field-box">
                             <label>Cedula:</label>
                             <div class="col-md-7">
-                                <input value="<?php echo $_POST['ci_pacnt'];?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="30000000" placeholder="12345678" autofocus>
+                                <input value="<?php echo $_POST['ci_pacnt'];?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="90000000" placeholder="12345678" autofocus>
                             </div>        
                                             
                        <div class="action">
