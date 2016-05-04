@@ -14,7 +14,7 @@
     <link href="../vistas/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
     <link href="../vistas/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />   <!--metaforas-->
     <link href="../vistas/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
-    <link href="../vistas/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link href="../vistas/js/select2-4.0.2/dist/css/select2.css" type="text/css" rel="stylesheet" />
     <link href="../vistas/css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
 
 
