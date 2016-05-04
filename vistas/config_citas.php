@@ -65,6 +65,7 @@
 	          									<tbody>
 	          										<?php	          											
 	          											foreach ($resul as $value) {
+	          												if ($value['tipo'] == 1) {
 	          										?>
 	          										<tr>
 	          											<td><?php echo $i++; ?></td>
@@ -72,7 +73,7 @@
 	          											<td><?php echo $value['fecha_config']; ?></td>
 	          											<td><?php echo ($value['status'] == '1') ? '<span class="label label-success">Activo</span>' : '<span class="label label-default">Vencido</span>'  ; ?>  </td>
 	          										</tr>
-	          										<?php } ?>	          									</tbody>
+	          										<?php } } ?>	          									</tbody>
 	          								</table>
           								</div>
           							
@@ -80,32 +81,7 @@
 				                
 				            </div>
 
-				            <div class="tab-pane" id="numero">
-				               <!-- <br>
-				                <div class="row">
-					              <div class="col-md-6">
-					                  <label for="">Número Actual de Citas</label>
-					                  	<?php echo numeroCitas; ?>
-					              </div>
-          						</div><br><br>
-
-          						<form class="form-horizontal" method="POST" action="../control/config_cita.php" autocomplete="off">
-                    
-			                          <div class="form-group">
-			                                <label class="col-md-1">Número:</label>
-			                                <div class="col-md-4">
-			                                         <input name="numero_cita" id="numero_cita" class="form-control" required type="number" placeholder="1000" autofocus>
-			                                </div>
-			                        </div>
-									
-			                        <div class="action">
-			                            <input type="submit"  class="btn btn-primary" name="guardar_numero_cita" id="guardar" value="Guardar" >
-			                            <a href="principal.php" class="btn btn-default">Cancelar</a>
-			                            
-			                        </div> 
-			                        
-			                        
-			                    </form> -->
+				            <div class="tab-pane" id="numero">				               
 				                <br>
           						<div class="row">
           							<form class="form-horizontal" method="POST" action="../control/config_cita.php" autocomplete="off">
