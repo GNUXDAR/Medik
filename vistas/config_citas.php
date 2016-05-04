@@ -63,7 +63,7 @@
 	          										</tr>
 	          									</thead>
 	          									<tbody>
-	          										<?php 
+	          										<?php	          											
 	          											foreach ($resul as $value) {
 	          										?>
 	          										<tr>
@@ -81,7 +81,7 @@
 				            </div>
 
 				            <div class="tab-pane" id="numero">
-				               <br>
+				               <!-- <br>
 				                <div class="row">
 					              <div class="col-md-6">
 					                  <label for="">Número Actual de Citas</label>
@@ -105,8 +105,47 @@
 			                        </div> 
 			                        
 			                        
-			                    </form>
-				                
+			                    </form> -->
+				                <br>
+          						<div class="row">
+          							<form class="form-horizontal" method="POST" action="../control/config_cita.php" autocomplete="off">
+                    					 <label >Definir Nuevo Número de Citas diarias</label>
+			                          	<div class="form-group">			                               
+			                                <div class="col-md-4">
+			                                         <input name="numero_cita" id="numero_cita" class="form-control" required type="number" placeholder="1000" autofocus>
+			                                </div>
+			                         	</div>									
+			                        	<div class="action">
+			                            	<input type="submit"  class="btn btn-primary" id="guardar_numero_cita" name="guardar_numero_cita" value="Guardar" >
+			                            	<a href="principal.php" class="btn btn-default">Cancelar</a>
+			                        	</div>		                        
+			                    	</form>
+          						</div><br><hr><br>
+          						<div class="row">
+          								<div class="col-md-4">
+	          								<h4>Número de Citas </h4><br>
+	          								<table class="table table-condensed table-striped table-hover">
+	          									
+	          									<thead>
+	          										<tr>	          											
+	          											<th>Número de citas</th>
+	          										</tr>
+	          									</thead>
+	          									<tbody>
+	          										<?php 
+	          											
+	          											foreach ($resul as $value) {
+	          												if ($value['tipo'] == 2) {	    
+	          										?>
+	          										<tr>
+	          											<td><?php echo $value['numero_cita']; ?></td>	          											
+	          										</tr>
+	          										<?php } }?>
+	          									</tbody>
+	          								</table>
+          								</div>
+          							
+          						</div>
 				            </div>
 
 				          <!--   <div class="tab-pane" id="three-left">
