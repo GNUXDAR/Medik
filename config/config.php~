@@ -1,0 +1,89 @@
+<?php
+
+	ini_set("default_charset", "utf-8");
+	ini_set('display_errors', 'on');
+	error_reporting(E_ALL ^ E_NOTICE);
+	define('NOMBRE_APLICACION', 'SISGAD, SISTEMA DE GESTION ADMINISTRATIVA');
+	define('ACRONIMO_PROYECTO', 'SISGAD');	
+	define('SERVIDOR_BD', 'localhost');
+	//define('SERVIDOR_BD', '127.0.0.1');
+	//define('SERVIDOR_WEB', '167.175.51.29');
+	//define('SERVIDOR_WEB', $_SERVER['HTTP_HOST']);
+	
+	define('SERVIDOR_WEB', '127.0.0.1');
+	//define('RTA_SERVIDOR', SERVIDOR_WEB.'/sisgad/desarrollo/');
+	//define('RUTA_DOCUMENTOS', '/var/www/sisgad/');
+	//define('RUTA_ADJUNTOS', '/var/www/sisgad/Docs/');
+	
+	define('RUTA_SERVIDOR', SERVIDOR_WEB.'/sisgad/');
+	//define('RUTA_LOG','/var/www/sisgad/log/');
+	
+	define('RUTA_LOG','../log/');
+	//define('NOMBRE_BD', 'sisgad');	
+	
+	define('NOMBRE_BD', 'sisgad');	
+	define('ESQUEMA_BD', 'public');
+	//define('MANEJADOR_ADODB', 'postgres8');
+	
+	define('USUARIO_SISGADBD', 'aplicacion');
+	define('CLAVE_SISGADBD', '123456');
+	define('PUERTO_BD', 5432);	
+	//define('PHPJAVA_BRIDGE', '/var/www/JavaBridge/META-INF/java/JavaBridge.inc');
+	
+	//Definicion de variables para transformar fechas
+	$Dias = array('Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo');
+	$Meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');	
+		
+	$ColoresPrioridades = array(
+		482 => 'PrioridadHabitual', // 
+		483 => 'PrioridadImportante', //
+		484 => 'PrioridadUrgente', //
+		
+	);
+	
+	$imagenPrioridades = array(
+		482 => 'prioazul.png', // 
+		483 => 'prionaran.png', //
+		484 => 'priorojo.png', //
+		
+	);
+	define('PrioridadHabitual',482);
+	define('PrioridadImportante',483);	
+	define('PrioridadUrgente',484);
+
+	$Antiguedad = array(
+		'0' => '',
+		'1' => '(*)',
+		'2' => '(**)',
+		'3' => '(***)',
+		'4' => '',
+		'x' => '<div class="CuadroColorPrioridad" style="background-color:#FF0000"></div>'
+	);
+	//Nombre del estilo CSS para las solicitudes con antiguedad de mas de 1 mes
+	define('EstiloAntiguedad4','EstiloAntiguedad4');
+	
+	//Roles en la Aplicacion
+	define('IntRolSupervisorAdmtivo',41);
+	define('IntRolOperador',42);
+	//define('IntRolAnalista',43);
+	define('IntRolAdministrador',44);
+	define('IntCoAplicacion',9);
+	
+	//Estado del usuario
+	define('Usuario_activo',747);
+	define('Usuario_inactivo',748);
+	
+  	define('PAGINA_AUTENTICACION','../inicio-sesion.php');
+	
+	define('PAGINA_INICIO','index.php');
+	define('PAGINA_ENTRADA', 'entrada.php');
+	define('PAGINA_MANUALUSUARIO','Manual_online/index.htm');		
+	define('PAGINA_GUIARAPIDA','javascript:EnConstruccion();');
+	define('PAGINA_ACERCADE','informacion/acerca.php');
+	define('PAGINA_LOGIN','login.php');	
+	define('PAGINA_LOGOUT','logout.php');
+	define('SALT','clavesecreta');
+	/*define('PAGINA_EDITAR_USUARIOS','editar_usuario.php'); 
+	define('PAGINA_BUSCAR_USUARIOS','busquedausuario.php'); 
+	define('PAGINA_REPORTES','reportes.php');*/
+?>

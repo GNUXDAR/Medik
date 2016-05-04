@@ -26,8 +26,7 @@
 	               	<option value="1" > Edad</option>
 	               	<option value="2" > Sexo</option>
 	               	<option value="3" > Enfermedad</option>
-	               	<option value="4" > Asisten al mes</option>
-	               	<option value="5" > Asisten a la semana</option>
+	              
 	               </select>
             	</label>
 
@@ -73,41 +72,4 @@
 			}
 		});
 	});
-</script>
-
-<script type="text/javascript">
-	// function descargar_pdf() {
-		
-	// 	var titilu_grafica = "";
-	// 	var nombre_archivo = "";
-	// 	if ($("#select_reporte").val() == 1) {
-	// 			titilu_grafica = "Reporte de pacientes por Edades";
-	// 			nombre_archivo = "reporte de pacientes por edades";
-	// 	}
- //        if ($("#select_reporte").val() == 2) {
- //                titilu_grafica = "Reporte de pacientes por Sexo";
- //                nombre_archivo = "reporte de pacientes por sexo";
- //        }
- //        if ($("#select_reporte").val() == 3) {
- //                titilu_grafica = "Reporte de pacientes por Enfermedad";
- //                nombre_archivo = "reporte de pacientes por enfermedad";
- //        }
- //        if ($("#select_reporte").val() == 4) {
- //                titilu_grafica = "Reporte de pacientes por Asisten al mes";
- //                nombre_archivo = "reporte de pacientes por asisten al mes";
- //        }
-	// 	$.ajax({
- //                    url: "reporte_pdf.php",
- //                    type : 'POST',
- //                    data: { 
- //                    		titilu_grafica : titilu_grafica,
- //                    		nombre_archivo : nombre_archivo
- //                    	  },
- //                    success:
- //                        function (data) {
- //                               $("#pdf").html(data);                      
- //                        }
- //        });
-		
-	// }
 </script>

@@ -57,14 +57,12 @@
 
                         <div class="field-box">
                             <label>Especialidad:</label>
-                            <div class="col-md-7">
-                                
+                            <div class="col-md-7">                                
                                 <select name="espc_medic" class="form-control" id="espc_medic">
                                     <option value="GENERAL"  <?php if ($medico['espc_medic'] == 'GENERAL') { echo "selected" ;   } ?> >General</option>
                                     <option value="INTERNISTA" <?php if ($medico['espc_medic'] == 'INTERNISTA') { echo "selected" ;   } ?>>Internista</option>
                                     <option value="TRAUMATOLOGO" <?php if ($medico['espc_medic'] == 'TRAUMATOLOGO') { echo "selected" ;   } ?> >Traumatologo</option>
-                                </select>
-                                
+                                </select>                                
                             </div>
                         </div>
 
@@ -97,8 +95,7 @@
                         <div class="field-box">
                             <label>Coreo:</label>
                             <div class="col-md-7">
-                                <input type="text" name="mail_medic" value="<?php echo $medico['mail_medic']; ?>" id="mail_medic" class="form-control" placeholder="
-                                @" required>
+                                <input type="text" name="mail_medic" value="<?php echo $medico['mail_medic']; ?>" id="mail_medic" class="form-control" placeholder="  @" required>
                             </div>
                         </div>
 
@@ -120,7 +117,7 @@
                         </div> 
                         
                         
-                    </form>';
+                    </form>
                 </div>
             
             </div>

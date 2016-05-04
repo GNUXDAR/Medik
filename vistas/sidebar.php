@@ -27,7 +27,7 @@
 <!--this page specific styles -->
     <link rel="stylesheet" href="../vistas/css/compiled/index.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../vistas/css/compiled/form-showcase.css" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../vistas/css/datatable/jquery.dataTables.css"/>
     <link rel="stylesheet" type="text/css" href="../vistas/css/app.css" />
 
 </head>
@@ -65,10 +65,10 @@
     <!-- sidebar -->
     <div id="sidebar-nav">
      <script type="text/javascript">
-            $(document).ready(function () {
-                // Create a jqxMenu
-                $("#jqxMenu").jqxMenu({ width: '200', mode: 'vertical'});
-            });
+            // $(document).ready(function() {
+            //     // Create a jqxMenu
+            //     //$("#jqxMenu").jqxMenu({ width: '200', mode: 'vertical'});
+            // });
         </script> 
          
         <ul id="dashboard-menu">
@@ -107,11 +107,9 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a  href="listas_citas.php">Listado </a></li>
-<<<<<<< HEAD
-					<li><a href="citas.php">Registrar</a></li>
-=======
-					<!-- <li><a href="citas.php">Registrar</a></li> -->
->>>>>>> 89a451467197dfa12e14121dd5a1c77a31742e48
+
+					<li><a href="citas.php">Registrar</a></li>	
+
                     <!-- <li><a href="b_citas.php">consultar</a></li> -->
                     
 
@@ -141,7 +139,7 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a href="reportes.php" >Estadisticos</a></li>
-                    <!-- <li><a href="#" >dos</a></li> -->
+                    <li><a href="reporte_asistencia_mes.php" >Asistencia al mes</a></li>
                 </ul>
             </li> 
             <!--reporte-->
@@ -167,11 +165,11 @@
             <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-cog"></i><!--icon-->
-                    <span>config</span>
+                    <span>Configuración</span>
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="mumero_citas.php" >limite de citas</a></li>
+                    <li><a href="config_citas.php" >Citas</a></li>
                 </ul>
             </li> 
 <?php
