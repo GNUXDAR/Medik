@@ -15,7 +15,7 @@ $mail_pacnt		= $_POST['mail_pacnt'];
 $tlf_pacnt2		= $_POST['tlf_pacnt2'];
 $tlf_pacnt1		= $_POST['tlf_pacnt'];
 
-$tlf_pacnt  	= $tlf_pacnt2 . $tlf_pacnt1;
+$tlf_pacnt  	= $tlf_pacnt2 .'-'. $tlf_pacnt1;
 
 $comparar="SELECT * FROM pacnt_cnslt WHERE ci_pacnt = '$ci_pacnt'";
 
