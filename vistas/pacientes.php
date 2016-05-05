@@ -11,6 +11,7 @@
         include_once('script.php');
         ini_set('display_errors', 'on');  //muestra los errores de php
 
+
 ?> 
     
     <!--  main container -->
@@ -29,22 +30,24 @@
 					<h2 align="center">Registrar Pacientes</h2></br></br>
 
                     <!---->
-                     <form method="POST" action="pacientes.php">
+                     
     
                         <div class="field-box">
                             <label>Cedula:</label>
                             <div class="col-md-7">
-                                <input value="<?php echo $_POST['ci_pacnt'];?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="90000000" placeholder="12345678" autofocus>
+                                <input name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="90000000" placeholder="12345678" autofocus>
                             </div>        
                                             
-                       <div class="action">
-                            <input type="submit"  class="btn-flat" id="buscar" value="Buscar"></input>
+                        <div class="action">
+                            <input type="submit"  class="btn-flat" id="buscar_paciente" value="Buscar"></input>
                         </div> 
                         
-                    </form>
+                    
                     <hr>
-
-                    <?php include_once('form_pacientes.php');  ?>
+                    <div id="form_paciente">
+                        
+                    </div>
+                    <?php //include_once('form_pacientes.php');  ?>
 
                 </div>
             
