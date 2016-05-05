@@ -49,9 +49,39 @@ $(function() {
                         data: { id_cita : id_cita },
                         success:
                             function (data) {                                   
-                               $("#modal_body_cita").html(data);                               
+                                $("#modal_body_cita").html(data);
+                                                              
                             }
         });
+    });
+
+});
+
+
+// ========================================================================
+//  Eventos Modulo Pacientes
+// ========================================================================
+$(function() {
+
+    $("#buscar_paciente").click(function(e) {
+        e.preventDefault();
+        var cedula_paciente = $("#ci_pacnt").val();
+        if (cedula_paciente == '') {
+            alert("El campo cedula no debe estar vacio");
+            $("#ci_pacnt").focus()
+        }else{
+
+            $.ajax({
+                    url: "form_pacientes.php",
+                    type : 'POST',
+                    data: { cedula_paciente : cedula_paciente },
+                    success:
+                        function (data) {                                   
+                            $("#form_paciente").html(data);                               
+                        }
+            });
+        }
+        
     });
 
 });

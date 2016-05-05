@@ -1,8 +1,7 @@
 <?php 
-
-if($_POST){  //inicio if _POST
-
-$ci_pacnt = $_POST['ci_pacnt'];
+include_once('../control/conexion.php');
+ini_set('display_errors', 'on');  //muestra los errores de php
+$ci_pacnt = $_POST['cedula_paciente'];
 
 $buscarPersona="SELECT * FROM pacnt_cnslt WHERE ci_pacnt='$ci_pacnt'";
 $conectando = new Conection();
@@ -171,7 +170,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         </div> 
                         
                         
-                    </form>';
+                    </form><script>$("select").select2();</script>';
 
 
 }//fin if registra paciente
@@ -182,6 +181,6 @@ else{
 
      }
 
-} //fin if _POST
+
 
 ?>
