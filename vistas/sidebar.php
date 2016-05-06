@@ -95,7 +95,7 @@
                     
                     <!-- <li><a href="b_paciente.php">Consultar</a></li>
                     <li><a href="edit_paciente.php">Modificar</a></li> -->
-                    <li><a href="hist.php">Historial Cinico</a></li>
+                    <!-- <li><a href="hist.php">Historial Cinico</a></li> -->
                 </ul>
             </li>            
 <!--inicio citas-->            
@@ -169,8 +169,8 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="#" >Diario</a></li>
-                    <li><a href="#" >Mensual</a></li>
+                    <li><a href="ingresos_diarios.php" >Diario</a></li>
+                    <li><a href="ingresos_mes.php" >Mensual</a></li>
                 </ul>
             </li> 
 
