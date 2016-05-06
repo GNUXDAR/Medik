@@ -36,7 +36,7 @@
 
                 <div class="col-md-2"></div><!--primera columna de centrado-->
                 <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
-					<h2 align="center">Registrar Cita</h2></br></br>
+                    <h2 align="center">Registrar Cita</h2></br></br>
 
                     <!---->
                      <form method="POST" action="citas.php">

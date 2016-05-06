@@ -85,3 +85,36 @@ $(function() {
     });
 
 });
+
+
+
+// ========================================================================
+//  Eventos Modulo Pacientes
+// ========================================================================
+$(function() {
+
+    $("#buscar_cita").click(function(e) {
+        e.preventDefault();
+        var cedula_paciente = $("#ci_pacnt").val();
+        if (cedula_paciente == '') {
+            alert("El campo cedula no debe estar vacio");
+            $("#ci_pacnt").focus()
+        }else{
+
+            $.ajax({
+                    url: "form_citas.php",
+                    type : 'POST',
+                    data: { cedula_paciente : cedula_paciente },
+                    success:
+                        function (data) {                                   
+                            $("#form_cita").html(data);                               
+                        }
+            });
+        }
+        
+    });
+
+});
+
+
+

@@ -8,12 +8,14 @@
 
 ?>
 <?php 
-
-
         include_once('../control/conexion.php');
         include_once('sidebar.php');
         include_once('script.php');
-
+        ini_set('display_errors', 'on');  //muestra los errores de php
+        $buscarPersonas="SELECT * FROM pacnt_cnslt";
+        $conectando = new Conection();
+        $query=pg_query($conectando->conectar(), $buscarPersonas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
+        $result=pg_fetch_all($query);
 ?> 
     
     <!--  main container -->
@@ -36,8 +38,16 @@
     
                         <div class="field-box">
                             <label>Cedula:</label>
-                            <div class="col-md-7">
-                                <input value="<?php echo $_POST['ci_pacnt'];?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="99999999" placeholder="12345678" autofocus>
+                            <div class="col-md-4">
+                                <select name="ci_pacnt" id="ci_pacnt" style="width: 120px;">
+                                    <option value=""></option>
+                                    <?php
+                                        foreach ($result as $value) {
+                                             echo'<option value="'.$value['ci_pacnt'].'">'.$value['ci_pacnt'].'</option>';
+                                         } 
+                                    ?>                                    
+                                </select>
+                                <!-- <input value="<?php echo $_POST['ci_pacnt'];?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="99999999" placeholder="12345678" autofocus> -->
                             </div>
                                             
                        <div class="action">
