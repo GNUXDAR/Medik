@@ -65,7 +65,7 @@ if ($localizar > 0){        //inicio if otra cita
                         <div class="field-box">
                             <label>Acompanante:</label>
                             <div class="col-md-7">
-                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui" required>
+                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui">
                             </div>
                         </div>
                         
@@ -134,7 +134,7 @@ else{  //registrar cita a paciente
                         <div class="field-box">
                             <label>Acompanante:</label>
                             <div class="col-md-7">
-                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui" required>
+                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui">
                             </div>
                         </div>
 

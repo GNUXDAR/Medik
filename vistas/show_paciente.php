@@ -46,7 +46,7 @@ $id_pacnt = $_GET['id_paciente'];
 
 				        <tr>
 				            <td><strong>Telefono:</strong></td>
-				            <td><?php echo $paciente['tlf_pacnt']; ?></td>
+				            <td><?php echo $paciente['cod_tlf_pacnt'].'-'. $paciente['tlf_pacnt']; ?></td>
 				            <td><strong>Sexo:</strong></td>
 				            <td colspan="3"><?php echo $paciente['sexo_pacnt']; ?></td>
 				        </tr>

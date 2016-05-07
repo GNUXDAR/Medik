@@ -79,7 +79,7 @@
                 </div>
                 <a href="principal.php">
                     <i class="icon-home"></i>
-                    <span>Home</span>
+                    <span>Inicio</span>
                 </a>
             </li> 
 <!--inicio pacientes--> 
