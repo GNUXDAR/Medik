@@ -5,8 +5,8 @@ ini_set('display_errors', 'on');
 
 
 $ci_pacnt		= $_POST['ci_pacnt'];
-$nom_pacnt		= $_POST['nom_pacnt'];
-$apel_pacnt		= $_POST['apel_pacnt'];
+$nom_pacnt		= ucwords($_POST['nom_pacnt']);
+$apel_pacnt		= ucwords($_POST['apel_pacnt']);
 $fn_pacnt		= $_POST['fn_pacnt'];
 $dir_pacnt		= $_POST['dir_pacnt'];
 $mail_pacnt		= $_POST['mail_pacnt'];

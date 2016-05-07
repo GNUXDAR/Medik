@@ -47,8 +47,7 @@
                     <div id="form_paciente">
                         
                     </div>
-                    <?php //include_once('form_pacientes.php');  ?>
-
+                    
                 </div>
             
             </div>

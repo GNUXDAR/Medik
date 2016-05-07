@@ -49,6 +49,9 @@ if ($localizar > 0){        //inicio if otra cita
                                           //button     : "Image1"
                                             }
                                           );
+                                          $("#fecha_cita").keypress(function(e) {
+                                                    return false;
+                                                });
                                         </script>
                                     
 

@@ -31,7 +31,7 @@ $id_pacnt = $_GET['id_paciente'];
 				            <td><strong>Cedula:</strong></td>
 				            <td><?php echo $paciente['ci_pacnt']; ?></td>
 				            <td><strong>Fecha de Nacimiento:</strong></td>
-				            <td><?php echo $paciente['fn_pacnt']; ?></td>
+				            <td><?php echo strftime("%d-%m-%Y",strtotime($paciente['fn_pacnt']) ) ; ?></td>
 				        </tr>
 
 				        <tr>

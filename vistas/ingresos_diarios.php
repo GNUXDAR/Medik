@@ -50,7 +50,7 @@ if( pg_num_rows($query) > 0 ){
 
 	 <tr>
             <td><?php echo $i++; ?></td>
-            <td><?php echo $value['fecha_cita']; ?></td>
+            <td><?php echo strftime("%d-%m-%Y",strtotime($value['fecha_cita'])); ?></td>
             <td><?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?></td>
             <td><?php echo $value['ci_pacnt']; ?></td>    
             <td><?php echo $value['motivo_cita']; ?></td>

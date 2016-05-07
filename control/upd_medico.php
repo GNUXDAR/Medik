@@ -5,15 +5,16 @@ ini_set('display_errors', 'on');
 
 
 $ci_medic		= $_POST['ci_medic'];
-$nom_medic		= $_POST['nom_medic'];
-$apel_medic		= $_POST['apel_medic'];
+$nom_medic		= ucwords($_POST['nom_medic']);
+$apel_medic		= ucwords($_POST['apel_medic']);
 $fn_medic		= $_POST['fn_medic'];
 $dir_medic		= $_POST['dir_medic'];
 $mail_medic		= $_POST['mail_medic'];
 $tlf_medic		= $_POST['tlf_medic'];
 $espc_medic     = $_POST['espc_medic'];
+$cod_tlf        = $_POST['cod_tlf'];
 
-$modificar="UPDATE medic_cnslt SET nom_medic = '$nom_medic', apel_medic = '$apel_medic', fn_medic = '$fn_medic', dir_medic = '$dir_medic', mail_medic = '$mail_medic', tlf_medic = '$tlf_medic', espc_medic = '$espc_medic'  WHERE ci_medic = $ci_medic";
+$modificar="UPDATE medic_cnslt SET nom_medic = '$nom_medic', apel_medic = '$apel_medic', fn_medic = '$fn_medic', dir_medic = '$dir_medic', mail_medic = '$mail_medic', tlf_medic = '$tlf_medic', espc_medic = '$espc_medic', cod_tlf= '$cod_tlf'  WHERE ci_medic = $ci_medic";
 
 $conectando = new Conection();
 

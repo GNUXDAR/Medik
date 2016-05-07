@@ -118,3 +118,43 @@ $(function() {
 
 
 
+
+
+
+ // Calendar.setup(
+ //                                            {
+ //                                          inputField : "fecha_cita",
+ //                                          ifFormat   : "%Y/%m/%d",
+ //                                          //button     : "Image1"
+ //                                            }
+ //                                          );
+
+
+    //     inputField : 'fn_medic',
+    //     ifFormat : '%Y/%m/%d',
+        
+    //     align : 'Bl',
+    //     singleClick : true,
+    //   disableFunc: function(date) {
+    //       var now= new Date();
+    //     if(date.getFullYear()<now.getFullYear())
+    //     {
+    //         return true;
+    //     }
+    //     if(date.getFullYear()==now.getFullYear())
+    //     {
+    //         if(date.getMonth()<now.getMonth())
+    //         {
+    //             return true;
+    //         }
+    //     }
+    //     if(date.getMonth()==now.getMonth())
+    //     {
+    //         if(date.getDate()<now.getDate())
+    //         {
+    //             return true;
+    //         }
+    //     }
+    // }
+
+

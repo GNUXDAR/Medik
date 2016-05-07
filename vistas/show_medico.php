@@ -35,7 +35,7 @@ $id_medic = $_GET['id_medic'];
 				            <td><strong>Cedula:</strong></td>
 				            <td><?php echo $medico['ci_medic']; ?></td>
 				            <td><strong>Fecha de Nacimiento:</strong></td>
-				            <td><?php echo $medico['fn_medic']; ?></td>
+				            <td><?php echo strftime("%d-%m-%Y",strtotime($medico['fn_medic'])); ?></td>
 				        </tr>
 
 				        <tr>
@@ -50,7 +50,7 @@ $id_medic = $_GET['id_medic'];
 
 				        <tr>
 				            <td><strong>Telefono:</strong></td>
-				            <td><?php echo $medico['tlf_medic']; ?></td>				            
+				            <td><?php echo $medico['cod_tlf'].'-'. $medico['tlf_medic']; ?></td>				            
 				        </tr>
 
 				            </tbody>

@@ -25,7 +25,7 @@
 <div class="row">
     <div class="col-md-6">
        <label for="">Fecha Cita</label>
-            <?php echo $cita['fecha_cita']; ?>
+            <?php echo strftime("%d-%m-%Y",strtotime($cita['fecha_cita'])); ?>
     </div>
 </div>
 
@@ -55,7 +55,12 @@
             <?php echo $cita['acmp_cita']; ?>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-md-6">
+       <label for="">Observación</label>
+           <?php  echo $cita['observacion_cita']; ?>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-6">

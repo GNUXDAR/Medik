@@ -2,12 +2,12 @@
 
 include_once('conexion.php');
  
-$nombre_usr = $_POST['nombre_usr'];
-$apellido_usr = $_POST['apellido_usr'];
-$ci_usr = $_POST['ci_usr'];
-$tipo_usr = $_POST['tipo_usr'];
-$status_usr = $_POST['status_usr'];
-$id_usr = $_POST['id_usr'];
+$nombre_usr   = ucwords($_POST['nombre_usr']);
+$apellido_usr = ucwords($_POST['apellido_usr']);
+$ci_usr       = $_POST['ci_usr'];
+$tipo_usr     = $_POST['tipo_usr'];
+$status_usr   = $_POST['status_usr'];
+$id_usr       = $_POST['id_usr'];
 
 $modificar="UPDATE usr_system SET nombre_usr = '$nombre_usr', apellido_usr = '$apellido_usr', ci_usr = '$ci_usr', tipo_usr = $tipo_usr, status_usr = '$status_usr' WHERE id_usr = '$id_usr' ";
 

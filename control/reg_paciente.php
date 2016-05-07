@@ -26,7 +26,7 @@ $localizar=pg_num_rows($verifica);
 	if ($localizar==0) {
 
 
-		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO pacnt_cnslt (ci_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, dir_pacnt, mail_pacnt, tlf_pacnt, sexo_pacnt,cod_tlf_pacnt,'status')
+		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO pacnt_cnslt (ci_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, dir_pacnt, mail_pacnt, tlf_pacnt, sexo_pacnt,cod_tlf_pacnt,status)
 		VALUES ('$ci_pacnt', '$nom_pacnt', '$apel_pacnt', '$fn_pacnt', '$dir_pacnt', '$mail_pacnt', '$tlf_pacnt', '$sexo_pacnt','$cod_tlf_pacnt','1')");	
 
 		if (!$INSERTAR) { 
