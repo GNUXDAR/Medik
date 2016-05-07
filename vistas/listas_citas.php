@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col col-md-6">
                 <a href="citas.php" class="btn btn-primary">
-                    <i class="icon-plus" ></i>  Registrar Cita
+                    <i class="icon-plus-sign" ></i>  Registrar Cita
                 </a>
                 
             </div>                                                    
@@ -104,9 +104,9 @@
 <?php   
             }
     }else{ ?>
-        <tr>    
-            <td colspan="6">No hay Registros</td>
-        </tr>
+        <!-- <tr>    
+            <td colspan="7">No hay Registros</td>
+        </tr> -->
 <?php    }
 	
 include_once('modal.php');

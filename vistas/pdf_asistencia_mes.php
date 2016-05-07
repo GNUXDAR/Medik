@@ -1,6 +1,6 @@
 <?php 
 include_once('reportes/Reportes_pdf.php');
-ini_set('display_errors', 'on');
+ini_set('display_errors', 'on');  //muestra los errores de php
 $CONECTAR="host='127.0.0.1' dbname='consulta' user='grebo' password='123'";
 $CONEXION=pg_connect($CONECTAR);
 $fecha = new DateTime();
@@ -11,6 +11,7 @@ $last_day = $fecha->format('Y-m-d');
 $i = 1;
 $sql="SELECT  * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) Where fecha_cita  BETWEEN '$first_day'  AND '$last_day'";
 $query = pg_query($CONEXION, $sql) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
+
 
 $html= '
 <h3 align="center">Asistencia del Mes</h3><br>

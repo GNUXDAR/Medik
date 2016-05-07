@@ -13,7 +13,7 @@ $first_day = $fecha->format('Y-m-d');
 $fecha->modify('last day of this month');
 $last_day = $fecha->format('Y-m-d');
  $i = 1;
-$sql="SELECT  * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) Where fecha_cita  BETWEEN '$first_day'  AND '$last_day'";
+$sql="SELECT  * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) Where fecha_cita  BETWEEN '$first_day'  AND '$last_day' AND estatus = '1'";
 $conectando = new Conection();
 
 $query = pg_query($conectando->conectar(), $sql) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
@@ -25,7 +25,7 @@ $query = pg_query($conectando->conectar(), $sql) or die('ERROR AL INSERTAR DATOS
         <h3>Asistencia del Mes</h3><br>
         <div class="row">
             <div class="col col-md-6">
-                <a href="pdf_asistencia_mes.php" id="pdf_asistencia_mes" class="btn btn-primary">
+                <a href="pdf_asistencia_mes.php" id="pdf_asistencia_mes" class="btn btn-primary" <?php echo (pg_num_rows($query) > 0) ? "" : "disabled" ; ?>>
                     <i class="icon-download-alt" ></i>  Exportar
                 </a>
                 
@@ -65,9 +65,9 @@ if( pg_num_rows($query) > 0 ){
 	}
 }else{
 ?>
-	<tr>    
+	<!-- <tr>    
             <td colspan="4">No hay Registros</td>
-    </tr>
+    </tr> -->
 <?php	
 }
 

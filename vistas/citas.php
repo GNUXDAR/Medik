@@ -11,7 +11,16 @@
         include_once('../control/conexion.php');
         include_once('sidebar.php');
         include_once('script.php');
-
+        // include_once('../config/config.php');
+        // $numeroCitas = numeroCitas;
+        // $date = date('Y-m-d');
+        // $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) WHERE fecha_cita='$date'";
+        // $conectando = new Conection();
+        // $listaCitas = pg_query($conectando->conectar(), $buscarCitas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
+        // if (pg_num_rows( $listaCitas) >= $numeroCitas) {
+        //     print ("<script>alert('Ya no quedan citas!.');</script>");
+        //     print('<meta http-equiv="refresh" content="0; URL=../vistas/listas_citas.php">');
+        // }else{
 ?> 
     
     <!--  main container -->
@@ -52,3 +61,6 @@
             </div>
         </div>
     </div>
+<?php
+// }
+?>

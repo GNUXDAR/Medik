@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col col-md-6">
                 <a href="medicos.php" class="btn btn-primary">
-                    <i class="icon-plus" ></i>  Registrar Medico
+                    <i class="icon-plus-sign" ></i>  Registrar Medico
                 </a>
                 
             </div>                                                    

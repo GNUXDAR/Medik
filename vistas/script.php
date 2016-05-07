@@ -16,7 +16,7 @@
     <!-- <script type="text/JavaScript" language="javascript" src="../vistas/js/jquery.dataTables.js"></script>-->
     <script type="text/JavaScript" language="javascript" src="../vistas/js/jquery-validation-1.15.0/dist/jquery.validate.js"></script>
     <script type="text/JavaScript" language="javascript" src="../vistas/js/validate.js"></script>
-    <script type="text/javascript" language="javascript" src="pass.js"></script>
+    <script type="text/javascript" language="javascript" src="../vistas/js/pass.js"></script>
     <!-- <script type="text/javascript" src="jquery-1.2.6.min.js"></script> -->
     <script type="text/javascript" src="../vistas/js/datatable/jquery.dataTables.js"></script>
     <script type="text/JavaScript" language="javascript" src="../vistas/js/app.js"></script>

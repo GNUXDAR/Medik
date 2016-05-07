@@ -65,10 +65,10 @@
     <!-- sidebar -->
     <div id="sidebar-nav">
      <script type="text/javascript">
-            $(document).ready(function() {
-                // Create a jqxMenu
-                $("#jqxMenu").jqxMenu({ width: '200', mode: 'vertical'});
-            });
+            // $(document).ready(function() {
+            //     // Create a jqxMenu
+            //     //$("#jqxMenu").jqxMenu({ width: '200', mode: 'vertical'});
+            // });
         </script> 
          
         <ul id="dashboard-menu">
@@ -167,7 +167,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="mumero_citas.php" >limite de citas</a></li>
+                    <li><a href="config_citas.php" >Citas</a></li>
                 </ul>
             </li> 
 <?php

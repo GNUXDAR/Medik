@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col col-md-6">
                 <a href="user_create.php" class="btn btn-primary">
-                	<i class="icon-plus" ></i> Agregar Usuario
+                	<i class="icon-plus-sign" ></i> Agregar Usuario
                 </a>
                 
             </div>                                                    

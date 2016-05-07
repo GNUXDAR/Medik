@@ -1,11 +1,11 @@
 <?php 
 include_once('../control/conexion.php');
- 
-ini_set('display_errors', 'on');
+include_once('../config/config.php');
+
 
 $id_cita = $_GET['id_cita'];
-
-$sql="UPDATE cita_cnslt SET pago_cita = 5000, estatus = '1'  WHERE id_cita = $id_cita";
+$precio = precioCita;
+$sql="UPDATE cita_cnslt SET pago_cita = $precio, estatus = '1'  WHERE id_cita = $id_cita";
 
 $conectando = new Conection();
 

@@ -9,7 +9,7 @@ table.dataTable {
 }
 
 table.dataTable thead th {
-	    background: #858689;
+	background: #858689;
     color: #fff;
     font-size: .87em;
     letter-spacing: 1px;
@@ -18,7 +18,6 @@ table.dataTable thead th {
     border: 1px solid #8b8c8d;
     padding: 7px 10px;
     border-bottom: 7px solid #ddd;
-    
 }
 
 table.dataTable tfoot th {

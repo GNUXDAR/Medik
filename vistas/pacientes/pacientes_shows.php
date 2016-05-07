@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col col-md-6">
                 <a href="pacientes.php" class="btn btn-primary">
-                    <i class="icon-plus" ></i>  Agregar Paciente
+                    <i class="icon-plus-sign" ></i>  Agregar Paciente
                 </a>
                 
             </div>                                                    
