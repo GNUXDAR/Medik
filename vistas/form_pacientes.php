@@ -88,12 +88,12 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         <div class="field-box">
                             <label>Num Telefono:</label>
                             <div class="col-md-2">
-                                <select name="tlf_pacnt2" id="tlf_pacnt2" class="form-control">
-                                    <option value="0412" name="0412">0412</option>
-                                    <option value="0414" name="0414">0414</option>
-                                    <option value="0424" name="0424">0424</option>
-                                    <option value="0416" name="0416">0416</option>
-                                    <option value="0426" name="0426">0426</option>
+                                <select name="cod_tlf_pacnt" id="cod_tlf_pacnt" class="form-control">
+                                    <option value="0412">0412</option>
+                                    <option value="0414">0414</option>
+                                    <option value="0424">0424</option>
+                                    <option value="0416">0416</option>
+                                    <option value="0426">0426</option>
                                     <option value="0212">0212</option>
                                     <option value="0234">0234</option>
                                     <option value="0235">0235</option>
@@ -154,8 +154,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
 
                                 </select>
                             </div>
-                        
-                        
+                                                
                             <div class="col-md-5">
                             
                                 <input type="number" name="tlf_pacnt" id="tlf_pacnt" class="form-control" placeholder="Ingrese Aqui" required>

@@ -33,7 +33,7 @@
                 <th>Nombre</th>
                
                 <th>Cedula</th>
-                <th>Email</th>
+                <th>Telefono</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -49,12 +49,12 @@
                     <td><?php echo $value['nom_pacnt']; ?> <?php echo $value['apel_pacnt']; ?></td>
                    
                     <td><?php echo $value['ci_pacnt']; ?></td>
-                    <td><?php echo $value['mail_pacnt']; ?></td>
+                    <td><?php echo $value['cod_tlf_pacnt'].'-'. $value['tlf_pacnt']; ?></td>
                     <td>
                         <div class="btn-group btn-group-sm">
                             <a href="show_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
                             <a href="edit_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
-                            <a href="../control/delete_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-danger" title="Eliminar" onclick="if(confirm('&iquest;Esta seguro que desea Eliminar al paciente?')) return true;  else return false;"><i class="icon-trash"></i></a>
+                            <!-- <a href="../control/delete_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-danger" title="Eliminar" onclick="if(confirm('&iquest;Esta seguro que desea Eliminar al paciente?')) return true;  else return false;"><i class="icon-trash"></i></a> -->
                         </div>
                     </td>
                 </tr>   
