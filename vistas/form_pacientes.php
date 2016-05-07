@@ -59,10 +59,13 @@ $localizarPersona=pg_num_rows($verificaPersona);
                                           Calendar.setup(
                                             {
                                           inputField : "fn_pacnt",
-                                          ifFormat   : "%Y/%m/%d",
+                                          ifFormat   : "%d-%m-%Y",
                                           //button     : "Image1"
                                             }
                                           );
+                                            $("#fn_pacnt").keypress(function(e) {
+                                           return false;
+                                        });
                                         </script>
                                     
 

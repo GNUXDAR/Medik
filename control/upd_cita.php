@@ -8,8 +8,9 @@ $id_cita		= $_POST['id_cita'];
 $fecha_cita		= $_POST['fecha_cita'];
 $motivo_cita	= $_POST['motivo_cita'];
 $acmp_cita		= $_POST['acmp_cita'];
+$observacion_cita = $_POST['observacion_cita'];
 
-$modificar="UPDATE cita_cnslt SET fecha_cita = '$fecha_cita', motivo_cita = '$motivo_cita', acmp_cita = '$acmp_cita'  WHERE id_cita = $id_cita";
+$modificar="UPDATE cita_cnslt SET fecha_cita = '$fecha_cita', motivo_cita = '$motivo_cita', acmp_cita = '$acmp_cita', observacion_cita = '$observacion_cita' WHERE id_cita = $id_cita";
 
 $conectando = new Conection();
 

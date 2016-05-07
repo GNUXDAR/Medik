@@ -4,7 +4,7 @@ include_once('../config/config.php');
 
 
 $id_cita = $_GET['id_cita'];
-$precio = precioCita;
+$precio = PRECIO_CITA;
 $sql="UPDATE cita_cnslt SET pago_cita = $precio, estatus = '1'  WHERE id_cita = $id_cita";
 
 $conectando = new Conection();

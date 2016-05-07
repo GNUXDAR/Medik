@@ -53,34 +53,72 @@
                             <label>Fecha de Cita:</label>
                             <div class="col-md-7">
                                 <input type="hidden" value="'.$id_cita.'" name="id_cita">
-                                <input name="fecha_cita" id="fecha_cita" class="form-control" type="text" placeholder="Click Aqui" required type="text" value="'.$ATRIBUTO['fecha_cita'].'">
+                                <input name="fecha_cita" id="fecha_cita" class="form-control" type="text" placeholder="Click Aqui" required type="text" value="'.strftime("%d-%m-%Y",strtotime($ATRIBUTO['fecha_cita'])).'">
 
                                         <script type="text/javascript">
                                           Calendar.setup(
                                             {
                                           inputField : "fecha_cita",
-                                          ifFormat   : "%Y/%m/%d",
+                                          ifFormat   : "%d-%m-%Y",
                                           //button     : "Image1"
-                                            }
-                                          );
+                                          disableFunc: function(date) {
+                                                        var now= new Date();     
+            
+                                                        if(date.getFullYear()<now.getFullYear())
+                                                        {
+                                                            return true;
+                                                        }
+                                                        if(date.getFullYear()==now.getFullYear())
+                                                        {
+                                                            if(date.getMonth()<now.getMonth())
+                                                            {
+                                                                return true;
+                                                            }
+                                                        }
+                                                        if(date.getMonth()==now.getMonth())
+                                                        {
+                                                            if(date.getDate()<now.getDate())
+                                                            {
+                                                                return true;
+                                                            }
+                                                        }           
+                                            },
+                                     });
+                                        
+                                        $("#fecha_cita").keypress(function(e) {
+                                           return false;
+                                        });
                                         </script>
                                     
 
                             </div>                            
                         </div>
-
+'; ?>
                         <div class="field-box">
                             <label>Motivo Cita:</label>
                             <div class="col-md-7">
-                                <input type="text" name="motivo_cita" id="motivo_cita" class="form-control" placeholder="Ingrese Aqui" value="'.$ATRIBUTO['motivo_cita'].'" required>
+                                <select required  name="motivo_cita" id="motivo_cita" class="form-control">
+                                    <option  value="">Seleccione</option>
+                                    <option value="Motivo 1" <?php if($ATRIBUTO['motivo_cita'] == 'Motivo 1'){ echo 'selected'; }?> >Motivo 1</option>
+                                    <option value="Motivo 2" <?php if($ATRIBUTO['motivo_cita'] == 'Motivo 2'){ echo 'selected'; }?> >Motivo 2</option>
+                                    <option value="Motivo 2" <?php if($ATRIBUTO['motivo_cita'] == 'Motivo 2'){ echo 'selected'; }?> >Motivo 2</option> 
+                                    <option value="Otros"    <?php if($ATRIBUTO['motivo_cita'] == 'Otros'){ echo 'selected'; }?> >Otros</option>                                            
+                                </select>
                             </div>
                         </div>
-
+<?php echo '
                         <div class="field-box">
                             <label>Acompanante:</label>
                             <div class="col-md-7">
-                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui" value="'.$ATRIBUTO['acmp_cita'].'" required>
+                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui" value="'.$ATRIBUTO['acmp_cita'].'" >
                             </div>
+                        </div>
+                        <div class="field-box">
+                            <label>Observación</label>
+                            <div class="col-md-7">
+                                 <textarea name="observacion_cita" id="observacion_cita" class="form-control" placeholder="Observación">'.$ATRIBUTO['observacion_cita'].'</textarea>
+                            </div>
+                           
                         </div>
                         
                         <div class="action">

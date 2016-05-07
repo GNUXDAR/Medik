@@ -36,11 +36,13 @@
                                           Calendar.setup(
                                             {
                                           inputField : "fecha_cita",
-                                          ifFormat   : "%Y-%m-%d",
+                                          ifFormat   : "%d-%m-%Y",
                                           //button     : "Image1"
                                             }
                                           );
-                                          
+                                        $("#fecha_cita").keypress(function(e) {
+                                           return false;
+                                        });
                                         </script>
             </div>
             <div class="col col-md-4">
@@ -73,7 +75,7 @@
             foreach ( $resul as $value) {
 ?>
                 <tr>
-                    <td><?php echo $value['fecha_cita']; ?></td>
+                    <td><?php echo strftime("%d-%m-%Y",strtotime($value['fecha_cita'])); ?></td>
                     <td>
                             <?php
                                 if ($value['estatus'] == 0) {

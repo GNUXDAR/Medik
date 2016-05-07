@@ -54,6 +54,9 @@ $localizarPersona=pg_num_rows($verificaPersona);
                                           //button     : "Image1"
                                             }
                                           );
+                                        $("#fn_medic").keypress(function(e) {
+                                           return false;
+                                        });
                                         </script>
                                     
 

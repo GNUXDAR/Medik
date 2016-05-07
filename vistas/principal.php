@@ -15,21 +15,26 @@
         $resul = pg_fetch_all($listaCitas);
 ?>  
     <div class="content">
-        <div id="pad-wrapper" class="form-page">
+        <div id="pad-wrapper" class="form-page" >
             <div class="row header">
                 <h3>SISTRAERCA</h3></br>
-                <h4>- Sistema de citas Medicas -</h4></br>
+                <h4>- Sistema de citas Medicas -</h4>
                 
             </div>
-
-            <div class="row">
-                <div class="col col-4">
-                    <a  href="listas_citas.php" class="alert alert-info">Citas del Dia <span class="badge"><?php echo pg_num_rows($listaCitas); ?></span></a>
-                </div>
-            
+            <?php if (pg_num_rows($listaCitas) > 0) { ?>
+           
+             <div class="row">
+                <div class="col col-md-2">
+                    <div class="alert alert-info">
+                        <a  href="listas_citas.php" class="">Citas del Dia <span class="badge"><?php echo pg_num_rows($listaCitas); ?></span></a>
+                    </div>                    
+                </div>            
             </div>
-
-            
+            <?php } ?>
+            <div class="logo">
+                
+            </div>
+                       
         </div>
         
             

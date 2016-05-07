@@ -12,7 +12,7 @@ $table ='';
 if ($resul) {
 	foreach ($resul as  $cita) {
 			$table.= '<tr>';
-				$table.='<td>'. $cita["fecha_cita"] .'</td>';
+				$table.='<td>'. strftime("%d-%m-%Y",strtotime($cita["fecha_cita"])) .'</td>';
 				if ($cita['estatus'] == 0) {
 					$table.='<td><span class="label label-default">En Espera</span></td>';
 				} else {
