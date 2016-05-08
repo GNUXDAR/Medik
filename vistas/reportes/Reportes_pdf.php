@@ -68,14 +68,16 @@
 			        
 			        //preparamos y maquetamos el contenido a crear
 			        
-					// Imprimimos el texto con writeHTMLCell()
+					// Imprimimos el texto con writeHTMLCell()					
 					$pdf->writeHTML($html, true, 0, true, 0);
+					
 					//$pdf->writeHTMLCell($w = 0, $h = 0, $x = '', $y = '', $html,$border = 0, $ln = 1, $fill = 0, $reseth = true, $align = 'center',$autopadding = true);
 					// ---------------------------------------------------------
 					// Cerrar el documento PDF y preparamos la salida
 					// Este método tiene varias opciones, consulte la documentación para más  información.
 			        $nombre_archivo = utf8_decode($archivo.".pdf");
 			        $pdf->lastPage();
+
 			        $pdf->Output($nombre_archivo, 'D');
     	}
 } //FIN de la clase
