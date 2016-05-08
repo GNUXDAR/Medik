@@ -9,7 +9,7 @@
     include_once('script.php');
     $date = date('Y-m-d');
     ini_set('display_errors', 'on');  //muestra los errores de php
-    $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) WHERE fecha_cita='$date'";
+    $buscarCitas="SELECT * FROM  cita_cnslt INNER JOIN pacnt_cnslt ON (cita_cnslt.ci_pacnt_cita = pacnt_cnslt.ci_pacnt) WHERE fecha_cita='$date' order by estatus asc";
 	$conectando = new Conection();
 
 	$listaCitas = pg_query($conectando->conectar(), $buscarCitas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
@@ -96,7 +96,7 @@
                                
                             ?>
                             <a href="edit_cita.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
-                            <a href="terminar_cita.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-success"  title="Verificar" onclick="if(confirm('&iquest;Esta seguro que desea Terminar la Cita?')) return true;  else return false;"><i class="icon-check"></i></a>
+                            <a href="#" class="btn btn-success verificar"  title="Verificar"  data-idcita="<?php echo $value['id_cita']; ?>" data-cipacnt="<?php echo $value['ci_pacnt']; ?>" ><i class="icon-check"></i></a>
                             <!-- <a href="#" class="btn btn-default" title="Mover"><i class="icon-forward"></i></a> -->
                             <a href="../control/elim_cita.php?id_cita=<?php echo $value['id_cita']; ?>" class="btn btn-danger"  title="Cancelar" onclick="if(confirm('&iquest;Esta seguro que desea Cancelar la Cita?')) return true;  else return false;"><i class="icon-remove"></i></a>
                             <?php } ?>
@@ -150,14 +150,26 @@ include_once('modal.php');
                                                             }
                                         });
                                  });
+                                    
+                                $(".verificar").click(function(e) {
+                                    e.preventDefault();
+                                    $("#id_cita").val($(this).data('idcita'));
+                                    $("#ci_pacnt").val($(this).data('cipacnt'));
+                                    $("#modal_hitoria").modal();
+                                });
                             }
                            
                         }
                 });
-        }
-        
-
-
-        
+        }    
     });
+
+    $(".verificar").click(function(e) {
+         e.preventDefault();
+        $("#id_cita").val($(this).data('idcita'));
+        $("#ci_pacnt").val($(this).data('cipacnt'));
+        $("#modal_hitoria").modal();
+    });
+
+
 </script>
