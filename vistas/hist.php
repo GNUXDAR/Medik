@@ -12,219 +12,109 @@
         include_once('sidebar.php');
         include_once('script.php');
         ini_set('display_errors', 'on');  //muestra los errores de php
-        $buscarPersonas="SELECT * FROM pacnt_cnslt";
+        $id_paciente = $_GET['id_paciente'];
+        $buscarPersonas="SELECT * FROM pacnt_cnslt INNER JOIN cita_cnslt ON cita_cnslt.ci_pacnt_cita =  pacnt_cnslt.ci_pacnt INNER JOIN hist_pacnt ON hist_pacnt.id_cita =  cita_cnslt.id_cita WHERE id_pacnt = $id_paciente";
         $conectando = new Conection();
         $query=pg_query($conectando->conectar(), $buscarPersonas) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
         $result=pg_fetch_all($query);
+        if (pg_num_rows($query) > 0) {
+            
+ 
+        
 ?> 
     
-    <!--  main container -->
-    <div class="content">
+            <!--  main container -->
+            <div class="content">
 
-        <!-- end upper main stats -->
+                <!-- end upper main stats -->
 
-        <div id="pad-wrapper" class="form-page">
+                <div id="pad-wrapper" class="form-page">
 
-            <!-- statistics chart built with jQuery Flot -->
-            <div class="row form-wrapper">
-                <!-- left column -->
+                    <!-- statistics chart built with jQuery Flot -->
+                    <div class="row form-wrapper">
+                        <!-- left column -->
 
-                <div class="col-md-2"></div><!--primera columna de centrado-->
-                <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
-					<h2 align="center">Historial Clinico</h2></br></br>
+                        <div class="col-md-2"></div><!--primera columna de centrado-->
+                        <div id="miPagina" class="col-md-7 column"><!--segunda columna de centrado-->
+        					<h2 align="center">HISTORIA CLINICA</h2><br>
+                            
+                            <a href="pacientes_shows.php" class="btn btn-default"><i class="icon-arrow-left"></i> Regresar</a>
+                            <a href="pdf_historia.php?id_paciente=<?php echo $result[0]['id_pacnt']; ?>" id="pdf_historia" class="btn btn-primary" <?php echo (pg_num_rows($query) > 0) ? "" : "disabled" ; ?>>
+                                <i class="icon-download-alt" ></i>  Exportar
+                            </a><br><br>
+                            <table class="table table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4"><strong>Nombres y Apellidos: </strong> <?php echo $result[0]['nom_pacnt']; ?> <?php echo $result[0]['apel_pacnt']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Edad:</strong> <?php echo CalculaEdad($result[0]['fn_pacnt']); ?> años</td>
+                                        <td><strong>C.I.:</strong> <?php echo $result[0]['ci_pacnt']; ?></td>
+                                        <td><strong>Sexo:</strong> <?php echo $result[0]['sexo_pacnt']; ?></td>
+                                        <td><strong>Tlf:</strong> <?php echo $result[0]['cod_tlf_pacnt']; ?>-<?php echo $result[0]['tlf_pacnt']; ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><strong>Dirección:</strong> <?php echo $result[0]['dir_pacnt']; ?> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                                    <?php foreach ($result as $value) { ?>
+                                        <br>
+                                        <table class="table table-condensed">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="background: #858689;color: #fff;"><strong>N#H:</strong> <?php echo $value['id_his']; ?> </td>
+                                                    <td colspan="3" style="background: #858689;color: #fff;"><strong>Fecha:</strong> <?php echo strftime("%d-%m-%Y",strtotime($value['fecha_cita'])); ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Motivo de consulta:</strong> <?php echo $value['motivo_cita']; ?> </td>
+                                                </tr>
 
-                    <!---->
-                     <form method="POST" action="hist.php">
-    
-                        <div class="field-box">
-                            <label>Cedula:</label>
-                            <div class="col-md-4">
-                                <select name="ci_pacnt" id="ci_pacnt" style="width: 120px;">
-                                    <option value=""></option>
-                                    <?php
-                                        foreach ($result as $value) {
-                                             echo'<option value="'.$value['ci_pacnt'].'">'.$value['ci_pacnt'].'</option>';
-                                         } 
-                                    ?>                                    
-                                </select>
-                                <!-- <input value="<?php echo $_POST['ci_pacnt'];?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="number" min="00000000" max="99999999" placeholder="12345678" autofocus> -->
-                            </div>
-                                            
-                       <div class="action">
-                            <input type="submit"  class="btn-flat" id="buscar" value="Buscar"></input>
-                        </div> 
+                                                <tr>
+                                                    <td colspan="4" ><strong>Enfermedad actual:</strong> <?php echo $value['enfermedad_actual']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" align="center"><strong>Antecedentes</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Personales:</strong> <?php echo $value['antecedentes_personales']; ?></td>
+                                                </tr> 
+                                                <tr>
+                                                    <td colspan="4" ><strong>Quirúrgicos:</strong> <?php echo $value['antecedentes_quirurgicos']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Familiares:</strong> <?php echo $value['antecedentes_familiares']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" align="center"><strong>Hábitos Psicobiológicos</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" > <?php echo $value['habitos']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Diagnósticos:</strong> <?php echo $value['diagnostico']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" ><strong>Comentarios:</strong> <?php echo $value['comentarios']; ?></td>
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                    <?php } ?>  
+                                
                         
-                    </form>
-                    <hr>
-
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
 <?php 
 
-if($_POST){
-$ci_pacnt = $_POST['ci_pacnt'];
-
-$buscar="SELECT * FROM cita_cnslt WHERE ci_pacnt_cita='$ci_pacnt'";
-$conectando = new Conection();
-
-$verifica = pg_query($conectando->conectar(), $buscar) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
-$localizar=pg_num_rows($verifica);
-
-//REgistrando otra cita al paciente
-
-if ($localizar > 0){        //inicio if otra cita
-    
-    print ("<script>alert('Ya tiene una cita Asignada ');</script>");
-
-    $buscarPersona="SELECT * FROM pacnt_cnslt WHERE ci_pacnt='$ci_pacnt'";
-
-    $verificaPersona = pg_query($conectando->conectar(), $buscarPersona) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
-    $localizarPersona=pg_num_rows($verificaPersona);
-
-    if ($localizarPersona > 0){  //inicio if registrar otra cita
-
-        $ATRIBUTO=pg_fetch_array($verificaPersona);
-
-
-        echo '<div class="row">
-        <div class="col-md-7"> <b>Agregando Cita a:</>
-         '.$ATRIBUTO['nom_pacnt'].'
-         '.$ATRIBUTO['apel_pacnt'].'
-          </div>
-         </div> <hr>';
-
-
-         echo '
-                        
-                    <form method="POST" action="../control/reg_cita.php" autocomplete="off">
-                    <input value="'.$ci_pacnt.'" name="ci_pacnt_cita" id="ci_pacnt_cita" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
-
-                        <div class="field-box">
-                            <label>Fecha de Cita:</label>
-                            <div class="col-md-7">
-                                <input name="fecha_cita" id="fecha_cita" class="form-control" type="text" placeholder="Click Aqui" required type="text">
-
-                                        <script type="text/javascript">
-                                          Calendar.setup(
-                                            {
-                                          inputField : "fecha_cita",
-                                          ifFormat   : "%Y/%m/%d",
-                                          //button     : "Image1"
-                                            }
-                                          );
-                                               $("#fecha_cita").keypress(function(e) {
-                                           return false;
-                                        });
-                                        </script>
-                                    
-
-                            </div>                            
-                        </div>
-
-                        <div class="field-box">
-                            <label>Motivo Cita:</label>
-                            <div class="col-md-7">
-                                <input type="text" name="motivo_cita" id="motivo_cita" class="form-control" placeholder="Ingrese Aqui" required>
-                            </div>
-                        </div>
-
-                        <div class="field-box">
-                            <label>Acompanante:</label>
-                            <div class="col-md-7">
-                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui" required>
-                            </div>
-                        </div>
-                        
-                        <div class="action">
-                            <input type="submit"  class="btn-flat" id="registrar" value="Registrar" >
-                            
-                        </div> 
-                        
-                        
-                    </form>';
-}//inicio if registrar otra c
-
-}//fin if otra cita
-
-else{  //registrar cita a paciente
-
-    $buscarPersona="SELECT * FROM pacnt_cnslt WHERE ci_pacnt='$ci_pacnt'";
-
-    $verificaPersona = pg_query($conectando->conectar(), $buscarPersona) or die('ERROR AL BUSCAR DATOS: ' . pg_last_error());
-    $localizarPersona=pg_num_rows($verificaPersona);
-
-    if ($localizarPersona > 0){
-
-        $ATRIBUTO=pg_fetch_array($verificaPersona);
-
-
-        echo '<div class="row">
-        <div class="col-md-7"> <b>Gestionando datos de:</>
-         '.$ATRIBUTO['nom_pacnt'].'
-         '.$ATRIBUTO['apel_pacnt'].'
-          </div>
-         </div> <hr>';
-
-
-         echo '
-                        
-                    <form method="POST" action="../control/reg_cita.php" autocomplete="off">
-                    <input value="'.$ci_pacnt.'" name="ci_pacnt_cita" id="ci_pacnt_cita" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
-
-                        <div class="field-box">
-                            <label>Fecha de Cita:</label>
-                            <div class="col-md-7">
-                                <input name="fecha_cita" id="fecha_cita" class="form-control" type="text" placeholder="Click Aqui" required type="text">
-
-                                        <script type="text/javascript">
-                                          Calendar.setup(
-                                            {
-                                          inputField : "fecha_cita",
-                                          ifFormat   : "%Y/%m/%d",
-                                          //button     : "Image1"
-                                            }
-                                          );
-                                        </script>
-                                    
-
-                            </div>                            
-                        </div>
-
-                        <div class="field-box">
-                            <label>Motivo Cita:</label>
-                            <div class="col-md-7">
-                                <input type="text" name="motivo_cita" id="motivo_cita" class="form-control" placeholder="Ingrese Aqui" required>
-                            </div>
-                        </div>
-
-                        <div class="field-box">
-                            <label>Acompanante:</label>
-                            <div class="col-md-7">
-                                <input type="text" name="acmp_cita" id="acmp_cita" class="form-control" placeholder="Ingrese Aqui" required>
-                            </div>
-                        </div>
-
-                        
-                        <div class="action">
-                            <input type="submit"  class="btn-flat" id="registrar" value="Registrar" >
-                            
-                        </div> 
-                        
-                        
-                    </form>';
-}
-
-else{
-    print ("<script>alert('El paciente con la Cedula: $ci_pacnt No esta Registrado');</script>");
-?>
-<hr>
-
-<?php
-}
-}
+           } else {
+            print ("<script>alert('El Paciente no Tiene Histaria Medica');</script>");
+            print('<meta http-equiv="refresh" content="0; URL=../vistas/pacientes_shows.php">');
+        }
+function CalculaEdad( $fecha ) {
+    list($Y,$m,$d) = explode("-",$fecha);
+    return( date("md") < $m.$d ? date("Y")-$Y-1 : date("Y")-$Y );
 }
 ?>
-
-                </div>
-            
-            </div>
-        </div>
-    </div>
