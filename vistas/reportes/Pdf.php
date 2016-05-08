@@ -11,17 +11,23 @@ class Pdf extends TCPDF
     //$this->Image($direct,10,10,250,25,'','','N','','','C');
     /* modificamos tipografia para el subtitulo
     e insertamos este */
-     
+    $text = '<div style="text-align:center;">Dr. Edgar Augusto Rodriguez Mendez <br>
+        Cirugía Ortopédica y Traumatología <br>
+           Artroscopia Hombro y Rodilla<br>
+            RIF: V-14432276-9</div>';
+            //$this->writeHTMLCell(0, 1, $text, 0, false, 'C', 0, '', 0, false, 'T', 'M');
+            $this->writeHTMLCell($w = 0, $h = 0, $x = '', $y = '', $text,$border = 0, $ln = 1, $fill = 0, $reseth = true, $align = '',$autopadding = true);
     /*trazamos una linea roja debajo del encabezado */
-    //$this->Line(19,25,200,25);       
+    $this->Line(19,25,200,25,array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 0, 0)));       
 }
      public function Footer() {
     /* establecemos el color del texto */
     /* insertamos numero de pagina y total de paginas*/
-    $this->Cell(0, 1, 'Pagina '.$this->getAliasNumPage(). ' de un total de '. $this-> getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
-         
+    $text = '<div style="text-align:center;">Centro Medico Odontologico SINA. Planta Baja, consultorio , consultorio 6; Av Universitaria.<br> Consulta de lunes a jueves 2:00 pm/ Tlf Consultorio: 0294-4167145; Cell: 0414- 0920635</div>';
+    $this->writeHTMLCell($w = 0, $h = 0, $x = '', $y = '', $text,$border = 0, $ln = 1, $fill = 0, $reseth = true, $align = '',$autopadding = true);
+             
     /* dibujamos una linea roja delimitadora del pie de página */
-    //$this->Line(19,282,200,282);
+    $this->Line(19,282,200,282,array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 0, 0)));
 }
 }
 /* siat-svo/reportes/Pdf.php */

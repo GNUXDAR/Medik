@@ -25,9 +25,9 @@ if ($resul) {
 				$table.='<td>'. $cita["acmp_cita"] .'</td>';
 				$table.='<td><div class="btn-group btn-group-sm">
 							<a href="#" class="btn btn-info ver_cita" data-id="'.$cita['id_cita'].'"  data-title= "'.$cita['nom_pacnt'].' '.$cita['apel_pacnt'].'" title="Ver"><i class="icon-eye-open"></i></a>';
-							if ($cita['estatus'] == 0) {
+							if ($cita['estatus'] == 0  ) {//and  date('%Y-%m-%d') > $cita['fecha_cita']
 								$table.=' <a href="edit_cita.php?id_cita='.$cita['id_cita'].'" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
-                            			  <a href="terminar_cita.php?id_cita='.$cita['id_cita'].'" class="btn btn-success"  title="Verificar" onclick="if(confirm(\'&iquest;Esta seguro que desea Terminar la Cita?\')) return true;  else return false;"><i class="icon-check"></i></a>
+                            			  <a href="#"  class="btn btn-success verificar" data-idcita="'.$cita['id_cita'].'" data-cipacnt="'.$cita["ci_pacnt"].'"  title="Verificar" ><i class="icon-check"></i></a>
                             			  <a href="../control/elim_cita.php?id_cita='.$cita['id_cita'].'" class="btn btn-danger"  title="Cancelar" onclick="if(confirm(\'&iquest;Esta seguro que desea Cancelar la Cita?\')) return true;  else return false;"><i class="icon-remove"></i></a>';
 							}
                             

@@ -4,7 +4,7 @@ ini_set('display_errors', 'on');
 $titilo_grafica = $_GET['titulo_grafica'];
 
 $nombre_archivo = $_GET['nombre_archivo'];
-$html= '
+$html= '<br>
 <h1 align="center">'.$titilo_grafica.'</h1>
 <img  src="img/reportes/'.$nombre_archivo.'.png"><br>
 

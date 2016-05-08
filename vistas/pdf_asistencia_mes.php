@@ -15,15 +15,14 @@ $query = pg_query($CONEXION, $sql) or die('ERROR AL INSERTAR DATOS: ' . pg_last_
 
 $html= '
 <h3 align="center">Asistencia del Mes</h3><br>
- <table id="data" border="1" class="table table-condensed table-striped table-hover dataTable" id="table_citas">
+ <table id="data" border="1" class="table table" id="table_citas" cellpadding="2" cellspacing="2" >
             <thead>
             <tr>
-                <th>#</th>
-                <th>Fecha Cita</th>
-                <th>Paciente</th>
-                <th>Cedula</th>
-                <th>Motivo</th>
-                <th>Acompañante</th>  
+                <th style="font-weight: bold;" width="50">#</th>
+                <th style="font-weight: bold;">Fecha Cita</th>
+                <th style="font-weight: bold;">Paciente</th>
+                <th style="font-weight: bold;">Cedula</th>
+                <th style="font-weight: bold;">Motivo</th>
             </tr>
             </thead>
             <tbody id="tbody">
@@ -33,12 +32,12 @@ $resul = pg_fetch_all($query);
 	foreach ($resul as $value) {
 	$html.='
 		<tr>
-	            <td>'.$i++.'</td>
+	            <td width="50">'.$i++.'</td>
 	            <td>'.$value['fecha_cita'].'</td>
 	            <td>'.$value['nom_pacnt'].' '.$value['apel_pacnt'].'</td>
 	            <td>'.$value['ci_pacnt'].'</td>    
 	            <td>'.$value['motivo_cita'].'</td>
-	            <td>'.$value['acmp_cita'].'</td>
+	            
 	    </tr>
 	';
 }
