@@ -54,6 +54,7 @@
                         <div class="btn-group btn-group-sm">
                             <a href="show_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-info" title="Ver"><i class="icon-eye-open"></i></a>
                             <a href="edit_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-primary" title="Modificar"><i class="icon-pencil"></i></a>
+                            <a href="hist.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-success"  title="Historia"><i class="icon-list-alt"></i></a>
                             <!-- <a href="../control/delete_paciente.php?id_paciente=<?php echo $value['id_pacnt'];?>" class="btn btn-danger" title="Eliminar" onclick="if(confirm('&iquest;Esta seguro que desea Eliminar al paciente?')) return true;  else return false;"><i class="icon-trash"></i></a> -->
                         </div>
                     </td>
