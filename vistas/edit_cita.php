@@ -99,9 +99,9 @@
                             <div class="col-md-7">
                                 <select required  name="motivo_cita" id="motivo_cita" class="form-control">
                                     <option  value="">Seleccione</option>
-                                    <option value="Motivo 1" <?php if($ATRIBUTO['motivo_cita'] == 'Motivo 1'){ echo 'selected'; }?> >Motivo 1</option>
-                                    <option value="Motivo 2" <?php if($ATRIBUTO['motivo_cita'] == 'Motivo 2'){ echo 'selected'; }?> >Motivo 2</option>
-                                    <option value="Motivo 2" <?php if($ATRIBUTO['motivo_cita'] == 'Motivo 2'){ echo 'selected'; }?> >Motivo 2</option> 
+                                    <option value="Fractura" <?php if($ATRIBUTO['motivo_cita'] == 'Fractura'){ echo 'selected'; }?> >Fractura</option>
+                                    <option value="Artritis" <?php if($ATRIBUTO['motivo_cita'] == 'Artritis'){ echo 'selected'; }?> >Artritis</option>
+                                    <option value="Artrosis" <?php if($ATRIBUTO['motivo_cita'] == 'Artrosis'){ echo 'selected'; }?> >Artrosis</option> 
                                     <option value="Otros"    <?php if($ATRIBUTO['motivo_cita'] == 'Otros'){ echo 'selected'; }?> >Otros</option>                                            
                                 </select>
                             </div>
