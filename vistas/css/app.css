@@ -7,17 +7,20 @@
 
 .logo {
 	
-	background-image: url('../img/logo_consultorio.png');
+	background-image: url('../img/logo.png');
   	background-repeat: no-repeat;
-  	height: 799px;
+  	height: 400px;
   	background-position: center;  
 	overflow: hidden;
 	display:block; 
 	width: 100%;
-	opacity: 0.3;
-	-moz-opacity: 0.3;
-	-webkit-opacity: 0.3;
-	-o-opacity: 0.3;
-	-khtml-opacity: 0.3;
-	-ms-opacity: 0.3;
+	opacity: 0.8;
+    -moz-opacity: 0.8;
+    -webkit-opacity: 0.8;
+    -o-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    -ms-opacity: 0.8;
+	
 }
+
+

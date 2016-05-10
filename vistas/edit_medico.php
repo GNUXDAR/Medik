@@ -31,7 +31,7 @@
                     <h2 align="center">Modificar Medico</h2></br></br>
 
                     <!---->
-                      <form method="POST" action="../control/upd_medico.php" autocomplete="off">
+                      <form method="POST" id="editrar_medicos" action="../control/upd_medico.php" autocomplete="off">
                     
 
                         <div class="field-box">
@@ -194,3 +194,84 @@
             </div>
         </div>
     </div>
+<script>
+$(document).ready(function() {
+            $("select").select2();
+            $("#editrar_medicos").validate({
+                rules: {
+                    nom_medic : {
+                            required: true,
+                            minlength: 2
+                    },
+                    apel_medic : {
+                            required: true,
+                            minlength: 2
+                    },
+                    espc_medic : {
+                            required: true,
+                    },
+                    fn_medic : {
+                            required: true,
+                            
+                    },
+                    dir_medic : {
+                            required: true,
+                    },
+                    mail_medic : {
+                            required: true,
+                            email: true
+                    },
+                    tlf_medic : {
+                            required: true,
+                            number: true,
+                            minlength: 7,
+                            maxlength: 7,
+                    },
+                },
+                messages: {
+                    nom_medic:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    apel_medic:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    espc_medic:{                            
+                            required: 'el campo es requerido',
+                    },
+                    fn_medic:{                            
+                            required: 'el campo es requerido',
+                            
+                    },
+                    dir_medic:{                            
+                            required: 'el campo es requerido',
+                    },
+                    mail_medic:{                            
+                            required: 'el campo es requerido',
+                             email: 'debe ser un correo'
+                    },
+                    tlf_medic:{                            
+                            required: 'el campo es requerido',
+                            number: 'solo numeros',
+                            minlength: 'minimo 7 numeros',
+                            maxlength:'maximo 7 numeros',
+                    },
+                },
+            });
+});
+
+</script>
+<style type="text/css">
+    
+#from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
+
+    .error {
+        text-decoration-color: red;
+        color: red;
+    } 
+</style>
