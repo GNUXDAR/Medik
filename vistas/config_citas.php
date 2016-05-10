@@ -36,7 +36,7 @@
 				            <div class="tab-pane active" id="precio">
 				               <br>
           						<div class="row">
-          							<form class="form-horizontal" method="POST" action="../control/config_cita.php" autocomplete="off">
+          							<form class="form-horizontal" id="form_precio" method="POST" action="../control/config_cita.php" autocomplete="off">
                     					 <label >Definir Nuevo Precio de pago de la Cita</label>
 			                          	<div class="form-group">			                               
 			                                <div class="col-md-4">
@@ -84,7 +84,7 @@
 				            <div class="tab-pane" id="numero">				               
 				                <br>
           						<div class="row">
-          							<form class="form-horizontal" method="POST" action="../control/config_cita.php" autocomplete="off">
+          							<form class="form-horizontal" id="form_numero" method="POST" action="../control/config_cita.php" autocomplete="off">
                     					 <label >Definir Nuevo Número de Citas diarias</label>
 			                          	<div class="form-group">			                               
 			                                <div class="col-md-4">
@@ -142,3 +142,47 @@
 
      
     </div>
+<script>
+$(document).ready(function() {
+            $("select").select2();
+            $("#form_precio").validate({
+                rules: {
+                    precio_cita : {
+                            required: true,
+                    },
+                },
+                messages: {
+                    precio_cita:{                            
+                            required: 'el campo es requerido',
+                    },
+                },
+            });
+
+            $("#form_numero").validate({
+                rules: {
+                    numero_cita : {
+                            required: true,
+                    },
+                },
+                messages: {
+                    numero_cita:{                            
+                            required: 'el campo es requerido',
+                    },
+                },
+            });
+});
+
+</script>
+<style type="text/css">
+    
+#from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
+
+    .error {
+        text-decoration-color: red;
+        color: red;
+    } 
+</style>
