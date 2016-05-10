@@ -34,7 +34,7 @@
                     <h2 align="center">Modificar Pacientes</h2></br></br>
                      
                     <hr>
-                    <form method="POST" action="../control/upd_paciente.php" autocomplete="off">
+                    <form method="POST" id="form_paciente_2" action="../control/upd_paciente.php" autocomplete="off">
                        
                             <div class="field-box">
                                 <label>Cedula Paciente:</label>
@@ -81,19 +81,6 @@
                                 <div class="col-md-7">
                                     <input name="fn_pacnt" value="<?php echo strftime("%d-%m-%Y",strtotime($paciente['fn_pacnt']) ); ?>" id="fn_pacnt" class="form-control" type="text" placeholder="Click Aqui" required type="text">
 
-                                            <script type="text/javascript">
-                                              Calendar.setup(
-                                                {
-                                              inputField : "fn_pacnt",
-                                              ifFormat   : "%d-%m-%Y",
-                                              //button     : "Image1"
-                                                }
-                                              );
-                                              $("#fn_pacnt").keypress(function(e) {
-                                                    return false;
-                                                });
-                                            </script>
-                                        
 
                                 </div>                            
                             </div>
@@ -201,6 +188,108 @@
             </div>
         </div>
     </div>
+<script>
+$(document).ready(function() {
+            $("select").select2();
+            $("#form_paciente_2").validate({
+                rules: {
+                    ci_pacnt : {
+                            required: true,
+                            number: true,
+                            minlength: 5,
+                            maxlength: 8,
+                    },
+                    nom_pacnt : {
+                            required: true,
+                            minlength: 2
+                    },
+                    apel_pacnt : {
+                            required: true,
+                            minlength: 2
+                    },
+                    sexo_pacnt : {
+                            required: true,
+                    },
+                    fn_pacnt : {
+                            required: true,
+                            
+                    },
+                    dir_pacnt : {
+                            required: true,
+                    },
+                    mail_pacnt : {
+                            required: true,
+                            email: true
+                    },
+                    tlf_pacnt : {
+                            required: true,
+                            number: true,
+                            minlength: 7,
+                            maxlength: 7,
+                    },
+                },
+                messages: {
+                    ci_pacnt:{                            
+                            required: 'el campo es requerido',
+                            number: 'solo numeros',
+                            minlength: 'minimo 5 numeros',
+                            maxlength:'maximo 8 numeros',
+                    },
+                    nom_pacnt:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    apel_pacnt:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    sexo_pacnt:{                            
+                            required: 'el campo es requerido',
+                    },
+                    fn_pacnt:{                            
+                            required: 'el campo es requerido',
+                            
+                    },
+                    dir_pacnt:{                            
+                            required: 'el campo es requerido',
+                    },
+                    mail_pacnt:{                            
+                            required: 'el campo es requerido',
+                             email: 'debe ser un correo'
+                    },
+                    tlf_pacnt:{                            
+                            required: 'el campo es requerido',
+                            number: 'solo numeros',
+                            minlength: 'minimo 7 numeros',
+                            maxlength:'maximo 7 numeros',
+                    },
+                },
+            });
+
+            Calendar.setup({
+                            inputField : "fn_pacnt",
+                            ifFormat   : "%d-%m-%Y",
+                            //button     : "Image1"
+            });
+            $("#fn_pacnt").keypress(function(e) {
+                return false;
+            });
+});
+</script>
+<style type="text/css">
+    
+#from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
+
+    .error {
+        text-decoration-color: red;
+        color: red;
+    } 
+</style>
+
 <?php
         }else{
             print ("<script>alert('No hay Resgistro!.');</script>");
