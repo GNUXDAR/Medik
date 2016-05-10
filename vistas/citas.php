@@ -47,7 +47,7 @@ ini_set('display_errors', 'on');
                         <div class="field-box">
                             <label>Cedula:</label>
                             <div class="col-md-7">                               
-                                <select class="form-control" name="ci_pacnt" id="ci_pacnt" required>
+                                <select class="form-control" name="ci_pacnt" id="ci_pacnt" >
                                     <option value="">Seleccione</option>
                                     <?php
                                         foreach ($pacientes as $paciente) {
@@ -61,11 +61,11 @@ ini_set('display_errors', 'on');
                         <div class="field-box">
                             <label>Motivo Cita:</label>
                             <div class="col-md-7">                               
-                                <select required  name="motivo_cita" id="motivo_cita" class="form-control">
+                                <select  name="motivo_cita" id="motivo_cita" class="form-control">
                                     <option value="">Seleccione</option>
-                                    <option value="Motivo 1">Motivo 1</option>
-                                    <option value="Motivo 2">Motivo 2</option>
-                                    <option value="Motivo 2">Motivo 2</option> 
+                                    <option value="Fractura">Fractura</option>
+                                    <option value="Artritis">Artritis</option>
+                                    <option value="Artrosis">Artrosis</option> 
                                     <option value="Otros">Otros</option>                                            
                                 </select>
                             </div>
@@ -74,7 +74,7 @@ ini_set('display_errors', 'on');
                         <div class="field-box">
                             <label>Fecha de Cita:</label>
                             <div class="col-md-7">
-                                <input autocomplete="off" name="fecha_cita" id="fecha_cita" class="form-control fecha" type="text" placeholder="Click Aqui" required >
+                                <input autocomplete="off" name="fecha_cita" id="fecha_cita" class="form-control fecha" type="text" placeholder="Click Aqui"  >
                             </div>                            
                         </div>
 
@@ -154,7 +154,45 @@ $(function() {
        return false;
     });
 
+    $("#registrar_cita").validate({
+                rules: {
+                    ci_pacnt : {
+                            required: true,
+                    },
+                    motivo_cita : {
+                            required: true,
+                    },
+                    fecha_cita : {
+                            required: true,
+                            
+                    },
+                },
+                messages: {
+                    ci_pacnt:{                            
+                            required: 'el campo es requerido',
+                    },
+                    motivo_cita:{                            
+                            required: 'el campo es requerido',
+                    },
+                    fecha_cita:{                            
+                            required: 'el campo es requerido',
+                    },
+                },
+    });
 
 });
 
 </script>
+<style type="text/css">
+    
+#from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
+
+    .error {
+        text-decoration-color: red;
+        color: red;
+    } 
+</style>
