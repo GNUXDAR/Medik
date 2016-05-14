@@ -1,7 +1,7 @@
 <?php 
 include_once('reportes/Reportes_pdf.php');
 ini_set('display_errors', 'on');  //muestra los errores de php
-$CONECTAR="host='127.0.0.1' dbname='consulta' user='grebo' password='123'";
+$CONECTAR="host='127.0.0.1' dbname='consultorio' user='canaima' password='canaima'";
 $CONEXION=pg_connect($CONECTAR);
 $id_paciente = $_GET['id_paciente'];
 

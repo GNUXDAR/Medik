@@ -63,9 +63,9 @@ ini_set('display_errors', 'on');
                             <div class="col-md-7">                               
                                 <select required  name="motivo_cita" id="motivo_cita" class="form-control">
                                     <option value="">Seleccione</option>
-                                    <option value="Motivo 1">Motivo 1</option>
-                                    <option value="Motivo 2">Motivo 2</option>
-                                    <option value="Motivo 2">Motivo 2</option> 
+                                    <option value="Fractura">Fractura</option>
+                                    <option value="Artritis">Artritis</option>
+                                    <option value="Artrosis">Artrosis</option> 
                                     <option value="Otros">Otros</option>                                            
                                 </select>
                             </div>

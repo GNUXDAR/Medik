@@ -59,9 +59,7 @@
 <?php   
             }
     }else{ ?>
-        <tr>    
-            <td colspan="4">No hay Registros</td>
-        </tr>
+
 <?php    }
 	
 
