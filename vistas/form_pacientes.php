@@ -13,22 +13,22 @@ $localizarPersona=pg_num_rows($verificaPersona);
     if ($localizarPersona == 0){  //inicio if registrar paciente
 
         $ATRIBUTO=pg_fetch_array($verificaPersona);
-
-        echo '<div class="row">
+?>
+       <div class="row">
         <div class="col-md-7"> <b class="text-info">Registrando Nuevo Paciente</b></div>
-         </div> <hr>';
+         </div> <hr>
 
 
 
-         echo '
+        
                         
-                    <form method="POST" action="../control/reg_paciente.php" autocomplete="off">
-                    <input value="'.$ci_pacnt.'" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
+                    <form method="POST" action="../control/reg_paciente.php" id="form_paciente_2" autocomplete="off">
+                    <input value="<?php echo $ci_pacnt; ?>" name="ci_pacnt" id="ci_pacnt" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
 
                         <div class="field-box">
                             <label>Nombres Paciente:</label>
                             <div class="col-md-7">
-                                <input title="Nombre Paciente" name="nom_pacnt" id="nom_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required type="text" autofocus>
+                                <input  name="nom_pacnt" id="nom_pacnt" class="form-control" type="text" placeholder="Ingrese Aqui" required  autofocus>
                             </div>                            
                         </div>
 
@@ -42,7 +42,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         <div class="field-box">
                             <label>Sexo:</label>
                             <div class="col-md-4">
-                            <select class="form-control" name="sexo_pacnt">
+                            <select class="form-control" name="sexo_pacnt" id="sexo_pacnt">
                                 <option value="Masculino" >Masculino</option>
                                 <option value="Femenino" >Femenino</option>
                             </select>
@@ -56,16 +56,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                                 <input title="Fecha del Paciente" name="fn_pacnt" id="fn_pacnt" class="form-control" type="text" placeholder="Click Aqui" required type="text">
 
                                         <script type="text/javascript">
-                                          Calendar.setup(
-                                            {
-                                          inputField : "fn_pacnt",
-                                          ifFormat   : "%d-%m-%Y",
-                                          //button     : "Image1"
-                                            }
-                                          );
-                                            $("#fn_pacnt").keypress(function(e) {
-                                           return false;
-                                        });
+                                        
                                         </script>
                                     
 
@@ -82,8 +73,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         <div class="field-box">
                             <label>Correo:</label>
                             <div class="col-md-7">
-                                <input title="Correo del Paciente" type="text" name="mail_pacnt" id="mail_pacnt" class="form-control" placeholder="
-                                @" required>
+                                <input title="Correo del Paciente" type="text" name="mail_pacnt" id="mail_pacnt" class="form-control" placeholder="  @" required>
                             </div>
                         </div>
 
@@ -172,9 +162,98 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         </div> 
                         
                         
-                    </form><script>$("select").select2();</script>';
+                    </form>
+<script>
+$(document).ready(function() {
+            $("select").select2();
+            $("#form_paciente_2").validate({
+                rules: {
+                    nom_pacnt : {
+                            required: true,
+                            minlength: 2
+                    },
+                    apel_pacnt : {
+                            required: true,
+                            minlength: 2
+                    },
+                    sexo_pacnt : {
+                            required: true,
+                    },
+                    fn_pacnt : {
+                            required: true,
+                            
+                    },
+                    dir_pacnt : {
+                            required: true,
+                    },
+                    mail_pacnt : {
+                            required: true,
+                            email: true
+                    },
+                    tlf_pacnt : {
+                            required: true,
+                            number: true,
+                            minlength: 7,
+                            maxlength: 7,
+                    },
+                },
+                messages: {
+                    nom_pacnt:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    apel_pacnt:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    sexo_pacnt:{                            
+                            required: 'el campo es requerido',
+                    },
+                    fn_pacnt:{                            
+                            required: 'el campo es requerido',
+                            
+                    },
+                    dir_pacnt:{                            
+                            required: 'el campo es requerido',
+                    },
+                    mail_pacnt:{                            
+                            required: 'el campo es requerido',
+                             email: 'debe ser un correo'
+                    },
+                    tlf_pacnt:{                            
+                            required: 'el campo es requerido',
+                            number: 'solo numeros',
+                            minlength: 'minimo 7 numeros',
+                            maxlength:'maximo 7 numeros',
+                    },
+                },
+            });
 
+            Calendar.setup({
+                            inputField : "fn_pacnt",
+                            ifFormat   : "%d-%m-%Y",
+                            //button     : "Image1"
+            });
+            $("#fn_pacnt").keypress(function(e) {
+                return false;
+            });
+});
+</script>
+<style type="text/css">
+    
+#from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
 
+    .error {
+        text-decoration-color: red;
+        color: red;
+    } 
+</style>
+
+<?php
 }//fin if registra paciente
 
 else{ 

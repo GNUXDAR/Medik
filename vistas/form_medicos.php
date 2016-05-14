@@ -14,18 +14,16 @@ $localizarPersona=pg_num_rows($verificaPersona);
     if ($localizarPersona == 0){  //inicio if registrar medico
 
         $ATRIBUTO=pg_fetch_array($verificaPersona);
-
-        echo '<div class="row">
+?>
+        <div class="row">
         <div class="col-md-7"> <b class="text-info">Registrando Nuevo Medico</b>
           </div>
-         </div> <hr>';
+         </div> <hr>
 
 
-
-         echo '
                         
-                    <form method="POST" action="../control/reg_medico.php" autocomplete="off">
-                    <input value="'.$ci_medic.'" name="ci_medic" id="ci_medic" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
+                    <form method="POST" id="registrar_medicos" action="../control/reg_medico.php" autocomplete="off">
+                    <input value="<?php echo $ci_medic; ?>" name="ci_medic" id="ci_medic" class="form-control" required type="hidden" min="00000000" max="99999999" placeholder="12345678" autofocus>
 
                         <div class="field-box">
                             <label>Nombre Medico:</label>
@@ -58,13 +56,11 @@ $localizarPersona=pg_num_rows($verificaPersona);
                                 <input name="fn_medic" id="fn_medic" class="form-control" type="text" placeholder="Click Aqui" required type="text">
 
                                         <script type="text/javascript">
-                                          Calendar.setup(
-                                            {
-                                          inputField : "fn_medic",
-                                          ifFormat   : "%d-%m-%Y",
-                                          //button     : "Image1"
-                                            }
-                                          );
+                                          Calendar.setup({
+                                              inputField : "fn_medic",
+                                              ifFormat   : "%d-%m-%Y",
+                                              //button     : "Image1"
+                                            });
                                          $("#fn_medic").keypress(function(e) {
                                            return false;
                                         });
@@ -169,9 +165,90 @@ $localizarPersona=pg_num_rows($verificaPersona);
                         </div> 
                         
                         
-                    </form>';
+                    </form>
+<script>
+$(document).ready(function() {
+            $("select").select2();
+            $("#registrar_medicos").validate({
+                rules: {
+                    nom_medic : {
+                            required: true,
+                            minlength: 2
+                    },
+                    apel_medic : {
+                            required: true,
+                            minlength: 2
+                    },
+                    espc_medic : {
+                            required: true,
+                    },
+                    fn_medic : {
+                            required: true,
+                            
+                    },
+                    dir_medic : {
+                            required: true,
+                    },
+                    mail_medic : {
+                            required: true,
+                            email: true
+                    },
+                    tlf_medic : {
+                            required: true,
+                            number: true,
+                            minlength: 7,
+                            maxlength: 7,
+                    },
+                },
+                messages: {
+                    nom_medic:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    apel_medic:{                            
+                            required: 'el campo es requerido',
+                            minlength: 'minimo 2 caracteres'
+                    },
+                    espc_medic:{                            
+                            required: 'el campo es requerido',
+                    },
+                    fn_medic:{                            
+                            required: 'el campo es requerido',
+                            
+                    },
+                    dir_medic:{                            
+                            required: 'el campo es requerido',
+                    },
+                    mail_medic:{                            
+                            required: 'el campo es requerido',
+                             email: 'debe ser un correo'
+                    },
+                    tlf_medic:{                            
+                            required: 'el campo es requerido',
+                            number: 'solo numeros',
+                            minlength: 'minimo 7 numeros',
+                            maxlength:'maximo 7 numeros',
+                    },
+                },
+            });
+});
 
+</script>
+<style type="text/css">
+    
+#from_user label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+    }
 
+    .error {
+        text-decoration-color: red;
+        color: red;
+    } 
+</style>
+
+<?php
 }//fin if registra medico
 
 else{ 

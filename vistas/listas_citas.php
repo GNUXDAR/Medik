@@ -29,7 +29,7 @@
             <div class="col col-md-4">
                 <label>Fecha:</label>
                            
-                                <input name="fecha_cita" id="fecha_cita" class="form-control" type="text" placeholder="Click Aqui" required type="text">
+                                <input name="fecha_cita" id="fecha_cita" class="form-control" type="text" placeholder="Click Aqui" required autocomplete="off">
 
                                         <script type="text/javascript">
                                          

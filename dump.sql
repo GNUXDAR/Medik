@@ -26,7 +26,8 @@ CREATE TABLE cita_cnslt (
     motivo_cita text,
     acmp_cita text,
     estatus bit(1) NOT NULL,
-    pago_cita integer
+    pago_cita integer,
+    observacion_cita text
 );
 
 
@@ -92,58 +93,24 @@ ALTER SEQUENCE config_cita_id_config_seq OWNED BY config_cita.id_config;
 
 
 --
--- Name: hist-pacnt; Type: TABLE; Schema: public; Owner: grebo; Tablespace: 
+-- Name: hist_pacnt; Type: TABLE; Schema: public; Owner: grebo; Tablespace: 
 --
 
-CREATE TABLE "hist-pacnt" (
+CREATE TABLE hist_pacnt (
     id_his integer NOT NULL,
     ci_pacnt_hist integer NOT NULL,
-    antc_hist text,
-    antc_fm_hist text,
-    hab_pscb_hist text,
-    ex_fisc_hist text,
-    mdicnt_alrgc_hist character varying,
-    ptlg_hist text,
-    "null" character varying
+    id_cita integer NOT NULL,
+    enfermedad_actual character varying(200) NOT NULL,
+    diagnostico text,
+    comentarios text,
+    habitos text,
+    antecedentes_personales text,
+    antecedentes_quirurgicos text,
+    antecedentes_familiares text
 );
 
 
-ALTER TABLE public."hist-pacnt" OWNER TO grebo;
-
---
--- Name: COLUMN "hist-pacnt".antc_fm_hist; Type: COMMENT; Schema: public; Owner: grebo
---
-
-COMMENT ON COLUMN "hist-pacnt".antc_fm_hist IS 'antecedentes familiares';
-
-
---
--- Name: COLUMN "hist-pacnt".hab_pscb_hist; Type: COMMENT; Schema: public; Owner: grebo
---
-
-COMMENT ON COLUMN "hist-pacnt".hab_pscb_hist IS 'habitos psicobioogicos, fuma, bebe, drogas, etc';
-
-
---
--- Name: COLUMN "hist-pacnt".ex_fisc_hist; Type: COMMENT; Schema: public; Owner: grebo
---
-
-COMMENT ON COLUMN "hist-pacnt".ex_fisc_hist IS 'fracturas, desgarres, problemas fisico motriz';
-
-
---
--- Name: COLUMN "hist-pacnt".mdicnt_alrgc_hist; Type: COMMENT; Schema: public; Owner: grebo
---
-
-COMMENT ON COLUMN "hist-pacnt".mdicnt_alrgc_hist IS 'medicamento al que es alergico';
-
-
---
--- Name: COLUMN "hist-pacnt".ptlg_hist; Type: COMMENT; Schema: public; Owner: grebo
---
-
-COMMENT ON COLUMN "hist-pacnt".ptlg_hist IS 'neumonia, hipertension, asma, obecidad, etc';
-
+ALTER TABLE public.hist_pacnt OWNER TO grebo;
 
 --
 -- Name: hist-pacnt_id_his_seq; Type: SEQUENCE; Schema: public; Owner: grebo
@@ -163,7 +130,7 @@ ALTER TABLE public."hist-pacnt_id_his_seq" OWNER TO grebo;
 -- Name: hist-pacnt_id_his_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grebo
 --
 
-ALTER SEQUENCE "hist-pacnt_id_his_seq" OWNED BY "hist-pacnt".id_his;
+ALTER SEQUENCE "hist-pacnt_id_his_seq" OWNED BY hist_pacnt.id_his;
 
 
 --
@@ -179,7 +146,8 @@ CREATE TABLE medic_cnslt (
     dir_medic text,
     tlf_medic integer,
     ci_medic integer NOT NULL,
-    espc_medic character varying(30) NOT NULL
+    espc_medic character varying(30) NOT NULL,
+    cod_tlf character varying(4)
 );
 
 
@@ -217,9 +185,11 @@ CREATE TABLE pacnt_cnslt (
     fn_pacnt date,
     mail_pacnt character varying(30),
     dir_pacnt text,
-    tlf_pacnt numeric,
+    tlf_pacnt character varying,
     ci_pacnt integer,
-    sexo_pacnt character varying(15) NOT NULL
+    sexo_pacnt character varying(15) NOT NULL,
+    cod_tlf_pacnt character varying(4),
+    status bit(1)
 );
 
 
@@ -310,7 +280,7 @@ ALTER TABLE ONLY config_cita ALTER COLUMN id_config SET DEFAULT nextval('config_
 -- Name: id_his; Type: DEFAULT; Schema: public; Owner: grebo
 --
 
-ALTER TABLE ONLY "hist-pacnt" ALTER COLUMN id_his SET DEFAULT nextval('"hist-pacnt_id_his_seq"'::regclass);
+ALTER TABLE ONLY hist_pacnt ALTER COLUMN id_his SET DEFAULT nextval('"hist-pacnt_id_his_seq"'::regclass);
 
 
 --
@@ -338,24 +308,7 @@ ALTER TABLE ONLY usr_system ALTER COLUMN id_usr SET DEFAULT nextval('user_system
 -- Data for Name: cita_cnslt; Type: TABLE DATA; Schema: public; Owner: grebo
 --
 
-COPY cita_cnslt (id_cita, ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita, estatus, pago_cita) FROM stdin;
-1	19330646	2016-01-10	refriado y malestar general	Margarita Guerrero	0	\N
-3	19330646	2016-03-27	dolor de cabeza	Luisa Romero	0	\N
-2	19330646	2016-03-26	Revision Rutinaria	Pedro Pablo	0	\N
-5	12345678	2016-03-17	creer ganar	arturo	0	\N
-4	12345678	2016-03-12	problemas personales	angel	0	\N
-6	12121212	2016-03-10	dolor	adin	0	\N
-7	12345678	2016-04-05	xdgfd	ara	0	\N
-12	12345678	2016-04-19	csdcsd	jcsdkcmi	0	\N
-13	12345678	2016-04-20	dolor de cabeza	sbciusai	0	\N
-15	123123	2016-04-29	dolor de cabeza	julio cesar	1	5000
-20	19330646	2016-04-30	rewrwerewr	ewrwerwer	0	\N
-18	19330647	2016-04-29	edwee	jesus	1	5000
-14	12345678	2016-04-28	weewewefwefjwepojfojw	ewewewdfi	0	\N
-10	12345678	2016-04-17	bsbcs	iv sdo	1	3000
-21	123123	2016-04-30	ddsddsa	dsadasdasd	0	\N
-22	123123	2016-04-30	gfdgfd	fdgdfgdf	0	\N
-24	1312112	2016-05-01	sdsdasd	dasdasdas	1	3000
+COPY cita_cnslt (id_cita, ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita, estatus, pago_cita, observacion_cita) FROM stdin;
 \.
 
 
@@ -363,7 +316,7 @@ COPY cita_cnslt (id_cita, ci_pacnt_cita, fecha_cita, motivo_cita, acmp_cita, est
 -- Name: cita_cnslt_id_cita_seq; Type: SEQUENCE SET; Schema: public; Owner: grebo
 --
 
-SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 24, true);
+SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 92, true);
 
 
 --
@@ -371,13 +324,6 @@ SELECT pg_catalog.setval('cita_cnslt_id_cita_seq', 24, true);
 --
 
 COPY config_cita (id_config, precio_cita, numero_cita, tipo, fecha_config, status, id_usr) FROM stdin;
-1	3000	3	1	2016-05-02	0	1
-2	3434	\N	1	2016-05-02	0	1
-3	3434	\N	1	2016-05-02	0	1
-4	2000	\N	1	2016-05-02	0	1
-5	4000	\N	1	2016-05-02	0	1
-6	6000	\N	1	2016-05-02	0	1
-7	56566	\N	1	2016-05-03	1	1
 \.
 
 
@@ -385,30 +331,29 @@ COPY config_cita (id_config, precio_cita, numero_cita, tipo, fecha_config, statu
 -- Name: config_cita_id_config_seq; Type: SEQUENCE SET; Schema: public; Owner: grebo
 --
 
-SELECT pg_catalog.setval('config_cita_id_config_seq', 7, true);
-
-
---
--- Data for Name: hist-pacnt; Type: TABLE DATA; Schema: public; Owner: grebo
---
-
-COPY "hist-pacnt" (id_his, ci_pacnt_hist, antc_hist, antc_fm_hist, hab_pscb_hist, ex_fisc_hist, mdicnt_alrgc_hist, ptlg_hist, "null") FROM stdin;
-\.
+SELECT pg_catalog.setval('config_cita_id_config_seq', 8, true);
 
 
 --
 -- Name: hist-pacnt_id_his_seq; Type: SEQUENCE SET; Schema: public; Owner: grebo
 --
 
-SELECT pg_catalog.setval('"hist-pacnt_id_his_seq"', 1, false);
+SELECT pg_catalog.setval('"hist-pacnt_id_his_seq"', 5, true);
+
+
+--
+-- Data for Name: hist_pacnt; Type: TABLE DATA; Schema: public; Owner: grebo
+--
+
+COPY hist_pacnt (id_his, ci_pacnt_hist, id_cita, enfermedad_actual, diagnostico, comentarios, habitos, antecedentes_personales, antecedentes_quirurgicos, antecedentes_familiares) FROM stdin;
+\.
 
 
 --
 -- Data for Name: medic_cnslt; Type: TABLE DATA; Schema: public; Owner: grebo
 --
 
-COPY medic_cnslt (id_medic, nom_medic, apel_medic, fn_medic, mail_medic, dir_medic, tlf_medic, ci_medic, espc_medic) FROM stdin;
-1	jose	carmona	1942-03-12	drjs@gmail.com	carupano	34534543	21212121	TRAUMATOLOGO
+COPY medic_cnslt (id_medic, nom_medic, apel_medic, fn_medic, mail_medic, dir_medic, tlf_medic, ci_medic, espc_medic, cod_tlf) FROM stdin;
 \.
 
 
@@ -416,20 +361,14 @@ COPY medic_cnslt (id_medic, nom_medic, apel_medic, fn_medic, mail_medic, dir_med
 -- Name: medic_cnslt_id_medic_seq; Type: SEQUENCE SET; Schema: public; Owner: grebo
 --
 
-SELECT pg_catalog.setval('medic_cnslt_id_medic_seq', 3, true);
+SELECT pg_catalog.setval('medic_cnslt_id_medic_seq', 5, true);
 
 
 --
 -- Data for Name: pacnt_cnslt; Type: TABLE DATA; Schema: public; Owner: grebo
 --
 
-COPY pacnt_cnslt (id_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, mail_pacnt, dir_pacnt, tlf_pacnt, ci_pacnt, sexo_pacnt) FROM stdin;
-2	norelys	ospedales	1989-09-18	nore@nore.com	tunapuy	4267889948	12345678	femenino
-3	adrian	guerrero	1989-09-16	adri@hotmail.com	tunapuy	4267889945	19330647	masculino
-8	rofr	kncke	2016-04-08	edicds@jdbcdjs.com	fefifnsie	2434343	123123	masculino
-6	amarily	guerrero	1968-10-06	amarili@guerrero	rio caribe	124546	12121212	femenino
-1	Arturo	Guerrero	1989-09-18	gnuxdar@gmail.com	Tunapuy	4267889948	19330646	masculino
-9	nombre	apellido	2016-04-22	grgrgr@fsfsfsdf.cac	rththhhghslknushve vebujbeklvejk	41212365236	1312112	
+COPY pacnt_cnslt (id_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, mail_pacnt, dir_pacnt, tlf_pacnt, ci_pacnt, sexo_pacnt, cod_tlf_pacnt, status) FROM stdin;
 \.
 
 
@@ -437,7 +376,7 @@ COPY pacnt_cnslt (id_pacnt, nom_pacnt, apel_pacnt, fn_pacnt, mail_pacnt, dir_pac
 -- Name: pacnt_cnslt_id_pacnt_seq; Type: SEQUENCE SET; Schema: public; Owner: grebo
 --
 
-SELECT pg_catalog.setval('pacnt_cnslt_id_pacnt_seq', 10, true);
+SELECT pg_catalog.setval('pacnt_cnslt_id_pacnt_seq', 17, true);
 
 
 --
@@ -452,7 +391,7 @@ SELECT pg_catalog.setval('user_system_id_usr_seq', 8, true);
 --
 
 COPY usr_system (id_usr, ci_usr, login_usr, pass_usr, status_usr, nombre_usr, apellido_usr, tipo_usr) FROM stdin;
-1	12345678	gnuxdar	123	1	gnuxdar	gnuxdar	1
+1	12345678	aracelys	123	1	Aracelys	Martinez	1
 \.
 
 
@@ -476,7 +415,7 @@ ALTER TABLE ONLY config_cita
 -- Name: hist-pacnt_pkey; Type: CONSTRAINT; Schema: public; Owner: grebo; Tablespace: 
 --
 
-ALTER TABLE ONLY "hist-pacnt"
+ALTER TABLE ONLY hist_pacnt
     ADD CONSTRAINT "hist-pacnt_pkey" PRIMARY KEY (id_his);
 
 

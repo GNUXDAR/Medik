@@ -62,9 +62,11 @@
                     success:
                         function (data) {
                             if (data == 0) {
-                                alert("Error al procesar la operacion!.");
+                                alert("No hay registros para realizar el reporte.");
+                            }else if(data == 1){
+                                 alert("No un problema en la operacion.");
                             }else{
-                                 $("#reporte").empty().html(data);
+                                $("#reporte").empty().html(data);
                             }
                            
                         }
