@@ -1,7 +1,7 @@
 <?php 
 include_once('reportes/Reportes_pdf.php');
 ini_set('display_errors', 'on');  //muestra los errores de php
-$CONECTAR="host='127.0.0.1' dbname='consulta' user='grebo' password='123'";
+$CONECTAR="host='127.0.0.1' dbname='consultorio' user='canaima' password='canaima'";
 $CONEXION=pg_connect($CONECTAR);
 $fecha = new DateTime();
 $fecha->modify('first day of this month');
@@ -18,11 +18,11 @@ $html= '
  <table id="data" border="1" class="table table" id="table_citas" cellpadding="2" cellspacing="2" >
             <thead>
             <tr>
-                <th style="font-weight: bold;" width="50">#</th>
-                <th style="font-weight: bold;">Fecha Cita</th>
-                <th style="font-weight: bold;">Paciente</th>
-                <th style="font-weight: bold;">Cedula</th>
-                <th style="font-weight: bold;">Motivo</th>
+                <th style="background-color: #858689;color: #fff;font-weight: bold;" width="50">#</th>
+                <th style="background-color: #858689;color: #fff;font-weight: bold;">Fecha Cita</th>
+                <th style="background-color: #858689;color: #fff;font-weight: bold;">Paciente</th>
+                <th style="background-color: #858689;color: #fff;font-weight: bold;">Cedula</th>
+                <th style="background-color: #858689;color: #fff;font-weight: bold;">Motivo</th>
             </tr>
             </thead>
             <tbody id="tbody">

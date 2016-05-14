@@ -196,7 +196,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="https://twitter.com" target="_blank">Ayuda</a></li>
+                    <li><a href="manual sistraerca.pdf" target="_blank">Ayuda</a></li>
 
 
                 </ul>

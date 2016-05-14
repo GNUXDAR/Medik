@@ -22,8 +22,11 @@
                 <a href="pacientes.php" class="btn btn-primary">
                     <i class="icon-plus-sign" ></i>  Registrar Paciente
                 </a>
+                <a href="pdf_listodo_pacientes.php" id="pdf_asistencia_mes" class="btn btn-primary" <?php echo (pg_num_rows($listaCitas) > 0) ? "" : "disabled" ; ?>>
+                    <i class="icon-download-alt" ></i>  Exportar
+                </a>
                 
-            </div>                                                    
+            </div>                                              
         </div><br><br>
         <div class="row">
          <table class="table table-condensed table-striped table-hover dataTable" id="table_citas">

@@ -20,14 +20,14 @@ $i =1;
   <div class="content">
         <div id="pad-wrapper" class="form-page"> 
         <h3>Ingresos Diarios</h3><br>
-        <!-- <div class="row">
+        <div class="row">
             <div class="col col-md-6">
-                <a href="pdf_asistencia_mes.php" id="pdf_asistencia_mes" class="btn btn-primary" <?php echo (pg_num_rows($query) > 0) ? "" : "disabled" ; ?>>
+                <a href="pdf_ingresos_diarios.php" id="pdf_asistencia_mes" class="btn btn-primary" <?php echo (pg_num_rows($query) > 0) ? "" : "disabled" ; ?>>
                     <i class="icon-download-alt" ></i>  Exportar
                 </a>
                 
             </div>                                                    
-        </div><br> --><br>
+        </div><br><br>
         <div class="row" id="table_asistencia">
          <table class="table table-condensed table-striped table-hover dataTable" id="table_citas">
             <thead>

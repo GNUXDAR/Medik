@@ -36,8 +36,8 @@ $resul = pg_fetch_all($query);
                                         <table id="data" border="1" class="table table" id="table_citas" cellpadding="2" cellspacing="2" >
                                             <tbody>
                                                 <tr>
-                                                    <td ><strong>N#H:</strong>'.$value['id_his'].'</td>
-                                                    <td colspan="3" ><strong>Fecha:</strong>'.strftime("%d-%m-%Y",strtotime($value['fecha_cita'])).'</td>
+                                                    <td style="background-color: #858689;color: #fff;font-weight: bold;"><strong>N#H:</strong>'.$value['id_his'].'</td>
+                                                    <td colspan="3" style="background-color: #858689;color: #fff;font-weight: bold;"><strong>Fecha:</strong>'.strftime("%d-%m-%Y",strtotime($value['fecha_cita'])).'</td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" ><strong>Motivo de consulta:</strong>'.$value['motivo_cita'].'</td>
