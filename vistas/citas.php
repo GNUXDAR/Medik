@@ -65,8 +65,24 @@ ini_set('display_errors', 'on');
                                     <option value="">Seleccione</option>
                                     <option value="Fractura">Fractura</option>
                                     <option value="Artritis">Artritis</option>
-                                    <option value="Artrosis">Artrosis</option> 
-                                    <option value="Otros">Otros</option>                                            
+                                    <option value="Artrosis">Artrosis</option>
+                                    <option value="Juanetes">Juanetes</option>
+                                    <option value="Pies plano">Pies plano</option>
+                                    <option value="Escoliosis">Escoliosis</option>
+                                    <option value="Torticolis">Torticolis</option>
+                                    <option value="Osteoporosis">Osteoporosis</option>
+                                    <option value="Cervicalgia">Cervicalgia</option>
+                                    <option value="Contusion">Contusion</option>
+                                    <option value="Arteraciones musculares">Arteraciones musculares</option>
+                                    <option value="Hernia de columna">Hernia de columna</option>
+                                    <option value="Dolores musculares">Dolores musculares</option>
+                                    <option value="Dolores articulares">Dolores articulares</option>
+                                    <option value="Lesiones de articulaciones">Lesiones de articulaciones</option>
+                                    <option value="Lesiones de ligamentos">Lesiones de ligamentos</option>
+                                    <option value="Lumbalgia o lumbago">Lumbalgia o lumbago</option>
+                                    <option value="Otros">Otros</option>
+                                    
+                                                                           
                                 </select>
                             </div>
                         </div>
