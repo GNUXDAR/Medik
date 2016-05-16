@@ -101,7 +101,21 @@
                                     <option  value="">Seleccione</option>
                                     <option value="Fractura" <?php if($ATRIBUTO['motivo_cita'] == 'Fractura'){ echo 'selected'; }?> >Fractura</option>
                                     <option value="Artritis" <?php if($ATRIBUTO['motivo_cita'] == 'Artritis'){ echo 'selected'; }?> >Artritis</option>
-                                    <option value="Artrosis" <?php if($ATRIBUTO['motivo_cita'] == 'Artrosis'){ echo 'selected'; }?> >Artrosis</option> 
+                                    <option value="Artrosis" <?php if($ATRIBUTO['motivo_cita'] == 'Artrosis'){ echo 'selected'; }?> >Artrosis</option>
+                                    <option value="Juanetes" <?php if($ATRIBUTO['motivo_cita'] == 'Juanetes'){ echo 'selected'; }?> >Juanetes</option>
+                                    <option value="Pies plano" <?php if($ATRIBUTO['motivo_cita'] == 'Pies plano'){ echo 'selected'; }?> >Pies plano</option>
+                                    <option value="Escoliosis" <?php if($ATRIBUTO['motivo_cita'] == 'Escoliosis'){ echo 'selected'; }?> >Escoliosis</option>
+                                    <option value="Torticolis" <?php if($ATRIBUTO['motivo_cita'] == 'Torticolis'){ echo 'selected'; }?> >Torticolis</option>
+                                    <option value="Osteoporosis" <?php if($ATRIBUTO['motivo_cita'] == 'Osteoporosis'){ echo 'selected'; }?> >Osteoporosis</option>
+                                    <option value="Cervicalgia" <?php if($ATRIBUTO['motivo_cita'] == 'Cervicalgia'){ echo 'selected'; }?> >Cervicalgia</option>
+                                    <option value="Contusion" <?php if($ATRIBUTO['motivo_cita'] == 'Contusion'){ echo 'selected'; }?> >Contusion</option>
+                                    <option value="Arteraciones musculares" <?php if($ATRIBUTO['motivo_cita'] == 'Arteraciones musculares'){ echo 'selected'; }?> >Arteraciones musculares</option>
+                                    <option value="Hernia de columna" <?php if($ATRIBUTO['motivo_cita'] == 'Hernia de columna'){ echo 'selected'; }?> >Hernia de columna</option>
+                                    <option value="Dolores musculares" <?php if($ATRIBUTO['motivo_cita'] == 'Dolores musculares'){ echo 'selected'; }?> >Dolores musculares</option>
+                                    <option value="Dolores articulares" <?php if($ATRIBUTO['motivo_cita'] == 'Dolores articulares'){ echo 'selected'; }?> >Dolores articulares</option>
+                                    <option value="Lesiones de articulaciones" <?php if($ATRIBUTO['motivo_cita'] == 'Lesiones de articulaciones'){ echo 'selected'; }?> >Lesiones de articulaciones</option>
+                                    <option value="Lesiones de ligamentos" <?php if($ATRIBUTO['motivo_cita'] == 'Lesiones de ligamentos'){ echo 'selected'; }?> >Lesiones de ligamentos</option>
+                                    <option value="Lumbalgia o lumbago" <?php if($ATRIBUTO['motivo_cita'] == 'Lumbalgia o lumbago'){ echo 'selected'; }?> >Lumbalgia o lumbago</option>
                                     <option value="Otros"    <?php if($ATRIBUTO['motivo_cita'] == 'Otros'){ echo 'selected'; }?> >Otros</option>                                            
                                 </select>
                             </div>
